@@ -1,8 +1,11 @@
 .header {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 30px;
   z-index: 5;
+  width: 100%;
   .header-body {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;

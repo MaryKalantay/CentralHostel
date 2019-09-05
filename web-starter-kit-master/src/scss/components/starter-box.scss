@@ -1,9 +1,8 @@
-// Note: This is an example of components style, so please remove it or re-write it on your styles.
-
+// Startet Box
 .starter-box {
-  position: absolute;
+  position: relative;
   background: url('https://images.unsplash.com/photo-1533574383808-85e509c6f866?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80') no-repeat;
-  top: $header-line-height;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -55,6 +54,21 @@
     display: flex;
     justify-content: center;
     height: 10vh;
+    .phone {
+      color: $white;
+      font-size: calc(#{$base-font-size} + 4px);
+      border-bottom: 1px solid $white;
+      height: 28px;
+      letter-spacing: 1px;
+      margin: 0 10px;
+    }
+    .address {
+      text-transform: uppercase;
+      margin: 0 10px;
+      font-size: calc(#{$base-font-size} - 4px);
+      line-height: 1.5;
+      font-weight: 500;
+    }
   }
   p {
     font-size: 24px;

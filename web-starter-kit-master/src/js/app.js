@@ -5,7 +5,7 @@
 
 import navBar from './modules/navbar';
 // import slickSlider from './modules/slick-slider';
-import rangeDatepicker from './modules/datepicker';
+import rangeDatepicker from './modules/daterangepicker';
 
 (($) => {
   // When DOM is ready
