@@ -3,13 +3,13 @@
   top: 30px;
   z-index: 5;
   width: 100%;
+  background: transparent;
+  @include animate(all, .5s, ease-out);
   .header-body {
-    position: sticky;
-    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    @include animate(all .3s ease);
     @media (max-width: $desktop) {
       height: 30px;
     }
@@ -23,7 +23,7 @@
     .nav-link {
       font-size: $base-font-size;
       color: $white;
-      margin-right: 32px;
+      margin: 40px 32px 40px 0;
       position: relative;
       &:hover {
         color: $primary;
@@ -87,4 +87,15 @@
 
 .button {
 	@include button($primary, normal, normal, normal);
+}
+
+//Stiky Header
+.sticky-header {
+  .header {
+    background: rgba(0, 0, 0, .9);
+    top: 0;
+    .nav-link {
+      margin: 20px 32px 20px 0;
+    }
+  }
 }

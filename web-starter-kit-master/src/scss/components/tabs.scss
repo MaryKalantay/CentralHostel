@@ -1,0 +1,14 @@
+// Tabs
+
+.tabs {
+  .item {
+    list-style: none;
+  }
+
+  .item-content {
+    display: none;
+  }
+  .item-content.active {
+    display: flex;
+  }
+}

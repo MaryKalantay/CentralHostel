@@ -6,6 +6,8 @@
 import navBar from './modules/navbar';
 // import slickSlider from './modules/slick-slider';
 import rangeDatepicker from './modules/daterangepicker';
+import stickyHeader from './modules/header-sticky';
+import Tabs from './modules/tabs';
 
 (($) => {
   // When DOM is ready
@@ -13,5 +15,7 @@ import rangeDatepicker from './modules/daterangepicker';
     navBar.mobileMenu();
     // slickSlider.slider();
     rangeDatepicker.picker();
+    stickyHeader.sticky();
+    Tabs.fadeTabs();
   });
 })(jQuery);
