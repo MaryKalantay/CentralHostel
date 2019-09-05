@@ -1,0 +1,14 @@
+$header-line-height: 30px;
+
+.header-line-body {
+  max-width: 66%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  height: $header-line-height;
+  align-items: center;
+  font-size: 12px;
+  @media (max-width: $desktop) {
+    max-width: 100%;
+  }
+}

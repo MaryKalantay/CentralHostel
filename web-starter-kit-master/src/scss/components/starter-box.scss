@@ -1,0 +1,145 @@
+// Note: This is an example of components style, so please remove it or re-write it on your styles.
+
+.starter-box {
+  position: absolute;
+  background: url('https://images.unsplash.com/photo-1533574383808-85e509c6f866?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80') no-repeat;
+  top: $header-line-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100vh - #{$header-line-height}) ;
+  display: flex;
+  color: #fff;
+  background-size: cover;
+  z-index: 1;
+  min-width: 100%;
+  &::after {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    opacity: .65;
+    background: black;
+    height: calc(100vh - #{$header-line-height}) ;
+    content: "";
+    z-index: -1;
+  }
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5vh;
+    height: calc(85vh - #{$header-line-height});
+    .logo {
+      svg {
+        @media (max-width: $phone) {
+          width: 300px;
+        }
+      }
+    }
+    .slogan {
+      font-size: 20px;
+      font-weight: normal;
+      max-width: 567px;
+      line-height: 1.25;
+      letter-spacing: 0.5px;
+      margin: 34px 0 44px 0;
+      @media (max-width: $phone) {
+        font-size: 16px;
+        margin-top: 14px;
+      }     
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+  }
+  p {
+    font-size: 24px;
+  }
+}
+
+.book-box {
+  background: $primary;
+  border-radius: 8px;
+  padding: 25px;
+  max-width: 678px;
+  margin-bottom: 16px;
+  @media (max-width: $desktop) {
+    max-width: none;
+    padding: 20px;
+  }
+  &__form {
+    display: flex;
+    position: relative;
+    @media (max-width: $desktop) {
+      display: block; 
+    }
+    label {
+      position: absolute;
+      top: -15px;
+      display: flex;
+      font-size: 10px;
+      color: $accent;
+      opacity: 0.5;
+      letter-spacing: normal;
+      @media (max-width: $desktop) {
+        position: static;
+      }
+    }
+    .data-input {
+      margin-right: 10px;
+      @media (max-width: $desktop) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      input {
+        min-width: 200px;
+        @media (max-width: $phone) {
+          min-width: 100%;
+        }
+      }
+      &__submit {
+        margin-right: 0;
+        @media (max-width: $desktop) {
+          margin-bottom: 0;
+          margin-top: 20px;
+        }
+      }
+    }
+    .button {
+      min-height: 46px;
+      padding: 10px 50px;
+    }
+  }
+  &__notice {
+    a {
+      color: $white;
+      position: relative;
+      &:hover {
+        color: $primary;
+        &::after {
+          border-bottom: 1px dashed $primary;
+          left: 51%;
+          right: 51%;
+          transition-delay: 0s;
+        }
+      }
+      &::after {
+        position: absolute;
+        display: flex;
+        content: '';
+        border-bottom: 2px dashed #fff;
+        left: 0%;
+        right: 0%;
+        bottom: -3px;
+        transition-delay: 0s;
+        transition-duration: .3s;
+        transition-timing-function: cubic-bezier(0, -0.98, -0.51, -0.93);
+        transition-property: all;
+      }
+    }
+  }
+}

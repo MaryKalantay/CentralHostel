@@ -1,0 +1,87 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  .header-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    @media (max-width: $desktop) {
+      height: 30px;
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    @media (max-width: $desktop) {
+      display: none;
+    }
+    .nav-link {
+      font-size: $base-font-size;
+      color: $white;
+      margin-right: 32px;
+      position: relative;
+      &:hover {
+        color: $primary;
+        &::after {
+          border-bottom: 2px solid $primary;
+          left: 0%;
+          right: 0%;
+          transition-delay: 0s;
+        }
+      }
+      &::after {
+        position: absolute;
+        display: flex;
+        content: '';
+        border-bottom: 0 solid #fff;
+        left: 51%;
+        right: 51%;
+        bottom: -3px;
+        transition-delay: 0s;
+        transition-duration: .3s;
+        transition-timing-function: cubic-bezier(0, -0.98, -0.51, -0.93);
+        transition-property: all;
+      }
+    }
+  }
+  &__toggle {
+    margin-top: 30px;
+    display: none;
+    margin-left: auto;
+    position: relative;
+    @media (max-width: $desktop) {
+      display: flex;
+    }
+    .toggle-btn {
+      background: #ccc;
+      display: flex;
+      height: 2px;
+      position: relative;
+      @include animate(background, .2s, ease-out);
+      width: 20px;
+      &::before,
+      &::after {
+        background: $white;
+        content: '';
+        display: flex;
+        height: 100%;
+        position: absolute;
+        top: 30px;
+        @include animate(background, .2s, ease-out);
+        width: 100%;
+      }
+      &::before {
+        top: 5px;
+      }
+      &::after {
+        top: -5px;
+      }
+    }
+  }
+}
+
+.button {
+	@include button($primary, normal, normal, normal);
+}
