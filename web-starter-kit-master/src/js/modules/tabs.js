@@ -7,8 +7,8 @@ const Tabs = () => {
       var thref = $(this).attr("href").replace(/#/, '');
       $('#tab-menu a').removeClass('active');
       $(this).addClass('active');
-      $('#tab-content div.item-content[id!='+thref+']').fadeOut('slow', function(){
-        $('#'+thref).fadeIn('slow');
+      $('#tab-content div.item-content[id!='+thref+']').fadeOut('100', function(){
+        $('#'+thref).fadeIn('100');
       });
     });
   };

@@ -3,36 +3,33 @@
 // Base font styles for headings and links.
 
 // Alternate Colors
-$primary		    : #f8ce1c;
-$accent		  : rgb(0, 0, 0);
-$white		  : rgb(255, 255, 255);
-
-$purple		  : rgb(149, 149, 210);
-$blue		    : rgb(7, 114, 206);
-$lightblue	: rgb(65, 182, 230);
-$green		  : hsl(86, 88%, 35%);
-$red		    : rgb(218, 41, 28);
+$primary: #f8ce1c;
+$accent	: #000;
+$white: #ffffff;
+$gray: #E4E8ED;
+$green: #A4EB59;
+$purple: #B092ED;
+$blue: #80CAFF;
+$yellow	: #fff133;
 
 // Color Variations Array
 $prefix: color;
 $color-list: (
   'primary' $prefix $primary,
   'accent' $prefix $accent,
-	'white' $prefix $white
-
-
-	'purple' $prefix $purple,
-	'blue' $prefix $blue,
-	'lightblue' $prefix $lightblue,
-	'green' $prefix $green,
-	'red' $prefix $red,
+  'white' $prefix $white
+  'gray' $prefix $gray,
+  'green' $prefix $green,
+  'purple' $prefix $purple,
+  'blue' $prefix $blue,
+  'yellow' $prefix $yellow,
 );
 
 // For headers
 $headings: (
   'sizes': (
     'h1-font-size': 30px,
-    'h2-font-size': 27px,
+    'h2-font-size': 24px,
     'h3-font-size': 24px,
     'h4-font-size': 21px,
     'h5-font-size': 17px,
@@ -43,6 +40,9 @@ $headings: (
     'headings-color': inherit
   )
 );
+
+// Sections
+$box-padding: 75px;
 
 // Global vars for body typography
 $base-font-size: 14px;

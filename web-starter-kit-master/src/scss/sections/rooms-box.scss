@@ -1,5 +1,11 @@
 .rooms-box {
+  padding: $box-padding 0;
   h2 {
-    text-align: center
+    text-align: center;
+  }
+  &__tabs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
