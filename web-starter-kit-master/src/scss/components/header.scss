@@ -28,7 +28,7 @@
       &:hover {
         color: $primary;
         &::after {
-          border-bottom: 2px solid $primary;
+          border-bottom: 1px solid $primary;
           left: 0%;
           right: 0%;
           transition-delay: 0s;
@@ -48,6 +48,12 @@
         transition-property: all;
       }
     }
+  }
+  &__book {
+    height: 0;
+    display: none;
+    overflow: hidden;
+    @include animate(all .3s ease);
   }
   &__toggle {
     margin-top: 30px;
@@ -86,7 +92,7 @@
 }
 
 .button {
-	@include button($primary, normal, normal, normal);
+  @include button($primary, normal, normal, normal);
 }
 
 //Stiky Header
@@ -96,6 +102,11 @@
     top: 0;
     .nav-link {
       margin: 20px 32px 20px 0;
+    }
+    &__book {
+      display: block;
+      height: auto;
+      @include animate(all .3s ease);
     }
   }
 }

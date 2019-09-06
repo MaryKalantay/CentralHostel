@@ -9,7 +9,12 @@ const slickSlider = () => {
     };
     
     $.each(sliders, function(e) {
-      $(this.sslider).slick();
+      $(this.sslider).slick({
+        dots: true,
+        // arrows: true,
+        // nextArrow: '<svg><use xlink:href="#arr-r" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
+        // prevArrow: '<svg><use xlink:href="#arr-l" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
+      });
     });
 
     // $('.slick-slider').slick({

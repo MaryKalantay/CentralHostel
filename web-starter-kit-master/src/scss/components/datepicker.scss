@@ -1,0 +1,6 @@
+.daterangepicker {
+  border: none;
+  &::after {
+    border-bottom-color: $white;
+  }
+}

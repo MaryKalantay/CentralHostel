@@ -2,7 +2,7 @@
 
 const Tabs = () => {
   const fadeTabs = () => {
-    $('#tab-menu a').bind('click',function(e) {
+    $('#tab-menu a').bind('click', function(e) {
       e.preventDefault();
       var thref = $(this).attr("href").replace(/#/, '');
       $('#tab-menu a').removeClass('active');
