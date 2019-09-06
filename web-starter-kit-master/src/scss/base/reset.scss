@@ -16,6 +16,8 @@ body {
   font: #{map-get($base, 'base-font-size')}/#{map-get($base, 'base-line-height')} #{map-get($base, 'base-font-family')};
   min-width: map-get($base, base-min-width);
   letter-spacing: 0.5px;
+  margin: 0;
+  padding: 0;
 }
 
 // adaptive images

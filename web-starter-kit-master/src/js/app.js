@@ -4,8 +4,8 @@
 // Feel free with using ES6 here.
 
 import navBar from './modules/navbar';
-// import slickSlider from './modules/slick-slider';
-import rangeDatepicker from './modules/daterangepicker';
+import slickSlider from './modules/slick-slider';
+// import rangeDatepicker from './modules/daterangepicker';
 import stickyHeader from './modules/header-sticky';
 import Tabs from './modules/tabs';
 
@@ -13,8 +13,8 @@ import Tabs from './modules/tabs';
   // When DOM is ready
   $(() => {
     navBar.mobileMenu();
-    // slickSlider.slider();
-    rangeDatepicker.picker();
+    slickSlider.slider();
+    // rangeDatepicker.picker();
     stickyHeader.sticky();
     Tabs.fadeTabs();
   });
