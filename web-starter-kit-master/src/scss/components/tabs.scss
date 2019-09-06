@@ -41,10 +41,11 @@
   }
   .item-content {
     margin-top: 40px;
-    display: none;
+   height: 0px; overflow: hidden; 
+
   }
   .item-content.active {
-    display: block;
+    height: auto;
   }
 }
 

@@ -8,17 +8,9 @@ const slickSlider = () => {
       4: {sslider : '#slider_4'},
     };
     
-    $.each(sliders, function() {
-
+    $.each(sliders, function(e) {
       $(this.sslider).slick();
-      target.fadeIn("200", function() {
-        $(this.sslider).slick("setPosition", 0);
-      });
     });
-
-
-
-
 
     // $('.slick-slider').slick({
     //   arrows: true,

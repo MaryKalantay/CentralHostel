@@ -9,6 +9,7 @@ const Tabs = () => {
       $(this).addClass('active');
       $('#tab-content div.item-content[id!='+thref+']').fadeOut('slow', function(){
         $('#'+thref).fadeIn('slow');
+        $('#'+thref).addClass('active');
       });
     });
   };
