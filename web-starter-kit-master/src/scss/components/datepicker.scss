@@ -1,6 +1,20 @@
 .daterangepicker {
   border: none;
+  box-shadow: 0px 10px 30px 0 lighten(black,80%);
   &::after {
     border-bottom-color: $white;
+  }
+  td.active, td.active:hover {
+    background-color: black;
+  }
+  td.in-range {
+    background-color: $gray;
+  }
+  td.in-range.active.end-date {
+    background-color: black;   
+  }
+  td.available:hover, .daterangepicker th.available:hover {
+    background: $yellow;
+    color: $black;
   }
 }
