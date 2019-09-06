@@ -40,13 +40,11 @@
     
   }
   .item-content {
-    height: 0;         /* height:0 is also invisible */
-    overflow: hidden;
     margin-top: 40px;
+    display: none;
   }
-  .item-content.r-tabs-state-active {
-    position: relative;
-    height: auto;
+  .item-content.active {
+    display: block;
   }
 }
 
@@ -105,9 +103,4 @@
       }
     }
   }
-}
-
-
-.r-tabs .r-tabs-panel.r-tabs-state-active {
-  
 }

@@ -1,25 +1,20 @@
 // slick Slider
 const slickSlider = () => {
   const slider = () => {
-    const sliders = {
-      1: {sslider : '#slider_1'},
+    var sliders = {
+      1: {sslider : '#slider_1',},
       2: {sslider : '#slider_2'},
       3: {sslider : '#slider_3'},
-      4: {sslider : '#slider_4'}
+      4: {sslider : '#slider_4'},
     };
-$.each(sliders, function() {
-  $(this.sslider).slick({
-    arrows: true,
-    slidesToShow: 1,
-  });
-});
+    
+    $.each(sliders, function() {
 
-  $('.slick-slider').on('setPosition', function () {
-  $(this).find('.slick-slide').height('auto');
-  var slickTrack = $(this).find('.slick-track');
-  var slickTrackHeight = $(slickTrack).height();
-  $(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
-  });
+      $(this.sslider).slick();
+      target.fadeIn("200", function() {
+        $(this.sslider).slick("setPosition", 0);
+      });
+    });
 
 
 

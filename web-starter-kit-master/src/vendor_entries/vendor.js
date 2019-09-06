@@ -5,7 +5,6 @@
 module.exports = [
   './node_modules/jquery/dist/jquery.js',
   './node_modules/slick-carousel/slick/slick.js',
-  './node_modules/responsive-tabs/js/jquery.responsiveTabs.js',
   './node_modules/moment/moment.js',
   './node_modules/daterangepicker/daterangepicker.js',
 ];
