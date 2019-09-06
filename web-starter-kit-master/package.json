@@ -51,6 +51,7 @@
     "moment": "^2.24.0",
     "node-notifier": "^5.0.2",
     "path": "^0.12.7",
+    "responsive-tabs": "^1.6.3",
     "slick-carousel": "^1.8.1",
     "vinyl-source-stream": "^2.0.0"
   },
