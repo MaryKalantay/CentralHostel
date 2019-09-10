@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central Hostel</title>
     <link media="all" rel="stylesheet" href="assets/css/vendor.min.css">
@@ -54,7 +55,7 @@
             <form action="" class="book-box__form">
                 <div class="data-input">
                   <label for="checkIn">Дата заезда</label>
-                  <input id="checkIn" type="text" data-date-format="MM yyyy">
+                  <input type="text" data-range="true" data-multiple-dates-separator=" - " class="datepicker-here" data-date-format="MM yyyy">
                 </div>
                 <div class="data-input">
                     <label for="checkOut">Дата отъезда</label>

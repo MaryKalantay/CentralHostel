@@ -4,7 +4,7 @@
 // Feel free with using ES6 here.
 
 import navBar from './modules/navbar';
-import rangeDatepicker from './modules/daterangepicker';
+import rangeDatepicker from './modules/air-datepicker';
 import stickyHeader from './modules/header-sticky';
 import slickSlider from './modules/slick-slider';
 import Tabs from './modules/tabs';
