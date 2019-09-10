@@ -3,8 +3,7 @@ import moment from "moment";
 import 'moment/locale/ru';
 
 const rangeDatepicker = () => {
-  const picker = () => {
-  };
+  const picker = new Lightpick({ field: document.getElementById('datepicker') });
   return {
     picker,
   };

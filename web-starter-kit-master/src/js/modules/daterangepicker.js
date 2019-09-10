@@ -50,9 +50,6 @@ const rangeDatepicker = () => {
     checkOutDateInput.val('');
 
     checkInDateInput.on('apply.daterangepicker', function (event, picker) {
-      if (selectedCheckInDate === null) {
-        selectedCheckInDate = moment().locale('ru')
-      }
       checkInDateInput.val(selectedCheckInDate.format(dateFormat));
       checkOutDateInput.focus();
     });
@@ -67,7 +64,7 @@ const rangeDatepicker = () => {
       } else {
         checkInDateInput.val('');
       }
-      if (selectedCheckOutDate !== null && selectedCheckOutDate.isValid()) {
+      if (selectedCheckOutDate !== null) {
         checkOutDateInput.val(selectedCheckOutDate.format(dateFormat));
       } else {
         checkOutDateInput.val('');
@@ -85,7 +82,7 @@ const rangeDatepicker = () => {
       } else {
         checkInDateInput.val('');
       }
-      if (selectedCheckOutDate !== null && selectedCheckOutDate.isValid()) {
+      if (selectedCheckOutDate !== null) {
         checkOutDateInput.val(selectedCheckOutDate.format(dateFormat));
       } else {
         checkOutDateInput.val('');
