@@ -1,5 +1,4 @@
 .rooms-box {
-  padding: $box-padding 0;
   h2 {
     text-align: center;
   }
@@ -8,7 +7,72 @@
     align-items: center;
     flex-direction: column;
   }
-  .slick-slider {
-    width: 500px
+}
+
+.number {
+  &__guests {
+    opacity: .5;
+    text-transform: uppercase;
+    font-size: calc(#{$base-font-size} - 4px);
+  }
+  &__price {
+    margin-top: 30px;
+    .cost {
+      margin: 0;
+      span {
+        font-weight: 500;
+        font-size: calc(#{$base-font-size} + 4px);
+      }
+    }
+    .add-cost {
+      margin: 0px 0 0 0;
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+  &__book {
+    display: inline-flex;
+    margin-top: 40px;
+    align-items: center;
+    @media (max-width: $phone) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    } 
+    .sale {
+      opacity: .5;
+      font-size: calc(#{$base-font-size} - 2px);
+      margin-left: 10px;
+      @media (max-width: $phone) {
+        margin-left: 0; 
+        margin-top: 15px;
+      } 
+    }
+  }
+   .button {
+      @include button($accent, $white, normal, normal, normal);
+    }
+}
+.char-list {
+  margin-top: 20px;
+  padding: 0;
+  @media (max-width: $desktop) {
+    margin-top: 0;     
+  } 
+  li {
+    color: $spacegray;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+    @media (max-width: $desktop) {
+      min-height: 40px;
+      font-size: 12px;
+    }
+    svg {
+      opacity: .2;
+      margin-right: 7px;
+    }
   }
 }

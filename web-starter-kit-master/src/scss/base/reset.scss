@@ -1,6 +1,5 @@
 // This is base reset for global components.
 //
-// Note: If you use a framework that includes base styling then you need to remove this file.
 
 html {
 	box-sizing: border-box;
@@ -18,6 +17,7 @@ body {
   letter-spacing: 0.5px;
   margin: 0;
   padding: 0;
+  font-weight: 300;
 }
 
 // adaptive images
@@ -26,13 +26,26 @@ img {
   height: auto;
 }
 
-// google map fix
-.gm-style img {max-width: none;}
-
 // hide tel links on desktop
 @media only screen and (min-width: 1025px) {
     a[href^="tel"], a[href^="skype"], a[href^="sms"] {
     cursor: default;
     pointer-events: none;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 0 18px;
+  li {
+    padding: 5px 0
+  }
+}
+ul.list-unstyled {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    padding: 10px 0
   }
 }

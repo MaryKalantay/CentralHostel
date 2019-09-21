@@ -1,0 +1,15 @@
+// sections
+.section.gray {
+  background: lighten($gray, 5%);
+} 
+.section {
+  padding: $box-padding 0;
+  h2 {
+    text-align: center;
+  }
+}
+@media (max-width: $desktop) {
+  .section {
+    padding: calc(#{$box-padding} - 30px) 0;
+  }
+} 

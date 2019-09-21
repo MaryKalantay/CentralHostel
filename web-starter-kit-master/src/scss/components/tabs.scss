@@ -37,14 +37,26 @@
         opacity: 1;
       }
     }
-    
   }
+  @media (max-width: $desktop) {
+    .item {
+      padding: .344rem
+    }
+  } 
   .item-content {
-    margin-top: 40px;
-   height: 0px; overflow: hidden; 
+    display: block !important;
+    height: 0;
+    overflow: hidden;
   }
   .item-content.active {
     height: auto;
+  }
+  #tab-content.container {
+    margin-top: 40px;
+    padding: 0;
+    .container {
+      padding: 0
+    }
   }
 }
 

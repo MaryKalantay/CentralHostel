@@ -7,6 +7,9 @@ $primary: #f8ce1c;
 $accent	: #000;
 $white: #ffffff;
 $gray: #E4E8ED;
+$spacegray: #4a4a4a;
+$lightgray: #999;
+$black: #2d2d2d;
 $green: #A4EB59;
 $purple: #B092ED;
 $blue: #80CAFF;
@@ -19,27 +22,24 @@ $color-list: (
   'accent' $prefix $accent,
   'white' $prefix $white
   'gray' $prefix $gray,
+  'spacegray' $prefix $spacegray,
+  'lightgray' $prefix $lightgray,
+  'black' $prefix $black,
   'green' $prefix $green,
   'purple' $prefix $purple,
   'blue' $prefix $blue,
   'yellow' $prefix $yellow,
 );
 
-// For headers
-$headings: (
-  'sizes': (
-    'h1-font-size': 30px,
-    'h2-font-size': 24px,
-    'h3-font-size': 24px,
-    'h4-font-size': 21px,
-    'h5-font-size': 17px,
-    'h6-font-size': 15px
-  ),
-  'fonts': (
-    'headings-font-family': inherit,
-    'headings-color': inherit
-  )
-);
+// Headers
+$h3-font-size: 20px;
+$h1-font-size: 30px;
+$h2-font-size: 24px;
+$h3-font-size: 20px;
+$h4-font-size: 23px;
+$h5-font-size: 16px;
+$h6-font-size: 15px;
+
 
 // Sections
 $box-padding: 75px;

@@ -3,7 +3,6 @@
   top: 30px;
   z-index: 5000;
   width: 100%;
-  background: transparent;
   @include animate(all, .5s, ease-out);
   .header-body {
     display: flex;
@@ -11,20 +10,38 @@
     align-items: center;
     @include animate(all .3s ease);
     @media (max-width: $desktop) {
-      height: 30px;
+      height: 60px;
+      justify-content: flex-start;
     }
   }
   &__nav {
     display: flex;
     align-items: center;
+    transition: all .5s ease-out;
     @media (max-width: $desktop) {
-      display: none;
+      width: 100%;
+      overflow: hidden;
+      max-height: 0;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 0; left: 0;
+      padding-top: 60px;
+      z-index: -1;
     }
     .nav-link {
+      display: flex;
       font-size: $base-font-size;
       color: $white;
       margin: 40px 16px;
       position: relative;
+      @media (max-width: $desktop) {
+        justify-content: center;
+        margin: 0;
+        padding: 15px;
+        width: 100%;
+        border-top: 1px solid rgba(255,255,255,.2);
+      }
       &:hover {
         color: $primary;
         &::after {
@@ -32,6 +49,9 @@
           left: 0%;
           right: 0%;
           transition-delay: 0s;
+          @media (max-width: $desktop) {
+            display: none;
+          }
         }
       }
       &::after {
@@ -55,16 +75,30 @@
     overflow: hidden;
     @include animate(all .3s ease);
   }
+  &__logo {
+    display: none;
+    width: 26px;
+    height: 30px;
+    @media (max-width: $desktop) {
+      display: flex;
+    }
+  }
   &__toggle {
+    padding-top: 7px;
+    height: 14px;
+    width: 20px;
     margin-top: 30px;
     display: none;
     margin-left: auto;
     position: relative;
+    cursor: pointer;
     @media (max-width: $desktop) {
       display: flex;
+      margin-top: 0;
+      cursor: pointer;
     }
     .toggle-btn {
-      background: #ccc;
+      background: $white;
       display: flex;
       height: 2px;
       position: relative;
@@ -78,7 +112,7 @@
         height: 100%;
         position: absolute;
         top: 30px;
-        @include animate(background, .2s, ease-out);
+        @include animate(all, .2s, ease-out);
         width: 100%;
       }
       &::before {
@@ -91,8 +125,27 @@
   }
 }
 
-.button {
-  @include button($primary, normal, normal, normal);
+.header-open .header__nav {
+  max-height: 294px;
+  background: $accent;
+  transition: all, .5s ease-out;
+}
+.header-open {
+  .header .header__book {
+    display: none;
+  }
+  .toggle-btn {
+    background: transparent;
+    transition: all, .5s ease-out;
+    &::before,
+    &::after {
+      transition: all, .2s ease-out;
+      top: 0;
+    }
+    &::before {transform: rotate(-45deg);}
+    &::after {transform: rotate(45deg);}
+
+  }
 }
 
 //Stiky Header
@@ -100,13 +153,22 @@
   .header {
     background: rgba(0, 0, 0, .9);
     top: 0;
+    transition: all, .5s ease-out;
     .nav-link {
       margin: 20px 32px 20px 0;
+      @media (max-width: $desktop) {
+        margin: 0;
+        padding: 15px;
+      }
     }
     &__book {
       display: block;
       height: auto;
       @include animate(all .3s ease);
+      .button {
+        @include button($primary, normal, normal, normal);
+        @include animate(all, .2s, ease-in-out);
+      }
     }
   }
 }

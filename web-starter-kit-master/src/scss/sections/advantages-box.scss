@@ -1,0 +1,21 @@
+// Advantages Box
+.advantages-box {
+  text-align: center;
+  h2 {
+    margin-bottom: 70px;
+    @media (max-width: $desktop) {
+      margin-bottom: 20px;        
+    } 
+  }
+  .advantage {
+    text-align: center;
+    padding: 1rem 3rem;
+    p {
+      font-weight: 300;
+      line-height: 1.79;
+      letter-spacing: 0.5px;
+      text-align: center;
+      color: #999999;
+    }
+  }
+}

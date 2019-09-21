@@ -1,0 +1,29 @@
+.slick-slider {
+  display: flex;
+  align-items: center;
+  .slick-slide {
+    box-sizing: border-box;
+    position: relative;
+  }
+  .slick-arrow {
+    z-index: 1;
+    width: 32px;
+    position: absolute;
+    fill: #fff;
+    opacity: .5;
+    cursor: pointer;
+    @include animate(all, .2s, ease);
+    &:hover {
+      opacity: 1;
+    }
+    svg {
+      fill: inherit
+    } 
+  }
+  .arr-l {
+    left: 0;
+  }
+  .arr-r {
+    right: 0;
+  }
+} 

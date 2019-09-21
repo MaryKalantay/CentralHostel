@@ -1,0 +1,51 @@
+// Hostel Box
+.hostel-box {
+  display: flex;
+  background: $black;
+  position: relative;
+  color: $white;
+  padding-left: 10%;
+  @media (max-width: $desktop) {
+    padding-left: 0;
+  }
+  h3 {
+    margin-top: 40px;
+    @media (max-width: $desktop) {
+      margin-top: 15px;
+    }
+  }
+  &::before {
+    display: flex;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 110%;
+    height: 100%;
+    background: url(../images/pattern.png);
+    opacity: .3;
+    @media (max-width: $desktop) {
+      left: 0;
+    width: 100%;
+    }
+  }
+  p {
+    line-height: 1.88;
+    max-width: 75%;
+    @media (max-width: $desktop) {
+      max-width: 100%;
+    }
+  }
+  &__logo {
+    fill: $primary;
+    margin-bottom: 40px;
+    max-width: 350px;
+    @media (max-width: $desktop) {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    svg {
+      fill: inherit;
+    }
+  }
+}

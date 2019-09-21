@@ -1,0 +1,28 @@
+// Tables
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  thead {
+    tr {
+      border: none;
+    }
+  }
+  tr {
+    border: 1px solid #b3b8c3;
+  }
+  th {
+    vertical-align: bottom;
+    border: none;
+    text-align: left;
+    font-weight: normal;
+    padding: .42rem .75rem;
+  }
+  td {
+    padding: .42rem .75rem;
+    vertical-align: top;
+  }
+}

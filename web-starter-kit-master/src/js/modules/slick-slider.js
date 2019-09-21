@@ -9,32 +9,18 @@ const slickSlider = () => {
     };
     
     $.each(sliders, function(e) {
+      e.target
+      e.relatedTarget
+ 
       $(this.sslider).slick({
+        
         dots: true,
-        // arrows: true,
-        // nextArrow: '<svg><use xlink:href="#arr-r" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
-        // prevArrow: '<svg><use xlink:href="#arr-l" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
+        arrows: true,
+        nextArrow: '<svg class="arr-r"><use xlink:href="#arr-r" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
+        prevArrow: '<svg class="arr-l"><use xlink:href="#arr-l" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
+        setPosition : 0
       });
     });
-
-    // $('.slick-slider').slick({
-    //   arrows: true,
-    //   slidesToShow: 1,
-    //   // nextArrow: '<svg><use xlink:href="#arr-r" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
-    //   // prevArrow: '<svg><use xlink:href="#arr-l" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
-    //   responsive: [{
-    //     breakpoint: 1024,
-    //     settings: {
-    //       infinite: true,
-    //     },
-    //   }, {
-    //     breakpoint: 600,
-    //     settings: {
-    //       dots: true,
-    //       arrows: false,
-    //     },
-    //   }],
-    // });
   };
   return {
     slider,

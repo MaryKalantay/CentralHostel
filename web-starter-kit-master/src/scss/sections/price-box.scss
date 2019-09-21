@@ -1,0 +1,53 @@
+// Price Box
+.price-box {
+  &__table {
+    width: 90%;
+    margin-right: 30px;
+    margin-bottom: 50px;
+    @media (max-width: $desktop) {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    td {
+      font-size: calc(#{$base-font-size} + 2px);
+      @media (max-width: $desktop) {
+        font-size: $base-font-size;
+      }
+    }
+  }
+  p {
+    font-size: calc(#{$base-font-size} + 2px);
+    @media (max-width: $desktop) {
+      font-size: $base-font-size;
+    }
+  }
+  .last-p {
+    margin-top: 60px;
+    @media (max-width: $desktop) {
+      margin-top: 0;
+    }
+  }
+  .sales {
+    margin-left: 10%;
+    margin-top: .42rem;
+    @media (max-width: $desktop) {
+      margin-left: 0;
+    }
+    h3 {
+      font-size: $base-font-size;
+      @media (max-width: $desktop) {
+        font-weight: bold;
+        margin-top: 15px;
+      }
+    }
+    .last-p {
+      margin-top: 40px;
+      font-style: italic;
+      color: $lightgray;
+      @media (max-width: $desktop) {
+        margin-top: 10px;
+        font-size: calc(#{$base-font-size} - 2px);
+      }
+    }
+  }
+}

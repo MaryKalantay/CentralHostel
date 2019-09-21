@@ -2,8 +2,7 @@
 const navBar = () => {
   const mobileMenu = () => {
     $('#toggle-btn').click(() => {
-      $('#header-nav').toggleClass('open');
-      $('#toggle-btn').toggleClass('open');
+      $("body").toggleClass('header-open');
     });
   };
   return {

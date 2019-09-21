@@ -1,20 +1,46 @@
-.daterangepicker {
-  border: none;
-  box-shadow: 0px 10px 30px 0 lighten(black,80%);
+.lightpick {
+  box-shadow: 0 8px 25px #f6f6f6;
+  margin-top: 10px;
+}
+.lightpick__previous-action, .lightpick__next-action, .lightpick__close-action {
+  line-height: 0;
+}
+.lightpick__day.is-today {
+  color: $accent;
+  background: none;
+  position: relative;
+  font-weight: 700;
   &::after {
-    border-bottom-color: $white;
+    position: absolute;
+    bottom: 5px;
+    content: "";
+    width: 5px;
+    height: 5px;
+    display: flex;
+    background: $accent;
+    border-radius: 50%;
   }
-  td.active, td.active:hover {
-    background-color: black;
-  }
-  td.in-range {
-    background-color: $gray;
-  }
-  td.in-range.active.end-date {
-    background-color: black;   
-  }
-  td.available:hover, .daterangepicker th.available:hover {
-    background: $yellow;
-    color: $black;
-  }
+}
+.lightpick__day.is-start-date.is-in-range, .lightpick__day.is-end-date.is-in-range.is-flipped,
+.lightpick__day.is-end-date.is-in-range, .lightpick__day.is-start-date.is-in-range.is-flipped {
+  background-image: none;
+  background-color: $accent
+}
+.lightpick__day:not(.is-disabled):hover,
+.lightpick__previous-action, .lightpick__next-action, .lightpick__close-action {
+  background: $gray;
+  border-radius: 50%;
+}
+.lightpick__day.is-in-range {
+  background-image: none;
+  background-color: $gray;
+}
+.lightpick__day.is-in-range:hover {
+  background-color: $primary;
+  background-image: none;
+}
+.lightpick__day.is-start-date, .lightpick__day.is-end-date, .lightpick__day.is-start-date:hover, .lightpick__day.is-end-date:hover {
+  background-image: none;
+  background: $accent;
+  border-radius: 50%;
 }

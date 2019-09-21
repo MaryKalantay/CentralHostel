@@ -13,8 +13,8 @@ import Tabs from './modules/tabs';
   // When DOM is ready
   $(() => {
     navBar.mobileMenu();
-    Tabs.fadeTabs();
     slickSlider.slider();
+    Tabs.fadeTabs();
     rangeDatepicker.picker();
     stickyHeader.sticky();
   });
