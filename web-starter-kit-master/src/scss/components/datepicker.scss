@@ -1,6 +1,7 @@
 .lightpick {
   box-shadow: 0 8px 25px #f6f6f6;
   margin-top: 10px;
+  z-index: 1000;
 }
 .lightpick__previous-action, .lightpick__next-action, .lightpick__close-action {
   line-height: 0;

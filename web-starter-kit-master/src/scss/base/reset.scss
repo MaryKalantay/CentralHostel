@@ -49,3 +49,28 @@ ul.list-unstyled {
     padding: 10px 0
   }
 }
+
+.link-dash {
+    position: relative;
+    &:hover {
+      &::after {
+        border-bottom: 1px dashed $black;
+        left: 51%;
+        right: 51%;
+        transition-delay: 0s;
+      }
+    }
+    &::after {
+      position: absolute;
+      display: flex;
+      content: '';
+      border-bottom: 1px dashed $black;
+      left: 0%;
+      right: 0%;
+      bottom: -3px;
+      transition-delay: 0s;
+      transition-duration: .3s;
+      transition-timing-function: cubic-bezier(0, -0.98, -0.51, -0.93);
+      transition-property: all;
+    }
+  }

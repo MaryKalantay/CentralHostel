@@ -13,6 +13,7 @@ import Tabs from './modules/tabs';
   // When DOM is ready
   $(() => {
     navBar.mobileMenu();
+    navBar.anchorScroll();
     slickSlider.slider();
     Tabs.fadeTabs();
     rangeDatepicker.picker();

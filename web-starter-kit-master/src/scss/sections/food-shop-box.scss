@@ -31,9 +31,9 @@
       margin-left: 0%;
       margin-bottom: 15px;
     }
-      p {
+    p {
       font-size: calc(#{$base-font-size} + 2px);
-      max-width: 35%;
+      max-width: 40%;
       margin: auto;
       line-height: 1.88;
       @media (max-width: $desktop) {

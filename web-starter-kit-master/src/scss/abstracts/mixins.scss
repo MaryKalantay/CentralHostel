@@ -18,10 +18,10 @@
   text-decoration: none;
   position: relative;
   z-index: 1;
-  outline: none;
   transform: none;
   @include animate(all, .2s, ease);
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: $button-hover;
     color: $button-hover;
     background: $button-hover; 

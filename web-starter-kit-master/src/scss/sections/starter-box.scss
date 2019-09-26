@@ -1,27 +1,14 @@
 // Startet Box
 .starter-box {
   position: relative;
-  background: url('https://images.unsplash.com/photo-1533574383808-85e509c6f866?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80') no-repeat;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: calc(100vh - #{$header-line-height}) ;
+  background: url('../images/screen.jpg') no-repeat;
+  height: calc(100vh - #{$header-line-height});
   display: flex;
   color: #fff;
   background-size: cover;
   z-index: 1;
   min-width: 100%;
-  &::after {
-    width: 100%;
-    position: absolute;
-    display: flex;
-    opacity: .65;
-    background: black;
-    height: calc(100vh - #{$header-line-height}) ;
-    content: "";
-    z-index: -1;
-  }
+  background-position: center;
   &__intro {
     display: flex;
     flex-direction: column;
@@ -61,12 +48,13 @@
       align-items: center;
     }
     .phone {
-      color: $white;
-      font-size: calc(#{$base-font-size} + 4px);
-      border-bottom: 1px solid $white;
       height: 28px;
-      letter-spacing: 1px;
       margin: 0 10px;
+      border-bottom: 1px solid $white;
+      color: $white;      
+      font-size: calc(#{$base-font-size} + 4px);
+      font-weight: 400;
+      letter-spacing: 1px;
       @media (max-width: $tablet) {
         margin: 0 10px 15px 0;
       }
@@ -101,7 +89,6 @@
   background: $primary;
   border-radius: 8px;
   padding: 25px;
-  max-width: 678px;
   margin-bottom: 16px;
   @media (max-width: $desktop) {
     padding: 20px;
@@ -154,6 +141,7 @@
       min-height: 46px;
       padding: 10px 50px;
       background:$accent;
+      font-size: calc(#{$base-font-size} + 2px);
       color: $white;
       @include animate(all, .2s, ease);
     }
@@ -175,7 +163,7 @@
         position: absolute;
         display: flex;
         content: '';
-        border-bottom: 2px dashed #fff;
+        border-bottom: 1px dashed #fff;
         left: 0%;
         right: 0%;
         bottom: -3px;
@@ -187,3 +175,4 @@
     }
   }
 }
+

@@ -1,0 +1,126 @@
+.footer {
+  display: flex;
+  position: relative;
+  color: $white;
+  padding: 2rem;
+  overflow: hidden;
+  @media (max-width: $desktop) {
+    padding-left: 0;
+  }
+  &::after {
+    display: flex;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $black;
+    z-index: -2;
+  }
+  &::before {
+    display: flex;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/pattern.png);
+    opacity: .3;
+    z-index: -1;
+  }
+  &__body {
+    display: flex;
+    align-items: center;
+    @media (max-width: $widescreen) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: $desktop) {
+      display: block;
+    }
+  }
+  &__logo {
+    width: 180px;
+    height: 26px;
+    fill: #ffffff;
+  }
+  &__nav {
+    display: flex;
+    margin-top: 5px;
+    @media (max-width: $tablet) {
+      margin-top: 15px;
+      display: block;
+    }
+    .nav-link {
+      padding-left: 30px;
+      color: $white;
+      display: flex;
+      font-size: calc(#{$base-font-size} - 2px);
+      &:hover {
+        color: $primary;
+      }
+      @media (max-width: $widescreen) {
+        padding-left: 30px;
+      }
+      @media (max-width: $desktop) {
+        padding: 20px  30px 20px 0;
+      }
+      @media (max-width: $tablet) {
+        padding: 5px  30px 5px 0;     
+      }
+    }
+  }
+  .contacts {
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    @media (max-width: $widescreen) {
+      margin-top: 15px;
+      margin-left: 0;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  @media (max-width: $widescreen) {
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    margin: 0 2px;
+    color: $white;
+    font-size: calc(#{$base-font-size} - 2px);
+    @media (max-width: $tablet) {
+      margin: 5px 2px;
+      font-size: calc(#{$base-font-size} - 4px);
+    }
+  }
+  .phone {
+    margin-right: 10px;
+  }
+  .email {
+    display: flex;
+    align-items: center;
+    &:hover {
+      color: #57BCEC;
+    }
+    .email-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 3px;
+      background: #57BCEC;
+      fill: #fff;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 $header-line-height: 30px;
 
-.header-line-body {
-  max-width: 66%;
+.header-line__body {
+  max-width: 86%;
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -10,5 +10,26 @@ $header-line-height: 30px;
   font-size: 12px;
   @media (max-width: $desktop) {
     max-width: 100%;
+    padding: 0 15px;
+  }
+  .contacts {
+    a {
+      color: #9b9b9b;
+    }
+    .phone {
+      @media (max-width: $phone) {
+        display: none;
+      }
+    }
+  }
+  .lang {
+    min-width: 50px;
+    .item {
+      margin: auto 3px;
+      &:hover,
+      &.active {
+        color: $primary;
+      }
+    }
   }
 }
