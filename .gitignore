@@ -38,3 +38,4 @@ tmp
 # wordpress configs and uploads
 /wp-config.php
 /wp-content/uploads/*
+
