@@ -8,6 +8,7 @@ import rangeDatepicker from './modules/lightpick';
 import stickyHeader from './modules/header-sticky';
 import slickSlider from './modules/slick-slider';
 import Tabs from './modules/tabs';
+import jqueryModal from './modules/jquery-modal';
 
 (($) => {
   // When DOM is ready
@@ -15,6 +16,7 @@ import Tabs from './modules/tabs';
     navBar.mobileMenu();
     navBar.anchorScroll();
     slickSlider.slider();
+    jqueryModal.modal();
     Tabs.fadeTabs();
     rangeDatepicker.picker();
     stickyHeader.sticky();

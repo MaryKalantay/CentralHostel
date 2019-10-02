@@ -7,4 +7,5 @@ module.exports = [
   './node_modules/slick-carousel/slick/slick.js',
   './node_modules/moment/moment.js',
   './node_modules/lightpick/lightpick.js',
+  './node_modules/jquery-modal/jquery.modal.js',
 ];
