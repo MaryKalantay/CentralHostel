@@ -8,7 +8,10 @@
     } 
   }
   .advantage {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 1rem 3rem;
     p {
       font-weight: 300;
