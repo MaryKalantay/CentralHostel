@@ -28,6 +28,7 @@ node_modules/
 # markup
 /build/
 /assets/
+/src/video/
 /production/
 .sass-cache
 node_modules
