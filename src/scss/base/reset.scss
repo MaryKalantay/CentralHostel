@@ -74,3 +74,23 @@ ul.list-unstyled {
       transition-property: all;
     }
   }
+
+  .left-col {
+    max-width: 54%;
+    flex: 0 0 54%;
+    @media (max-width: $desktop) {
+      flex: 0 0 100%;
+      max-width: 100%;   
+    }
+  }
+  
+  .right-col {
+    max-width: 44%;
+    flex: 0 0 44%;
+    margin-left: 2%;
+    @media (max-width: $desktop) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-left: 0;
+    }
+  }
