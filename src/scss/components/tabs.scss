@@ -47,21 +47,22 @@
         position:  static;
       }
     }
-    &::after {
-      height:  2px;
-      width:  60px;
-      display:  flex;
-      content:  '';
-      position:  absolute;
-      bottom:  0;
-      background:  $black;
-      @media (max-width: $desktop) {
-        display: none;
-      }
-    }
+    
     &:hover,
     &.active {
       opacity:  1;
+      &::after {
+        height:  2px;
+        width:  60px;
+        display:  flex;
+        content:  '';
+        position:  absolute;
+        bottom:  0;
+        background:  $black;
+        @media (max-width: $desktop) {
+          display: none;
+        }
+      }
       &::after {
         opacity:  1;
       }
@@ -78,6 +79,9 @@
   #tab-content.container {
     margin-top: 40px;
     padding: 0;
+    @media (max-width: $desktop) {
+      margin-top: 10px;
+    }
     .container {
       padding: 0;
     }
@@ -119,7 +123,7 @@
     }
     .item.gray {
       &:before {
-        background: $gray;
+        background: $spacegray;
       }
     }
   }

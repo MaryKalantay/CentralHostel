@@ -1,6 +1,6 @@
 // sections
 .section.gray {
-  background: lighten($gray, 5%);
+  background: $gray;
 } 
 .section {
   padding: $box-padding 0;

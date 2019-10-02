@@ -2,6 +2,9 @@
   h2 {
     text-align: center;
   }
+  h3 {
+    line-height: 1;
+  }
   &__tabs {
     display: flex;
     align-items: center;
@@ -9,14 +12,32 @@
   }
 }
 
+.left-col {
+  max-width: 54%;
+  @media (max-width: $desktop) {
+    flex: 0 0 100%;
+    max-width: 100%;   
+  }
+  }
+
+.right-col {
+  max-width: 44%;
+  margin-left: 2%;
+  @media (max-width: $desktop) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+
 .number {
+  margin-bottom: 30px;
   &__guests {
     opacity: .5;
-    text-transform: uppercase;
-    font-size: calc(#{$base-font-size} - 4px);
+    font-size: calc(#{$base-font-size} - 2px);
   }
   &__price {
-    margin-top: 30px;
+    margin-top: 40px;
     .cost {
       margin: 0;
       span {
@@ -52,8 +73,11 @@
   }
    .button {
       @include button($accent, $white, normal, normal, normal);
+      box-shadow: 0 8px 25px 0 rgba(172, 172, 172, 0.6);
     }
 }
+
+// Char List
 .char-list {
   margin-top: 20px;
   padding: 0;
@@ -61,17 +85,20 @@
     margin-top: 0;     
   } 
   li {
-    color: $spacegray;
+    color: $black;
     list-style: none;
     display: flex;
     align-items: center;
-    min-height: 30px;
+    min-height: 40px;
     @media (max-width: $desktop) {
       min-height: 40px;
       font-size: 12px;
     }
-    svg {
-      opacity: .2;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
       margin-right: 7px;
     }
   }
