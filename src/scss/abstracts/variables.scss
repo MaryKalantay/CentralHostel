@@ -6,7 +6,7 @@
 $primary: #f8ce1c;
 $accent	: #000;
 $white: #ffffff;
-$gray: #E4E8ED;
+$gray: #f3f5f7;
 $spacegray: #4a4a4a;
 $lightgray: #999;
 $black: #2d2d2d;
@@ -14,6 +14,7 @@ $green: #A4EB59;
 $purple: #B092ED;
 $blue: #80CAFF;
 $yellow	: #fff133;
+$red	: red;
 
 // Color Variations Array
 $prefix: color;
@@ -29,6 +30,7 @@ $color-list: (
   'purple' $prefix $purple,
   'blue' $prefix $blue,
   'yellow' $prefix $yellow,
+  'red' $prefix $red,
 );
 
 // Headers

@@ -6,6 +6,8 @@ const slickSlider = () => {
       2: {sslider : '#slider_2'},
       3: {sslider : '#slider_3'},
       4: {sslider : '#slider_4'},
+      5: {sslider : '#slider_5'},
+      6: {sslider : '#slider_6'},
     };
     
     $.each(sliders, function(e) {
