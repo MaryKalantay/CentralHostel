@@ -13,10 +13,16 @@
                 <label for="checkOut">Дата отъезда</label>
                 <input name="checkOut" id="checkOut" type="text">
             </div>
-            <div class="data-input data-input__submit"><button type="submit" class="button button-solid color-accent">Забронировать</button></div>
+            <div class="data-input data-input__submit"><a href="#book-modal" rel="modal:open" class="open-modal  button button-solid color-accent">Забронировать</a></div>
           </div>
         </form>
-        <button type="submit" class="book__mobile button">Забронировать</button>
+        
+            <a class="open-modal book__mobile button" href="#book-modal" rel="modal:open">
+                Забронировать
+            </a>
+            <div id="book-modal" class="modal">
+                test
+              </div>
         <div class="book-box__notice">Получи скидки при <a href="" class="link-dash">раннем</a> бронировании!</div>
       </div>
     <div class="starter-box__info">
