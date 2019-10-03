@@ -1,8 +1,11 @@
 // Action Box
 .action-box {
   background: $primary;
+  position: relative;
   padding: 30px 0;
+  overflow: hidden;
   &__content {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,12 +19,13 @@
   }
   &__text {
     margin-bottom: 0;
+    font-weight: 400;
     line-height: 1.1;
     font-size: calc(#{$base-font-size} + 1px);
     @media (max-width: $desktop) {
       font-size: $base-font-size;
     }
-    }
+  }
   &__button {
     @include button($accent, $white, $accent, normal, normal);
     margin-left: 20px;
@@ -32,5 +36,34 @@
       margin-left: 0;
       margin-top: 15px;
     }
+  }
+  .percentage {
+    position: absolute;
+    fill: #F6C52D;
+  }
+  .percentage.percentage-lg {
+    width: 150px;
+    height: 250px;
+    top: -102px;
+    left: -230px;
+    transform: rotate(-15deg);
+    @media (max-width: $desktop) {
+      top: -102px;
+      left: -140px;
+    }
+  }
+  .percentage.percentage-sm {
+    width: 23px;
+    height: 51px;
+    bottom: -52px;
+    left: -240px;
+    transform: rotate(-12deg);
+  }
+  .percentage.percentage-xs {
+    width: 63px;
+    height: 82px;
+    top: -52px;
+    right: -82px;
+    transform: rotate(21deg);
   }
 }
