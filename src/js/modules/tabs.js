@@ -15,44 +15,44 @@ const Tabs = () => {
       $(tabItem).click(function () {
         let currentTabId = $(this).attr('href');
         let currentTabsBlockId = currentTabId.replace(new RegExp('(\\#tabs_\\d+)_\\d+'), '$1');
-        let currentTabContent = $(currentTabsBlockId + ' div .item-content.active'); //remove active class from active tab
+        let activeTabContent = $(currentTabsBlockId + ' div .item-content.active');
 
-        $(currentTabsBlockId + ' a.active').removeClass('active'); //add active class to current tab
+        //remove active class from active tab
+        $(currentTabsBlockId + ' a.active').removeClass('active');
 
-        $(this).addClass('active'); //remove active class from active tabContent
+        //add active class to current tab
+        $(this).addClass('active');
 
-        currentTabContent.removeClass('active');
-        currentTabContent.fadeOut(''); //add active class to current tabContent
+        //remove active class from active tabContent
+        activeTabContent.removeClass('active');
+        activeTabContent.fadeOut('');
 
+        //add active class to current tabContent
         $(currentTabId).addClass('active');
         $(currentTabId).fadeIn();
-        return false;
       });
-      let tabItemAccardion = $(tabValue.mtabs).find('#tab-content a');
-      $(tabItemAccardion).click(function () {
+
+      let tabItemAccordion = $(tabValue.mtabs).find('.tab-content a');
+      $(tabItemAccordion).click(function () {
         let currentTabId = $(this).attr('href');
         let currentTabsBlockId = currentTabId.replace(new RegExp('(\\#tabs_\\d+)_\\d+'), '$1');
-        let currentTabContent = $(currentTabsBlockId + ' div .item-content.active'); // this.classList.toggle("active");
+        let activeTabContent = $(currentTabsBlockId + ' div .item-content.active');
 
-        let panel = this.nextElementSibling;
-        console.log(active);
-        $(panel).addClass('active');
-        let active = $(this).hasClass('active');
+        //remove active class from active tab
+        $(currentTabsBlockId + ' a.active').removeClass('active');
 
-        if (active) {
-          $(this).removeClass('active');
-          $(panel).removeClass('active');
-          console.log(panel);
-        } else {
-          $(this).addClass('active');
-          $(panel).addClass('active');
-        } // //add active class to current tabContent
-        // $(currentTabId).addClass('active');
-        // $(currentTabId).fadeIn();
+        //add active class to current tab
+        $(this).addClass('active');
 
+        //remove active class from active tabContent
+        activeTabContent.removeClass('active');
+        activeTabContent.fadeOut('');
 
-        return false;
+        //add active class to current tabContent
+        $(currentTabId).addClass('active');
+        $(currentTabId).fadeIn();
       });
+
     });
   };
 
