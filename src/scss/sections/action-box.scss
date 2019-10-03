@@ -29,6 +29,8 @@
   &__button {
     @include button($accent, $white, $accent, normal, normal);
     margin-left: 20px;
+    min-width: 216px;
+    justify-content: center;
     &:hover {
       color: $primary;
     }

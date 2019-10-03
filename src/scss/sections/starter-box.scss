@@ -138,6 +138,8 @@
       }
     }
     .button {
+      @include button($accent, $white, normal, normal, normal);
+
       min-height: 46px;
       padding: 10px 50px;
       background:$accent;
