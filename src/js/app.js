@@ -9,6 +9,7 @@ import stickyHeader from './modules/header-sticky';
 import slickSlider from './modules/slick-slider';
 import Tabs from './modules/tabs';
 import jqueryModal from './modules/jquery-modal';
+import selectPicker from './modules/select-picker';
 
 (($) => {
   // When DOM is ready
@@ -20,5 +21,6 @@ import jqueryModal from './modules/jquery-modal';
     Tabs.fadeTabs();
     rangeDatepicker.picker();
     stickyHeader.sticky();
+    selectPicker.dropdown();
   });
 })(jQuery);

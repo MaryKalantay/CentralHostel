@@ -20,21 +20,21 @@
                       <div>
                         <picture>
                           <source srcset="assets/images/hostel/red-1.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/red-1.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/red-1.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/red-1.jpg" alt="Красный номер">
                         </picture>
                       </div>
                       <div>
                         <picture>
                           <source srcset="assets/images/hostel/red-2.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/red-2.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/red-2.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/red-2.jpg" alt="Красный номер">
                         </picture>
                       </div>
                       <div>
                         <picture>
                           <source srcset="assets/images/hostel/red-3.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/red-3.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/red-3.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/red-3.jpg" alt="Красный номер">
                         </picture>
                       </div>
@@ -105,11 +105,144 @@
                         </div>
                       </div>
                       <div class="number__price">
-                        <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p> 
-                        <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</picture>
+                        <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
+                        <p class="add-cost">+<span>50</span> грн. при заказе завтрака</picture>
                       </div>
                       <div class="number__book">
-                        <button type="submit" class="button">Забронировать</button>
+                        <a class="open-modal button" href="#modal-book-room" rel="modal:open">
+                          Забронировать
+                        </a>
+                        <div id="modal-book-room" class="modal">
+                          <div class="number">
+                            <h3>Красный номер</h3>
+                            <p class="number__guests">4 человека  |  Женщины</p>
+                            <div class="slick-slider" id="slider_modal_1">
+                              <div>
+                                <picture>
+                                  <source srcset="assets/images/hostel/red-1.webp" type="image/webp">
+                                  <source srcset="assets/images/hostel/red-1.jpg" type="image/jpeg">
+                                  <img src="assets/images/hostel/red-1.jpg" alt="Красный номер">
+                                </picture>
+                              </div>
+                              <div>
+                                <picture>
+                                  <source srcset="assets/images/hostel/red-2.webp" type="image/webp">
+                                  <source srcset="assets/images/hostel/red-2.jpg" type="image/jpeg">
+                                  <img src="assets/images/hostel/red-2.jpg" alt="Красный номер">
+                                </picture>
+                              </div>
+                              <div>
+                                <picture>
+                                  <source srcset="assets/images/hostel/red-3.webp" type="image/webp">
+                                  <source srcset="assets/images/hostel/red-3.jpg" type="image/jpeg">
+                                  <img src="assets/images/hostel/red-3.jpg" alt="Красный номер">
+                                </picture>
+                              </div>
+                            </div>
+                            <div class="number__info">
+                              <div class="row">
+                                <div class="col">
+                                  <ul class="number__list char-list">
+                                    <li>
+                                <span>
+                                  <svg width="20" height="18">
+                                    <use xlink:href="#air-con" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                  </svg>
+                                </span>
+                                      Кондиционер
+                                    </li>
+                                    <li>
+                                  <span>
+                                      <svg width="17" height="20">
+                                      <use xlink:href="#nightlight" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                  </span>
+                                      Ночное освещение
+                                    </li>
+                                    <li>
+                                  <span>
+                                    <svg width="20" height="18">
+                                      <use xlink:href="#safe" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                  </span>
+                                      Шкафчик с замком (локер)
+                                    </li>
+                                    <li>
+                                <span>
+                                  <svg width="16" height="22">
+                                    <use xlink:href="#chair" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                  </svg>
+                                </span>
+                                      Стол и стулья
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="col">
+                                  <ul class="number__list char-list">
+                                    <li>
+                                  <span>
+                                    <svg width="22" height="18">
+                                      <use xlink:href="#light" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                </span>
+                                      Персональный светильник
+                                    </li>
+                                    <li>
+                                  <span>
+                                    <svg width="20" height="21">
+                                      <use xlink:href="#socket" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                  </span>
+                                      Прикроватные розетки
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <hr>
+                            <form class="">
+                              <div class="row">
+                                <div class="col">
+                                  <input name="name" type="text" placeholder="Ваше имя и фамилия" />
+                                </div>
+                                <div class="col">
+                                  <input name="quantity" type="number" value="1" />
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <input name="checkIn" type="text" id="checkIn" placeholder="Дата заезда"/>
+                                </div>
+                                <div class="col">
+                                  <input name="checkOut" id="checkOut" type="text" placeholder="Дата отъезда">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <input name="email" type="email" placeholder="Ваше email" />
+                                </div>
+                                <div class="col">
+                                  <input name="phone" type="tel" placeholder="Ваше телефон" />
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <textarea rows="8" placeholder="Комментарий"></textarea>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <button type="submit" class="button">
+                                    Забронировать
+                                  </button>
+                                </div>
+                              </div>
+
+                            </form>
+
+
+                          </div>
+                        </div>
                         <div class="sale">Возможна скидка <br>при раннем бронировании</div>
                       </div>
                   </div>
@@ -126,35 +259,35 @@
                     <div>
                       <picture>
                         <source srcset="assets/images/hostel/green-1.webp" type="image/webp">
-                        <source srcset="assets/images/hostel/green-1.jpg" type="image/jpeg"> 
+                        <source srcset="assets/images/hostel/green-1.jpg" type="image/jpeg">
                         <img src="assets/images/hostel/green-1.jpg" alt="Зеленый номер">
                       </picture>
                     </div>
                     <div>
                       <picture>
                         <source srcset="assets/images/hostel/green-2.webp" type="image/webp">
-                        <source srcset="assets/images/hostel/green-2.jpg" type="image/jpeg"> 
+                        <source srcset="assets/images/hostel/green-2.jpg" type="image/jpeg">
                         <img src="assets/images/hostel/green-2.jpg" alt="Зеленый номер">
                       </picture>
                     </div>
                     <div>
                       <picture>
                         <source srcset="assets/images/hostel/green-3.webp" type="image/webp">
-                        <source srcset="assets/images/hostel/green-3.jpg" type="image/jpeg"> 
+                        <source srcset="assets/images/hostel/green-3.jpg" type="image/jpeg">
                         <img src="assets/images/hostel/green-3.jpg" alt="Зеленый номер">
                       </picture>
                     </div>
                     <div>
                         <picture>
                           <source srcset="assets/images/hostel/green-4.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/green-4.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/green-4.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/green-4.jpg" alt="Зеленый номер">
                         </picture>
                       </div>
                       <div>
                         <picture>
                           <source srcset="assets/images/hostel/green-5.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/green-5.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/green-5.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/green-5.jpg" alt="Зеленый номер">
                         </picture>
                       </div>
@@ -233,7 +366,7 @@
                         </div>
                       </div>
                       <div class="number__price">
-                        <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p> 
+                        <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
                         <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</picture>
                       </div>
                       <div class="number__book">
@@ -254,35 +387,35 @@
                       <div>
                         <picture>
                           <source srcset="assets/images/hostel/blue-1.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/blue-1.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/blue-1.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/blue-1.jpg" alt="Cиний номер">
                         </picture>
                       </div>
                       <div>
                         <picture>
                           <source srcset="assets/images/hostel/blue-2.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/blue-2.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/blue-2.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/blue-2.jpg" alt="Cиний номер">
                         </picture>
                       </div>
                       <div>
                         <picture>
                           <source srcset="assets/images/hostel/blue-3.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/blue-3.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/blue-3.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/blue-3.jpg" alt="Cиний номер">
                         </picture>
                       </div>
                       <div>
                         <picture>
                           <source srcset="assets/images/hostel/blue-4.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/blue-4.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/blue-4.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/blue-4.jpg" alt="Cиний номер">
                         </picture>
                       </div>
                       <div>
                         <picture>
                           <source srcset="assets/images/hostel/blue-5.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/blue-5.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/blue-5.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/blue-5.jpg" alt="Cиний номер">
                         </picture>
                       </div>
@@ -361,7 +494,7 @@
                         </div>
                       </div>
                       <div class="number__price">
-                        <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p> 
+                        <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
                         <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</p>
                       </div>
                       <div class="number__book">
@@ -382,35 +515,35 @@
                   <div>
                     <picture>
                       <source srcset="assets/images/hostel/viol-1.webp" type="image/webp">
-                      <source srcset="assets/images/hostel/viol-1.jpg" type="image/jpeg"> 
+                      <source srcset="assets/images/hostel/viol-1.jpg" type="image/jpeg">
                       <img src="assets/images/hostel/viol-1.jpg" alt="Фиолетовый номер">
                     </picture>
                     </div>
                     <div>
                       <picture>
                         <source srcset="assets/images/hostel/viol-2.webp" type="image/webp">
-                        <source srcset="assets/images/hostel/viol-2.jpg" type="image/jpeg"> 
+                        <source srcset="assets/images/hostel/viol-2.jpg" type="image/jpeg">
                         <img src="assets/images/hostel/viol-2.jpg" alt="Фиолетовый номер">
                       </picture>
                     </div>
                     <div>
                       <picture>
                         <source srcset="assets/images/hostel/viol-3.webp" type="image/webp">
-                        <source srcset="assets/images/hostel/viol-3.jpg" type="image/jpeg"> 
+                        <source srcset="assets/images/hostel/viol-3.jpg" type="image/jpeg">
                         <img src="assets/images/hostel/viol-3.jpg" alt="Фиолетовый номер">
                       </picture>
                     </div>
                     <div>
                       <picture>
                         <source srcset="assets/images/hostel/viol-4.webp" type="image/webp">
-                        <source srcset="assets/images/hostel/viol-4.jpg" type="image/jpeg"> 
+                        <source srcset="assets/images/hostel/viol-4.jpg" type="image/jpeg">
                         <img src="assets/images/hostel/viol-4.jpg" alt="Фиолетовый номер">
                       </picture>
                     </div>
                     <div>
                       <picture>
                         <source srcset="assets/images/hostel/viol-5.webp" type="image/webp">
-                        <source srcset="assets/images/hostel/viol-5.jpg" type="image/jpeg"> 
+                        <source srcset="assets/images/hostel/viol-5.jpg" type="image/jpeg">
                         <img src="assets/images/hostel/viol-5.jpg" alt="Фиолетовый номер">
                       </picture>
                     </div>
@@ -489,7 +622,7 @@
                         </div>
                       </div>
                       <div class="number__price">
-                        <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p> 
+                        <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
                         <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</p>
                       </div>
                       <div class="number__book">
@@ -510,35 +643,35 @@
                       <div>
                         <picture>
                           <source srcset="assets/images/hostel/yellow-1.webp" type="image/webp">
-                          <source srcset="assets/images/hostel/yellow-1.jpg" type="image/jpeg"> 
+                          <source srcset="assets/images/hostel/yellow-1.jpg" type="image/jpeg">
                           <img src="assets/images/hostel/yellow-1.jpg" alt="Желтый номер">
                         </picture>
                         </div>
                         <div>
                           <picture>
                             <source srcset="assets/images/hostel/yellow-2.webp" type="image/webp">
-                            <source srcset="assets/images/hostel/yellow-2.jpg" type="image/jpeg"> 
+                            <source srcset="assets/images/hostel/yellow-2.jpg" type="image/jpeg">
                             <img src="assets/images/hostel/yellow-2.jpg" alt="Желтый номер">
                           </picture>
                         </div>
                         <div>
                           <picture>
                             <source srcset="assets/images/hostel/yellow-3.webp" type="image/webp">
-                            <source srcset="assets/images/hostel/yellow-3.jpg" type="image/jpeg"> 
+                            <source srcset="assets/images/hostel/yellow-3.jpg" type="image/jpeg">
                             <img src="assets/images/hostel/yellow-3.jpg" alt="Желтый номер">
                           </picture>
                         </div>
                         <div>
                           <picture>
                             <source srcset="assets/images/hostel/yellow-4.webp" type="image/webp">
-                            <source srcset="assets/images/hostel/yellow-4.jpg" type="image/jpeg"> 
+                            <source srcset="assets/images/hostel/yellow-4.jpg" type="image/jpeg">
                             <img src="assets/images/hostel/yellow-4.jpg" alt="Желтый номер">
                           </picture>
                         </div>
                         <div>
                           <picture>
                             <source srcset="assets/images/hostel/yellow-5.webp" type="image/webp">
-                            <source srcset="assets/images/hostel/yellow-5.jpg" type="image/jpeg"> 
+                            <source srcset="assets/images/hostel/yellow-5.jpg" type="image/jpeg">
                             <img src="assets/images/hostel/yellow-5.jpg" alt="Желтый номер">
                           </picture>
                         </div>
@@ -617,7 +750,7 @@
                           </div>
                         </div>
                         <div class="number__price">
-                          <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p> 
+                          <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
                           <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</p>
                         </div>
                         <div class="number__book">
@@ -638,35 +771,35 @@
                         <div>
                             <picture>
                               <source srcset="assets/images/hostel/brown-1.webp" type="image/webp">
-                              <source srcset="assets/images/hostel/brown-1.jpg" type="image/jpeg"> 
+                              <source srcset="assets/images/hostel/brown-1.jpg" type="image/jpeg">
                               <img src="assets/images/hostel/brown-1.jpg" alt="Серый номер">
                             </picture>
                             </div>
                             <div>
                               <picture>
                                 <source srcset="assets/images/hostel/brown-2.webp" type="image/webp">
-                                <source srcset="assets/images/hostel/brown-2.jpg" type="image/jpeg"> 
+                                <source srcset="assets/images/hostel/brown-2.jpg" type="image/jpeg">
                                 <img src="assets/images/hostel/brown-2.jpg" alt="Серый номер">
                               </picture>
                             </div>
                             <div>
                               <picture>
                                 <source srcset="assets/images/hostel/brown-3.webp" type="image/webp">
-                                <source srcset="assets/images/hostel/brown-3.jpg" type="image/jpeg"> 
+                                <source srcset="assets/images/hostel/brown-3.jpg" type="image/jpeg">
                                 <img src="assets/images/hostel/brown-3.jpg" alt="Серый номер">
                               </picture>
                             </div>
                             <div>
                               <picture>
                                 <source srcset="assets/images/hostel/brown-4.webp" type="image/webp">
-                                <source srcset="assets/images/hostel/brown-4.jpg" type="image/jpeg"> 
+                                <source srcset="assets/images/hostel/brown-4.jpg" type="image/jpeg">
                                 <img src="assets/images/hostel/brown-4.jpg" alt="Серый номер">
                               </picture>
                             </div>
                             <div>
                               <picture>
                                 <source srcset="assets/images/hostel/brown-5.webp" type="image/webp">
-                                <source srcset="assets/images/hostel/brown-5.jpg" type="image/jpeg"> 
+                                <source srcset="assets/images/hostel/brown-5.jpg" type="image/jpeg">
                                 <img src="assets/images/hostel/brown-5.jpg" alt="Серый номер">
                               </picture>
                             </div>
@@ -745,7 +878,7 @@
                           </div>
                         </div>
                         <div class="number__price">
-                          <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p> 
+                          <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
                           <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</p>
                         </div>
                         <div class="number__book">

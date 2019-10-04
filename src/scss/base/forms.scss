@@ -19,7 +19,8 @@ textarea {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   box-sizing: border-box;
-  border: none;
+  width: 100%;
+  border: 1px solid $gray;
   border-radius: 5px;
   padding: map-get($forms, 'form-element-padding');
   font-family: map-get($forms, 'form-font-family');

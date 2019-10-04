@@ -13,7 +13,9 @@
 }
 
 .number {
-  margin-bottom: 30px;
+  @media (max-width: $desktop) {
+    margin-bottom: 30px;
+  }
   &__guests {
     opacity: .5;
     font-size: calc(#{$base-font-size} - 2px);
@@ -42,20 +44,22 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-    } 
+    }
     .sale {
       opacity: .5;
       font-size: calc(#{$base-font-size} - 2px);
       margin-left: 10px;
       @media (max-width: $phone) {
-        margin-left: 0; 
+        margin-left: 0;
         margin-top: 15px;
-      } 
+      }
     }
   }
    .button {
       @include button($accent, $white, normal, normal, normal);
       box-shadow: 0 8px 25px 0 rgba(172, 172, 172, 0.6);
+      min-width: 216px;
+     justify-content: center;
     }
 }
 
@@ -64,8 +68,8 @@
   margin-top: 20px;
   padding: 0;
   @media (max-width: $desktop) {
-    margin-top: 0;     
-  } 
+    margin-top: 0;
+  }
   li {
     color: $black;
     list-style: none;

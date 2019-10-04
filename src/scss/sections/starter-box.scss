@@ -19,7 +19,7 @@
     height: calc(85vh - #{$header-line-height});
     .logo {
       svg {
-        fill: $white; 
+        fill: $white;
         @media (max-width: $tablet) {
           width: 300px;
         }
@@ -51,7 +51,7 @@
       height: 28px;
       margin: 0 10px;
       border-bottom: 1px solid $white;
-      color: $white;      
+      color: $white;
       font-size: calc(#{$base-font-size} + 4px);
       font-weight: 400;
       letter-spacing: 1px;
@@ -100,7 +100,7 @@
     display: flex;
     position: relative;
     @media (max-width: $desktop) {
-      display: block; 
+      display: block;
     }
     label {
       position: absolute;

@@ -8,4 +8,5 @@ module.exports = [
   './node_modules/moment/moment.js',
   './node_modules/lightpick/lightpick.js',
   './node_modules/jquery-modal/jquery.modal.js',
+  './node_modules/select2/src/js/jquery.select2.js',
 ];
