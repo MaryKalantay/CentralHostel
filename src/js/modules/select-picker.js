@@ -1,12 +1,12 @@
 // Select Picker
 
 const selectPicker = () => {
-  const dropdown = () => {
+  const select = () => {
     $('.js-example-basic-single').select2();
   };
 
   return {
-    dropdown,
+    select,
   };
 };
 

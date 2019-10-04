@@ -21,6 +21,6 @@ import selectPicker from './modules/select-picker';
     Tabs.fadeTabs();
     rangeDatepicker.picker();
     stickyHeader.sticky();
-    selectPicker.dropdown();
+    selectPicker.select();
   });
 })(jQuery);
