@@ -6,7 +6,6 @@ const jqueryModal = () => {
       $(this).modal({
         fadeDuration: 550,
       });
-      
       return false;
     });
     $('#video-modal').on($.modal.OPEN, function (event, modal) {

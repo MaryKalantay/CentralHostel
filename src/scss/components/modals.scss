@@ -1,5 +1,15 @@
 // Modals
 
-.modal, .blocker {
+.blocker {
   z-index: 5000;
+  @media (max-width: $desktop) {
+    padding: 20px 0;
+  }
+}
+.modal {
+  max-width: 650px;
+  border-radius: 0;
+  @media (max-width: $desktop) {
+    max-width: 100%;
+  }
 }

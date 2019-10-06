@@ -9,12 +9,15 @@ $white: #ffffff;
 $gray: #f3f5f7;
 $spacegray: #4a4a4a;
 $lightgray: #999;
+$grayplace: #b3b8c3;
+$grayform: #e1e1e1;
 $black: #2d2d2d;
 $green: #A4EB59;
 $purple: #B092ED;
 $blue: #80CAFF;
 $yellow	: #fff133;
-$red	: red;
+$red: red;
+$beige: #fffbdf;
 
 // Color Variations Array
 $prefix: color;
@@ -25,6 +28,7 @@ $color-list: (
   'gray' $prefix $gray,
   'spacegray' $prefix $spacegray,
   'lightgray' $prefix $lightgray,
+  'grayform' $prefix $grayform,
   'black' $prefix $black,
   'green' $prefix $green,
   'purple' $prefix $purple,

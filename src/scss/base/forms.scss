@@ -20,18 +20,18 @@ textarea {
   -webkit-border-radius: 0;
   box-sizing: border-box;
   width: 100%;
-  border: 1px solid $gray;
+  border: 1px solid $grayform;
   border-radius: 5px;
   padding: map-get($forms, 'form-element-padding');
   font-family: map-get($forms, 'form-font-family');
   outline: none;
-
+  @include animate(border, .3s, linear);
   &:focus {
-    border-color: map-get($forms, 'form-element-focus-border-color');
+    // border-color: map-get($forms, 'form-element-focus-border-color');
+    @include animate(border, .3s, linear);
   }
-
   @include placeholder {
-    color: map-get($forms, 'placeholder-color');
+    color: $grayplace;
   }
 }
 
@@ -56,4 +56,166 @@ input[type='submit'] {
   padding: map-get($forms, 'form-element-padding');
   border-radius: 5px;
   font-family: map-get($forms, 'form-font-family');
+}
+
+// Input Number
+.quantity {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  label {
+    margin-right: 10px;
+  }
+  input {
+    width: 50px;
+    height: 42px;
+    line-height: 1.65;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    border: 1px solid $grayform;
+    border-radius: 5px;
+    &:focus {
+      outline: 0;
+    }
+  }
+  .quantity-nav {
+    position: relative;
+    height: 42px;
+    right: -22px;
+  }
+  .quantity-button {
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    text-align: center;
+    color: $black;
+    font-size: calc(#{$base-font-size} + 2px);
+    line-height: 1.7;
+    transform: translateX(-100%);
+    user-select: none;  
+  }
+  .quantity-button.quantity-up {
+    position: absolute;
+    height: 50%;
+    top: -2px;
+  }
+  .quantity-button.quantity-down {
+    position: absolute;
+    bottom: 6px;
+    height: 50%;
+  }
+}
+
+// Input Checkbox
+input[type='checkbox']{ height: 0; width: 0; display: none;}
+
+input[type='checkbox'] + label {
+  position: relative;
+  display: flex;
+  margin-bottom:  20px;
+  align-items: center;
+  color: $black;
+  cursor: pointer;  
+  transition: color 250ms cubic-bezier(.4,.0,.23,1);
+}
+input[type='checkbox'] + label > span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  padding: 4px;
+  border: 1px solid $grayform;
+  border-radius: 5px;
+  cursor: pointer;  
+  transition: all 250ms cubic-bezier(.4,.0,.23,1);
+}
+input[type='checkbox'] + label > span>svg {
+  display: none;
+}
+
+input[type='checkbox']:checked + label > span> svg{
+  display: block;
+}
+input[type='checkbox']:checked + label > span{
+  background: $primary;
+  border-color: $primary;
+  animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+}
+
+input[type='checkbox']:checked + label > span:before{
+  content: "";
+  position: absolute;
+}
+
+@keyframes shrink-bounce{
+  0%{
+    transform: scale(1);
+  }
+  33%{    
+    transform: scale(.85);
+  }
+  100%{
+    transform: scale(1);    
+  }
+}
+@keyframes checkbox-check{
+  0%{
+    width: 0;
+    height: 0;
+    border-color: #212121;
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
+  33%{
+    width: .2em;
+    height: 0;
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
+  100%{    
+    width: .2em;
+    height: .5em;    
+    border-color: #212121;
+    transform: translate3d(0,-.5em,0) rotate(45deg);
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+//Input with iocn
+.input-group {
+  display: flex;
+  span {
+    width: 20%;
+    padding: 10px;
+    align-items: center;
+    display: inline-flex;
+    border: 1px solid $grayform;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    margin-bottom: 20px;
+    @include animate(border, .3s, linear);
+  }
+  input {
+    width: 80%;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    padding-left: 0;
+  }
+  svg {
+    fill: $grayform;
+  }
 }
