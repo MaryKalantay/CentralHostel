@@ -950,7 +950,7 @@
               <form class="form number__form">
                 <div class="row">
                   <div class="col-md-6 col-lg-6">
-                    <input name="name" type="text" placeholder="Ваше имя и фамилия"required />
+                    <input name="name" type="text" placeholder="Ваше имя и фамилия" required />
                   </div>
                   <div class="col-md-6 col-lg-6">
                       <div class="quantity">
@@ -975,14 +975,14 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-md-6">
-                      <input id="earlyCheck" type="checkbox" required/>
+                      <input id="earlyCheck" type="checkbox"/>
                       <label for="earlyCheck">
                         <span><svg><use xlink:href="#check"></use></svg></span>
                         Ранний заезд
                       </label>
                   </div>
                   <div class="col-sm-12 col-md-6">
-                    <input id="lateCheck" type="checkbox" required/>
+                    <input id="lateCheck" type="checkbox"/>
                       <label for="lateCheck">
                         <span><svg><use xlink:href="#check"></use></svg></span>
                         Поздний заезд
@@ -991,7 +991,7 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-md-6">
-                      <input id="breackfast" type="checkbox" required/>
+                      <input id="breackfast" type="checkbox"/>
                       <label for="breackfast">
                         <span><svg><use xlink:href="#check"></use></svg></span>
                         Завтрак (+50 грн.)
@@ -1054,7 +1054,7 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-md-6">
-                    <div class="input-group" id="input-group_1'">
+                    <div class="input-group">
                       <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
                       <input name="" type="text" id="" placeholder="Дата заезда" required/>
                     </div>
@@ -1148,76 +1148,170 @@
           <div class="tab-content container">
               <div id="tabs_2_1" class="item-content active">
                 <div class="container">
-                  <div class="row zones-box__tab">
-                    <div class="col-md-6 left-col">
-                      <div class="zones-box__imgs">
-                          <picture class="img-t" >
-                            <source srcset="assets/images/hostel/hall-4.webp" type="image/webp">
-                            <source srcset="assets/images/hostel/hall-4.jpg" type="image/jpeg">
-                            <img src="assets/images/hostel/hall-4.jpg" alt="Кухня">
-                          </picture>
-                          <picture class="img-b" >
-                              <source srcset="assets/images/hostel/hall-3.webp" type="image/webp">
-                              <source srcset="assets/images/hostel/hall-3.jpg" type="image/jpeg">
-                              <img src="assets/images/hostel/hall-3.jpg" alt="Санузел">
-                            </picture>
-                      </div>
-                    </div>
-                    <div class="col-md-6 right-col">
-                      <div class="zone">
-                        <p class="zone__desc">Наша кухня оснащена всем необходимым для самостоятельного приготовления пищи. Микроволновые печи, электрические чайники и уютная обстановка помогут вам наслаждаться трапезой при просмотре любимых каналов на широкоформатном экране телевизор</p>
-                        <div class="zone__info">
-                            <div class="row">
-                              <div class="col">
-                                <ul class="char-list">
-                                  <li>
-                                    <span>
-                                    <svg width="22" height="16">
-                                      <use xlink:href="#microwave" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                    </svg>
-                                    </span>
-                                    Микроволновка
-                                  </li>
-                                  <li>
-                                    <span>
-                                      <svg width="15" height="24">
-                                        <use xlink:href="#fridge" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                      </svg>
-                                      </span>
-                                      Холодильник
-                                    </li>
-                                </ul>
+                    <div class="row zones-box__tab">
+                        <div class="col-md-6 left-col">
+                            <div class="zones-box__slides">
+                              <div class="zones-box__slider-t">
+                                  <div class="slick-slider" id="slider_1_1">
+                                    <div>
+                                      <picture>
+                                        <source srcset="assets/images/hostel/hall-4.webp" type="image/webp">
+                                        <source srcset="assets/images/hostel/hall-4.jpg" type="image/jpeg">
+                                        <img src="assets/images/hostel/hall-4.jpg" alt="Кухня">
+                                      </picture>
+                                    </div>
+                                    <div>
+                                      <picture>
+                                        <source srcset="assets/images/hostel/hall-4.webp" type="image/webp">
+                                        <source srcset="assets/images/hostel/hall-4.jpg" type="image/jpeg">
+                                        <img src="assets/images/hostel/hall-4.jpg" alt="Кухня">
+                                      </picture>
+                                    </div>
+                                  </div>
                               </div>
-                              <div class="col">
-                                  <ul class="char-list">
-                                    <li>
-                                      <span>
-                                      <svg width="20" height="21">
-                                        <use xlink:href="#kettle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                      </svg>
-                                      </span>
-                                      Чайник
-                                    </li>
-                                    <li>
-                                      <span>
-                                      <svg width="16" height="26">
-                                        <use xlink:href="#blender" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                      </svg>
-                                      </span>
-                                      Блендер
-                                    </li>
-                                  </ul>
+                              <div class="zones-box__slider-bg">
+                                  <picture>
+                                    <source srcset="assets/images/hostel/hall-3.webp" type="image/webp">
+                                    <source srcset="assets/images/hostel/hall-3.jpg" type="image/jpeg">
+                                    <img src="assets/images/hostel/hall-3.jpg" alt="Санузел">
+                                  </picture>
                               </div>
                             </div>
-                        </div>
-                      </div>
+                          </div>
+                          <div class="col-md-6 right-col">
+                            <div class="zone">
+                                <p class="zone__desc">Наша кухня оснащена всем необходимым для самостоятельного приготовления пищи. Микроволновые печи, электрические чайники и уютная обстановка помогут вам наслаждаться трапезой при просмотре любимых каналов на широкоформатном экране телевизор</p>
+                                <div class="zone__info">
+                                  <div class="row">
+                                    <div class="col">
+                                      <ul class="char-list">
+                                        <li>
+                                          <span>
+                                          <svg width="22" height="16">
+                                            <use xlink:href="#microwave" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                          </svg>
+                                          </span>
+                                          Микроволновка
+                                        </li>
+                                        <li>
+                                          <span>
+                                            <svg width="15" height="24">
+                                              <use xlink:href="#fridge" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                            </span>
+                                            Холодильник
+                                          </li>
+                                      </ul>
+                                    </div>
+                                    <div class="col">
+                                        <ul class="char-list">
+                                          <li>
+                                            <span>
+                                            <svg width="20" height="21">
+                                              <use xlink:href="#kettle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                            </span>
+                                            Чайник
+                                          </li>
+                                          <li>
+                                            <span>
+                                            <svg width="16" height="26">
+                                              <use xlink:href="#blender" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                            </span>
+                                            Блендер
+                                          </li>
+                                        </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
                     </div>
-                  </div>
                 </div>
               </div>
               <div id="tabs_2_2" class="item-content">
                 <div class="container">
-                 Контент табы Санузел
+                    <div class="row zones-box__tab">
+                        <div class="col-md-6 left-col">
+                            <div class="zones-box__slides">
+                              <div class="zones-box__slider-t">
+                                  <div class="slick-slider" id="slider_1_2">
+                                    <div>
+                                      <picture>
+                                        <source srcset="assets/images/hostel/hall-4.webp" type="image/webp">
+                                        <source srcset="assets/images/hostel/hall-4.jpg" type="image/jpeg">
+                                        <img src="assets/images/hostel/hall-4.jpg" alt="Красный номер">
+                                      </picture>
+                                    </div>
+                                    <div>
+                                      <picture>
+                                        <source srcset="assets/images/hostel/hall-14.webp" type="image/webp">
+                                        <source srcset="assets/images/hostel/hall-14.jpg" type="image/jpeg">
+                                        <img src="assets/images/hostel/hall-14.jpg" alt="Красный номер">
+                                      </picture>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="zones-box__slider-bg">
+                                <picture class="" >
+                                  <source srcset="assets/images/hostel/wc-3.webp" type="image/webp">
+                                  <source srcset="assets/images/hostel/wc-3.jpg" type="image/jpeg">
+                                  <img src="assets/images/hostel/wc-3.jpg" alt="Санузел">
+                                </picture>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6 right-col">
+                            <div class="zone">
+                              <p class="zone__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                              <div class="zone__info">
+                                <div class="row">
+                                  <div class="col">
+                                    <ul class="char-list">
+                                      <li>
+                                        <span>
+                                        <svg width="22" height="16">
+                                          <use xlink:href="#microwave" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                        </span>
+                                        Раковина
+                                      </li>
+                                      <li>
+                                        <span>
+                                          <svg width="15" height="24">
+                                            <use xlink:href="#fridge" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                          </svg>
+                                          </span>
+                                          Душ
+                                        </li>
+                                    </ul>
+                                  </div>
+                                  <div class="col">
+                                      <ul class="char-list">
+                                        <li>
+                                          <span>
+                                          <svg width="20" height="21">
+                                            <use xlink:href="#kettle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                          </svg>
+                                          </span>
+                                          Унитаз
+                                        </li>
+                                        <li>
+                                          <span>
+                                          <svg width="16" height="26">
+                                            <use xlink:href="#blender" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                          </svg>
+                                          </span>
+                                          Фен
+                                        </li>
+                                      </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
                 </div>
               </div>
           </div>

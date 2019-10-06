@@ -22,7 +22,7 @@
           border: none;
           padding: 10px 5px;   
           margin-bottom: 20px;     
-        }   
+        }
         &:hover {
           background: none;
         }
@@ -32,7 +32,7 @@
         &:after {
           @media (max-width: $desktop) {
             display: flex;
-          }        
+          }
         }
         span {
           display: flex;
@@ -85,7 +85,6 @@
     .img-t {
       min-width: 380px;
       height: auto;
-      margin: auto;
       margin-left: 10%;
       box-shadow: 0 15px 20px rgba(0,0,0,.23);
       @media (max-width: $desktop) {
@@ -93,6 +92,11 @@
         width: 100%;
         box-shadow: none;
       }
+    }
+    .slider-t {
+      display: flex;
+      height: 500px;
+      width: auto;
     }
     .img-b {
       max-width: 378px;
@@ -109,4 +113,73 @@
     
   }
 
+}
+
+.zones-box {
+  &__slides {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 520px;
+    @media (max-width: $desktop) {
+      min-height: auto;
+      display: inline;
+    }
+  }
+  &__slider-t .slick-slider {
+    line-height: 0;
+    height: 522px;
+    width: 550px;
+    margin-left: 7%;
+    overflow: hidden;
+    @media (max-width: $widescreen) {
+      width: 460px;
+      height: auto;
+    }
+    @media (max-width: $desktop) {
+      margin: 0 0 30px 0;
+      width: 100%;
+      box-shadow: none;
+    }
+    .slick-arrow {
+      z-index: 1;
+      width: 18px;
+      position: absolute;
+      bottom: -5%;
+      opacity: 1;
+      cursor: pointer;
+      @include animate(all, .2s, ease);
+      @media (max-width: $desktop) {
+        bottom: auto;
+      }
+    }
+    .slick-arrow.slick-disabled {
+      opacity: .6;
+    }
+    .arr-l-b {
+      right: 40px;
+      @media (max-width: $desktop) {
+        right: auto;
+        left: 10px;
+      }
+    }
+    .arr-r-b{
+      right: 10px;
+      @media (max-width: $desktop) {
+        right: 10px;
+      }
+    }
+  }
+  &__slider-bg {
+    width: 380px;
+    height: 520px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    opacity: .5;
+    box-shadow: 0 15px 20px rgba(0,0,0,.23);
+    @media (max-width: $desktop) {
+      display: none;
+    }
+  }
 }

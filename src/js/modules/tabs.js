@@ -26,7 +26,7 @@ const Tabs = () => {
 
         //remove active class from active tabContent
         activeTabContent.removeClass('active');
-        activeTabContent.fadeOut('');
+        activeTabContent.fadeOut();
 
         //add active class to current tabContent
         $(currentTabId).addClass('active');
