@@ -1,38 +1,39 @@
 // Book modals
 
 .modal.book-modal {
+  position: relative;
   display: block;
-  visibility: hidden;
-  height: 0px;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
 }
-
-.book-modal.active {
-  visibility: visible;
+.modal.book-modal.active {
+  display: block;
   height: auto;
+  overflow: visible;
 }
 
 .slider_modal {
-  padding: 35px 25px;
   width: 100%;
   align-items: flex-start;
-  justify-content: center;
   .slick-arrow {
+    top: 60px;
     width: 12.8px;
     height: 25.7px;
     opacity: 1;
   }
   .arr-l-b {
-    left: 0;
+    left: 40px;
   }
   .arr-r-b {
-    right: 0;
+    right: 40px;
   }
   .col-md-6, .col {
     padding-right: 10px;
     padding-left: 10px;
   }
   .number {
-    padding: 0;
+    padding: 50px 60px 10px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +48,8 @@
       justify-content: center;
       align-items: center;
       margin: 20px 0 30px 0;
-      width: 400px;
+      // max-width: 400px;
+      padding: 30px;
       height: 62px;
       border-radius: 5px;
       background-color: rgb(243, 243, 243);

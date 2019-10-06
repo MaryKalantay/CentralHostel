@@ -273,7 +273,7 @@
                             </div>
                           </div>
                           <div class="number__price">
-                            <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
+                            <div class="cost"><div class="weekdays"><span >230</span> грн./сутки</div><div class="weekend"><span>250</span> грн./сутки (Выходные)</div></div>
                             <p class="add-cost">+<span>50</span> грн. при заказе завтрака</p>
                           </div>
                           <div class="number__book">
@@ -282,106 +282,6 @@
                             </a>
                             <div class="sale">Возможна скидка <br>при раннем бронировании</div>
                           </div>
-                        <div id="modal-book-room" class="modal book-modal">
-                          <div class="slick-slider slider_modal" id="slider_modal_1">
-                            <div>
-                              <div id="number-red" class="number">
-                                <h3>Красный номер</h3>
-                                <p class="number__guests">4 человека  |  Женщины</p>
-                                <div class="number__price">
-                                  <p class="cost"><span >230</span> грн./сутки&nbsp;&nbsp;&nbsp;&nbsp;<span>250</span> грн./сутки (Выходные)</p>
-                                </div>
-                                <picture>
-                                  <source srcset="assets/images/hostel/red-1.webp" type="image/webp">
-                                  <source srcset="assets/images/hostel/red-1.jpg" type="image/jpeg">
-                                  <img src="assets/images/hostel/red-1.jpg" alt="Красный номер">
-                                </picture>
-                                <form class="form number__form">
-                                  <div class="row">
-                                    <div class="col-sm-12 col-md-6">
-                                      <input name="name" type="text" placeholder="Ваше имя и фамилия" />
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                      <div class="quantity">
-                                        <label>Кол-во человек:</label>
-                                        <input type="number" min="1" max="30" step="1" value="1">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-sm-12 col-md-6">
-                                      <div class="input-group" id="input-group_1'">
-                                        <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
-                                        <input name="" type="text" id="" placeholder="Дата заезда"/>
-                                      </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                      <div class="input-group" id="input-group_2">
-                                        <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
-                                        <input name="" id="#" type="text" placeholder="Дата отъезда">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-sm-12 col-md-6">
-                                        <input id='morning' type='checkbox' />
-                                        <label for='morning'>
-                                          <span><svg><use xlink:href="#check"></use></svg></span>
-                                          Ранний заезд
-                                        </label>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                      <input id='evening' type='checkbox' />
-                                        <label for='evening'>
-                                          <span><svg><use xlink:href="#check"></use></svg></span>
-                                          Поздний заезд
-                                        </label>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-sm-12 col-md-6">
-                                        <input id='breackfast' type='checkbox' />
-                                        <label for='breackfast'>
-                                          <span><svg><use xlink:href="#check"></use></svg></span>
-                                          Завтрак (+50 грн.)
-                                        </label>
-                                      </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col">
-                                      <div class="form__total">
-                                        К оплате: <span>750 </span> грн.
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="col-sm-12 col-md-6">
-                                      <input name="email" type="email" placeholder="Email" />
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                      <input name="phone" type="tel" pattern="" placeholder="Номер телефона" required/>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="col">
-                                      <textarea rows="4" placeholder="Комментарии"></textarea>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col">
-                                      <div class="form__button">
-                                        <button type="submit" class="button">Забронировать</button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </form>
-                              </div>
-                            </div>
-                            <div>
-                              <h3>Зеленый номер</h3>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -389,7 +289,7 @@
               </div>
               <a class="item green" href="#tabs_1_2">Зеленый номер</a>
               <div id="tabs_1_2" class="item-content">
-                  <div class="container">
+                <div class="container">
                   <div class="row">
                     <div class="col-md-6 left-col">
                       <div class="slick-slider" id="slider_2">
@@ -503,9 +403,9 @@
                             </div>
                           </div>
                           <div class="number__price">
-                            <p class="cost"><span >230</span> грн./сутки&nbsp;&nbsp;<span>250</span> грн./сутки (Выходные)</p>
+                            <div class="cost"><div class="weekdays"><span >230</span> грн./сутки</div><div class="weekend"><span>250</span> грн./сутки (Выходные)</div></div>
                             <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</p>
-                          </div>
+                          </p>
                           <div class="number__book">
                             <button type="submit" class="button">Забронировать</button>
                             <div class="sale">Возможна скидка <br>при раннем бронировании</div>
@@ -514,6 +414,7 @@
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
               <a class="item blue" href="#tabs_1_3">Синий номер</a>
               <div id="tabs_1_3" class="item-content">
@@ -631,7 +532,7 @@
                             </div>
                           </div>
                           <div class="number__price">
-                            <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
+                            <div class="cost"><div class="weekdays"><span >230</span> грн./сутки</div><div class="weekend"><span>250</span> грн./сутки (Выходные)</div></div>
                             <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</p>
                           </div>
                           <div class="number__book">
@@ -759,7 +660,7 @@
                             </div>
                           </div>
                           <div class="number__price">
-                            <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
+                            <div class="cost"><div class="weekdays"><span >230</span> грн./сутки</div><div class="weekend"><span>250</span> грн./сутки (Выходные)</div></div>
                             <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</p>
                           </div>
                           <div class="number__book">
@@ -887,7 +788,7 @@
                               </div>
                             </div>
                             <div class="number__price">
-                              <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
+                              <div class="cost"><div class="weekdays"><span >230</span> грн./сутки</div><div class="weekend"><span>250</span> грн./сутки (Выходные)</div></div>
                               <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</p>
                             </div>
                             <div class="number__book">
@@ -1015,7 +916,7 @@
                               </div>
                             </div>
                             <div class="number__price">
-                              <p class="cost"><span >230</span> грн./сутки     <span>250</span> грн./сутки (Выходные)</p>
+                              <div class="cost"><div class="weekdays"><span >230</span> грн./сутки</div><div class="weekend"><span>250</span> грн./сутки (Выходные)</div></div>
                               <p  class="add-cost">+<span>50</span> грн. при заказе завтрака</p>
                             </div>
                             <div class="number__book">
@@ -1030,8 +931,199 @@
           </div>
         </div>
       </div>
-    </section>
 
+      <!-- Book modal rooms-->
+      <div id="modal-book-room" class="modal book-modal">
+        <div class="slick-slider slider_modal" id="slider_modal_1">
+          <div>
+            <div id="number-red" class="number">
+              <h3>Красный номер</h3>
+              <p class="number__guests">4 человека  |  Женщины</p>
+              <div class="number__price">
+                  <div class="cost"><div class="weekdays"><span>230</span> грн./сутки</div><div class="weekend"><span>250</span> грн./сутки (Выходные)</div></div>
+              </div>
+              <picture>
+                <source srcset="assets/images/hostel/red-1.webp" type="image/webp">
+                <source srcset="assets/images/hostel/red-1.jpg" type="image/jpeg">
+                <img src="assets/images/hostel/red-1.jpg" alt="Красный номер">
+              </picture>
+              <form class="form number__form">
+                <div class="row">
+                  <div class="col-md-6 col-lg-6">
+                    <input name="name" type="text" placeholder="Ваше имя и фамилия"required />
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                      <div class="quantity">
+                      <label>Кол-во человек:</label>
+                      <input type="number" min="1" max="30" step="1" value="1" required />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="input-group" id="input-group_1'">
+                      <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
+                      <input name="" type="text" id="" placeholder="Дата заезда" required/>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="input-group">
+                      <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
+                      <input name="" id="#" type="text" placeholder="Дата отъезда" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                      <input id="earlyCheck" type="checkbox" required/>
+                      <label for="earlyCheck">
+                        <span><svg><use xlink:href="#check"></use></svg></span>
+                        Ранний заезд
+                      </label>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <input id="lateCheck" type="checkbox" required/>
+                      <label for="lateCheck">
+                        <span><svg><use xlink:href="#check"></use></svg></span>
+                        Поздний заезд
+                      </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                      <input id="breackfast" type="checkbox" required/>
+                      <label for="breackfast">
+                        <span><svg><use xlink:href="#check"></use></svg></span>
+                        Завтрак (+50 грн.)
+                      </label>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form__total">
+                      К оплате: <span>750 </span> грн.
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                    <input name="email" type="email" placeholder="Email" required/>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <input name="phone" type="tel" pattern="" placeholder="Номер телефона" required/>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                    <textarea rows="4" placeholder="Комментарии"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form__button">
+                      <button type="submit" class="button">Забронировать</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div>
+            <div id="number-green" class="number">
+              <h3>Зеленый номер</h3>
+              <p class="number__guests">4 человека  |  Мужчины и женщины</p>
+              <div class="number__price">
+                  <div class="cost"><div class="weekdays"><span>230</span> грн./сутки</div><div class="weekend"><span>250</span> грн./сутки (Выходные)</div></div>
+              </div>
+              <picture>
+                <source srcset="assets/images/hostel/green-1.webp" type="image/webp">
+                <source srcset="assets/images/hostel/green-1.jpg" type="image/jpeg">
+                <img src="assets/images/hostel/green-1.jpg" alt="Зеленый номер">
+              </picture>
+              <form class="form number__form">
+                <div class="row">
+                  <div class="col-md-6 col-lg-6">
+                    <input name="name" type="text" placeholder="Ваше имя и фамилия"required />
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                      <div class="quantity">
+                      <label>Кол-во человек:</label>
+                      <input type="number" min="1" max="30" step="1" value="1" required />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="input-group" id="input-group_1'">
+                      <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
+                      <input name="" type="text" id="" placeholder="Дата заезда" required/>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="input-group">
+                      <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
+                      <input name="" id="#" type="text" placeholder="Дата отъезда" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                      <input id="earlyCheck" type="checkbox" required/>
+                      <label for="earlyCheck">
+                        <span><svg><use xlink:href="#check"></use></svg></span>
+                        Ранний заезд
+                      </label>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <input id="lateCheck" type="checkbox" required/>
+                      <label for="lateCheck">
+                        <span><svg><use xlink:href="#check"></use></svg></span>
+                        Поздний заезд
+                      </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                      <input id="breackfast" type="checkbox" required/>
+                      <label for="breackfast">
+                        <span><svg><use xlink:href="#check"></use></svg></span>
+                        Завтрак (+50 грн.)
+                      </label>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form__total">
+                      К оплате: <span>750 </span> грн.
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                    <input name="email" type="email" placeholder="Email" required/>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <input name="phone" type="tel" pattern="" placeholder="Номер телефона" required/>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                    <textarea rows="4" placeholder="Комментарии"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form__button">
+                      <button type="submit" class="button">Забронировать</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="section zones-box">
       <div class="container">
         <h2>ОБЩАЯ ЗОНА</h2>

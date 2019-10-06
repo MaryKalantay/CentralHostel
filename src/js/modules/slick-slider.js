@@ -34,7 +34,30 @@ const slickSlider = () => {
       e.relatedTarget
 
       $(this.item_slider_modal).slick({
-        centerMode: false,
+        infinite:true,
+        fade: true,
+        centerMode: true,
+        cssEase: 'linear',
+        useTransform:false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        nextArrow: '<svg class="arr-r-b"><use xlink:href="#arr-r-b" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
+        prevArrow: '<svg class="arr-l-b"><use xlink:href="#arr-l-b" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
+      });
+    });
+  };
+
+  const slider_zones = () => {
+    let sliders_zones = {
+      1: {item_slider_zone : '#slider_1_1'},
+    };
+
+    $.each(sliders_zones, function(e) {
+      e.target
+      e.relatedTarget
+
+      $(this.item_slider_zone).slick({
         slidesToShow: 1,
         arrows: true,
         nextArrow: '<svg class="arr-r-b"><use xlink:href="#arr-r-b" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
@@ -43,6 +66,7 @@ const slickSlider = () => {
       });
     });
   };
+
   return {
     slider,
     slider_modal,

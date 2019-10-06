@@ -122,6 +122,7 @@
       }
       input {
         min-width: 200px;
+        border: none;
         @media (max-width: $desktop) {
           min-width: 320px;
         }

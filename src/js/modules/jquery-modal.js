@@ -2,6 +2,7 @@
 
 const jqueryModal = () => {
   const modal = () => {
+
     $('a.open-modal').click(function (event) {
       $(this).modal({
         fadeDuration: 550,

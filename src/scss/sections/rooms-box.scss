@@ -21,12 +21,22 @@
     font-size: calc(#{$base-font-size} - 2px);
   }
   &__price {
-    margin-top: 40px;
+    margin-top: 38px;
     .cost {
-      margin: 0;
-      span {
-        font-weight: 500;
-        font-size: calc(#{$base-font-size} + 4px);
+      display: flex;
+      margin: 0 0 5px 0;
+      .weekdays {
+        margin-right: 15px;
+        span {
+          font-weight: 500;
+          font-size: calc(#{$base-font-size} + 4px);
+        }
+      }
+      .weekend {
+        span {
+          font-weight: 500;
+          font-size: calc(#{$base-font-size} + 4px);
+        }
       }
     }
     .add-cost {
