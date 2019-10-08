@@ -9,6 +9,24 @@ const jqueryModal = () => {
       });
       return false;
     });
+
+    $('#slider_book_rooms_modal').slick({
+      infinite: true,
+      fade: true,
+      centerMode: true,
+      cssEase: 'linear',
+      useTransform: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      nextArrow: '<svg class="arr-r-b"><use xlink:href="#arr-r-b" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
+      prevArrow: '<svg class="arr-l-b"><use xlink:href="#arr-l-b" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
+    });
+
+    $('a[href="#modal-book-room"]').click(function (event) {
+      $('#slider_book_rooms_modal').slick('slickGoTo', parseInt(this.getAttribute('index')));
+    });
+
     $('#video-modal').on($.modal.OPEN, function (event, modal) {
       var video = this.querySelector('iframe[src*="www.youtube.com"], iframe[src*="player.vimeo.com"], video');
       console.log(video);

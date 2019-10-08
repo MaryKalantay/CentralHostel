@@ -11,9 +11,6 @@ const slickSlider = () => {
     };
 
     $.each(sliders, function(e) {
-      e.target
-      e.relatedTarget
-
       $(this.item_slider).slick({
         infinite:false,
         dots: true,
@@ -25,30 +22,6 @@ const slickSlider = () => {
     });
   };
 
-  const slider_modal = () => {
-    let sliders_modal = {
-      1: {item_slider_modal : '#slider_modal_1'},
-    };
-
-    $.each(sliders_modal, function(e) {
-      e.target
-      e.relatedTarget
-
-      $(this.item_slider_modal).slick({
-        infinite:true,
-        fade: true,
-        centerMode: true,
-        cssEase: 'linear',
-        useTransform:false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        nextArrow: '<svg class="arr-r-b"><use xlink:href="#arr-r-b" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
-        prevArrow: '<svg class="arr-l-b"><use xlink:href="#arr-l-b" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>',
-      });
-    });
-  };
-
   const slider_zones = () => {
     let sliders_zones = {
       1: {item_slider_zone : '#slider_1_1'},
@@ -56,9 +29,6 @@ const slickSlider = () => {
     };
 
     $.each(sliders_zones, function(e) {
-      e.target
-      e.relatedTarget
-
       $(this.item_slider_zone).slick({
         infinite:false,
         dots: false,
@@ -79,7 +49,6 @@ const slickSlider = () => {
 
   return {
     slider,
-    slider_modal,
     slider_zones,
   };
 };

@@ -19,7 +19,6 @@ import Forms from './modules/forms';
     navBar.anchorScroll();
     jqueryModal.modal();
     slickSlider.slider();
-    slickSlider.slider_modal();
     slickSlider.slider_zones();
     Tabs.fadeTabs();
     rangeDatepicker.picker();
