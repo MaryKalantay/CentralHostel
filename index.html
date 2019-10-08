@@ -78,11 +78,11 @@
             <form action="" class="book-box__form">
                 <div class="data-input">
                   <label for="checkIn">Дата заезда</label>
-                  <input name="checkIn" type="text" id="checkIn"/>
+                  <input name="checkIn" type="text" id="checkIn" readonly/>
                 </div>
                 <div class="data-input">
                     <label for="checkOut">Дата отъезда</label>
-                    <input name="checkOut" id="checkOut" type="text">
+                    <input name="checkOut" id="checkOut" type="text" readonly/>
                 </div>
                 <div class="data-input data-input__submit"><a href="#book-modal" rel="modal:open" class="open-modal  button button-solid color-accent">Забронировать</a></div>
             </form>
@@ -971,15 +971,15 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-md-6">
-                    <div class="input-group" id="input-group_1'">
+                    <div class="input-group">
                       <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
-                      <input name="" type="text" id="" placeholder="Дата заезда" required/>
+                      <input type="text" name="modalCheckIn" placeholder="Дата заезда" required  readonly/>
                     </div>
                   </div>
                   <div class="col-sm-12 col-md-6">
                     <div class="input-group">
                       <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
-                      <input name="" id="#" type="text" placeholder="Дата отъезда" required>
+                      <input name="modalCheckOut" type="text" placeholder="Дата отъезда" required readonly />
                     </div>
                   </div>
                 </div>
@@ -1066,13 +1066,13 @@
                   <div class="col-sm-12 col-md-6">
                     <div class="input-group">
                       <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
-                      <input name="" type="text" id="" placeholder="Дата заезда" required/>
+                      <input name="modalCheckIn" type="text" placeholder="Дата заезда" required/>
                     </div>
                   </div>
                   <div class="col-sm-12 col-md-6">
                     <div class="input-group">
                       <span><svg width="19px" height="19px"><use xlink:href="#calendar"></use></svg></span>
-                      <input name="" id="#" type="text" placeholder="Дата отъезда" required>
+                      <input name="modalCheckOut" type="text" placeholder="Дата отъезда" required>
                     </div>
                   </div>
                 </div>
