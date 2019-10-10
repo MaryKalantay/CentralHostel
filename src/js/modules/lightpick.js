@@ -15,75 +15,51 @@ const rangeDatepicker = () => {
     const checkInDateInput = $('#checkIn');
     const checkOutDateInput = $('#checkOut');
 
-    let checkOutPicker = null;
+    function momentFormatted(date) {
+      return moment(date).locale('ru').format(dateFormat);
+    }
 
     const checkInPicker = new Lightpick({
-      numberOfColumns: 2,
-      numberOfMonths: 2,
-      startDate: selectedCheckInDate,
-      endDate: selectedCheckOutDate ,
-      singleDate: true,
       field: document.getElementById('checkIn'),
+      startDate: selectedCheckInDate,
+      format: dateFormat,
+      singleDate: true,
+      minDate: moment(),
       onSelect: function (start, end) {
-        console.log("selected: " + moment(start));
         selectedCheckInDate = moment(start);
-        checkInDateInput.val(moment(start).locale('ru').format(dateFormat));
-        checkOutPicker = new Lightpick({
-          numberOfColumns: 2,
-          numberOfMonths: 2,
-          singleDate: false,
-          startDate: selectedCheckInDate,
-          field: document.getElementById('checkOut'),
-          onSelect: function (start, end) {
-            selectedCheckInDate = moment(start);
-            checkInDateInput.val(moment(start).locale('ru').format(dateFormat));
-            selectedCheckOutDate = moment(end);
-            checkOutDateInput.val(moment(end).locale('ru').format(dateFormat));
-          },
-
-          onOpen: function (start, end) {
-            checkOutDateInput.val('');
-          },
-        });
+        checkInDateInput.val(momentFormatted(start));
+        if (!start.isBefore(selectedCheckOutDate)) {
+          checkOutDateInput.val('');
+        }
+        checkOutPicker.setStartDate(moment(start));
+        checkOutPicker.setEndDate(null);
         checkOutDateInput.focus();
-      },
-    });
-
-    checkInDateInput.val(selectedCheckInDate.locale('ru').format(dateFormat));
-
-    checkOutDateInput.on('click', function () {
-      if (!checkOutPicker) {
-        checkOutPicker = checkOutPicker = new Lightpick({
-          numberOfColumns: 2,
-          numberOfMonths: 2,
-          singleDate: false,
-          format: ' ',
-          separator: ' ',
-          repick: true,
-          field: document.getElementById('checkOut'),
-          onSelect: function (start, end) {
-            selectedCheckInDate = moment(start);
-            checkInDateInput.val(moment(start).locale('ru').format(dateFormat));
-            checkInPicker.setDate(start);
-            if (end) {
-              selectedCheckOutDate = moment(end);
-              checkOutDateInput.val(moment(end).locale('ru').format(dateFormat));
-            } else {
-              setTimeout(function () {
-                checkOutDateInput.val('');
-              }, 0);
-            }
-          },
-        });
       }
-      checkOutPicker.show();
     });
 
-    checkOutDateInput.val(selectedCheckOutDate.locale('ru').format(dateFormat));
+    const checkOutPicker = new Lightpick({
+      field: document.getElementById('checkOut'),
+      startDate: selectedCheckInDate,
+      format: dateFormat,
+      singleDate: false,
+      minDate: moment(),
+      selectForward: true,
+      numberOfMonths: 2,
+      onSelect: function (start, end) {
+        selectedCheckInDate = moment(start);
+        selectedCheckOutDate = moment(end);
+        checkInDateInput.val(momentFormatted(start));
+        checkOutDateInput.val(momentFormatted(end));
+      },
+      onOpen: function () {
+        checkOutDateInput.val('');
+      }
+    });
 
-    $('input[name="modalCheckIn"]').val(selectedCheckInDate.locale('ru').format(dateFormat));
+    checkOutDateInput.val(momentFormatted(selectedCheckOutDate));
 
-    $('input[name="modalCheckOut"]').val(selectedCheckOutDate.locale('ru').format(dateFormat));
+    const checkInModalDateInput = $('#modalCheckIn');
+    const checkOutModalDateInput = $('#modalCheckOut');
   };
 
   return {
