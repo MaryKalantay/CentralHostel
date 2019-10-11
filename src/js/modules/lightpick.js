@@ -4,6 +4,9 @@ import 'moment/locale/ru';
 
 const rangeDatepicker = () => {
   const picker = () => {
+    const dayPrice = 230;
+    let totalSum = dayPrice;
+
     const dateFormat = 'dd. D MMM YYYY';
 
     let initialCheckInDate = moment();
@@ -57,6 +60,10 @@ const rangeDatepicker = () => {
         checkOutDateInput.val(momentFormatted(end));
         checkInModalDateInput.val(momentFormatted(start));
         checkOutModalDateInput.val(momentFormatted(end));
+        if (end) {
+          totalSum = dayPrice * moment(end).diff(moment(start), 'days');
+          $('#totalSum').empty().append(totalSum);
+        }
       },
       onOpen: function () {
         checkOutDateInput.val('');
@@ -105,6 +112,10 @@ const rangeDatepicker = () => {
         checkOutDateInput.val(momentFormatted(end));
         checkInModalDateInput.val(momentFormatted(start));
         checkOutModalDateInput.val(momentFormatted(end));
+        if (end) {
+          totalSum = dayPrice * moment(end).diff(moment(start), 'days');
+          $('#totalSum').empty().append(totalSum);
+        }
       },
       onOpen: function () {
         checkOutModalDateInput.val('');

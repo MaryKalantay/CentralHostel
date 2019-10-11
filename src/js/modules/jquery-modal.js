@@ -31,33 +31,35 @@ const jqueryModal = () => {
       $('#slider_book_rooms_modal').slick('slickGoTo', parseInt(this.getAttribute('index')));
     });
 
-    let totalSum = parseInt($('#totalSum').text());
-
+    const totalSumSpan = $('#totalSum');
     $('#earlyCheck').click(function () {
+      let totalSum = parseInt(totalSumSpan.text());
       if (this.checked) {
         totalSum = totalSum + earlyCheckFee;
       } else {
         totalSum = totalSum - earlyCheckFee;
       }
-      $('#totalSum').empty().append(totalSum);
+      totalSumSpan.empty().append(totalSum);
     });
 
     $('#breackfast').click(function () {
+      let totalSum = parseInt(totalSumSpan.text());
       if (this.checked) {
         totalSum = totalSum + breakfastFee;
       } else {
         totalSum = totalSum - breakfastFee;
       }
-      $('#totalSum').empty().append(totalSum);
+      totalSumSpan.empty().append(totalSum);
     });
 
     $('#lateCheck').click(function () {
+      let totalSum = parseInt(totalSumSpan.text());
       if (this.checked) {
         totalSum = totalSum + lateCheckFee;
       } else {
         totalSum = totalSum - lateCheckFee;
       }
-      $('#totalSum').empty().append(totalSum);
+      totalSumSpan.empty().append(totalSum);
     });
 
     $('#video-modal').on($.modal.OPEN, function (event, modal) {
