@@ -6,14 +6,17 @@ const rangeDatepicker = () => {
   const picker = () => {
     const dateFormat = 'dd. D MMM YYYY';
 
-    let selectedCheckInDate = moment();
-    let selectedCheckOutDate = moment().add(1, 'day');
+    let initialCheckInDate = moment();
+    let initialCheckOutDate = moment().add(1, 'day');
     if (moment().hour() > 19) {
-      selectedCheckInDate = moment().add(1, 'day');
-      selectedCheckOutDate = moment().add(2, 'day');
+      initialCheckInDate = moment().add(1, 'day');
+      initialCheckOutDate = moment().add(2, 'day');
     }
     const checkInDateInput = $('#checkIn');
     const checkOutDateInput = $('#checkOut');
+
+    const checkInModalDateInput = $('#modalCheckIn');
+    const checkOutModalDateInput = $('#modalCheckOut');
 
     function momentFormatted(date) {
       return moment(date).locale('ru').format(dateFormat);
@@ -21,15 +24,16 @@ const rangeDatepicker = () => {
 
     const checkInPicker = new Lightpick({
       field: document.getElementById('checkIn'),
-      startDate: selectedCheckInDate,
+      startDate: initialCheckInDate,
       format: dateFormat,
       singleDate: true,
       minDate: moment(),
       onSelect: function (start, end) {
-        selectedCheckInDate = moment(start);
         checkInDateInput.val(momentFormatted(start));
-        if (!start.isBefore(selectedCheckOutDate)) {
+        checkInModalDateInput.val(momentFormatted(start));
+        if (!start.isBefore(initialCheckOutDate)) {
           checkOutDateInput.val('');
+          checkOutModalDateInput.val('');
         }
         checkOutPicker.setStartDate(moment(start));
         checkOutPicker.setEndDate(null);
@@ -39,15 +43,14 @@ const rangeDatepicker = () => {
 
     const checkOutPicker = new Lightpick({
       field: document.getElementById('checkOut'),
-      startDate: selectedCheckInDate,
-      format: dateFormat,
+      startDate: initialCheckInDate,
+      format: ' ',
+      separator: ' ',
       singleDate: false,
       minDate: moment(),
       selectForward: true,
       numberOfMonths: 2,
       onSelect: function (start, end) {
-        selectedCheckInDate = moment(start);
-        selectedCheckOutDate = moment(end);
         checkInDateInput.val(momentFormatted(start));
         checkOutDateInput.val(momentFormatted(end));
       },
@@ -56,10 +59,9 @@ const rangeDatepicker = () => {
       }
     });
 
-    checkOutDateInput.val(momentFormatted(selectedCheckOutDate));
+    checkOutDateInput.val(momentFormatted(initialCheckOutDate));
 
-    const checkInModalDateInput = $('#modalCheckIn');
-    const checkOutModalDateInput = $('#modalCheckOut');
+    //++++++++modal pickers++++++++
   };
 
   return {
