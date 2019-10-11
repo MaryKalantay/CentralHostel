@@ -37,6 +37,8 @@ const rangeDatepicker = () => {
         }
         checkOutPicker.setStartDate(moment(start));
         checkOutPicker.setEndDate(null);
+        checkOutModalPicker.setStartDate(moment(start));
+        checkOutModalPicker.setEndDate(null);
         checkOutDateInput.focus();
       }
     });
@@ -53,6 +55,8 @@ const rangeDatepicker = () => {
       onSelect: function (start, end) {
         checkInDateInput.val(momentFormatted(start));
         checkOutDateInput.val(momentFormatted(end));
+        checkInModalDateInput.val(momentFormatted(start));
+        checkOutModalDateInput.val(momentFormatted(end));
       },
       onOpen: function () {
         checkOutDateInput.val('');
@@ -62,6 +66,56 @@ const rangeDatepicker = () => {
     checkOutDateInput.val(momentFormatted(initialCheckOutDate));
 
     //++++++++modal pickers++++++++
+    const checkInModalPicker = new Lightpick({
+      field: document.getElementById('modalCheckIn'),
+      startDate: initialCheckInDate,
+      format: dateFormat,
+      singleDate: true,
+      minDate: moment(),
+      onSelect: function (start, end) {
+        checkInDateInput.val(momentFormatted(start));
+        checkInModalDateInput.val(momentFormatted(start));
+        if (!start.isBefore(initialCheckOutDate)) {
+          checkOutDateInput.val('');
+          checkOutModalDateInput.val('');
+        }
+        checkOutPicker.setStartDate(moment(start));
+        checkOutPicker.setEndDate(null);
+        checkOutModalPicker.setStartDate(moment(start));
+        checkOutModalPicker.setEndDate(null);
+        checkOutModalDateInput.focus();
+      }
+    });
+
+    checkInModalDateInput.click(function () {
+      $('[class="lightpick lightpick--1-columns"]').css('zIndex', 5001);
+    });
+
+    const checkOutModalPicker = new Lightpick({
+      field: document.getElementById('modalCheckOut'),
+      startDate: initialCheckInDate,
+      format: ' ',
+      separator: ' ',
+      singleDate: false,
+      minDate: moment(),
+      selectForward: true,
+      numberOfMonths: 2,
+      onSelect: function (start, end) {
+        checkInDateInput.val(momentFormatted(start));
+        checkOutDateInput.val(momentFormatted(end));
+        checkInModalDateInput.val(momentFormatted(start));
+        checkOutModalDateInput.val(momentFormatted(end));
+      },
+      onOpen: function () {
+        checkOutModalDateInput.val('');
+      }
+    });
+
+    checkOutModalDateInput.focus(function () {
+      $('[class="lightpick lightpick--2-columns"]').css('zIndex', 5001);
+    });
+
+    checkOutModalDateInput.val(momentFormatted(initialCheckOutDate));
   };
 
   return {
