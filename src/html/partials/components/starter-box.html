@@ -13,21 +13,16 @@
                 <label for="checkOut">Дата отъезда</label>
                 <input name="checkOut" id="checkOut" type="text" readonly/>
             </div>
-            <div class="data-input data-input__submit"><a href="#book-modal" rel="modal:open" class="open-modal  button button-solid color-accent">Забронировать</a></div>
+            <div class="data-input data-input__submit">
+              <a href="#modal-book-room" index="0" rel="modal:open" class="open-modal button button-solid color-accent">
+                Забронировать
+              </a>
+            </div>
         </form>
       </div>
-      <a class="open-modal book__mobile button" href="#book-modal" rel="modal:open">
-        Забронировать
-      </a>
       <div class="book-box__notice">Получи скидки при <a href="" class="link-dash">раннем</a> бронировании!</div>
     </div>
 
-      <div id="book-modal" class="modal">
-        <select class="js-example-basic-single" name="state">
-          <option value="room-all">4-х местный номер для мужчин и женщин</option>
-          <option value="room-red">4-х местный номер только для женщин</option>
-        </select>
-      </div>
     <div class="starter-box__info">
       <a class="phone" href="tel:+3 (096) 104 90 60">+3 (096) 104 90 60</a>
       <address class="address">Харьков, М Архитектора бекетова<br>ул. Пушкинская, 40. Кв. 71</address>
