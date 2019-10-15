@@ -3,90 +3,96 @@
 .modal.book-modal {
   position: relative;
   display: block;
-  height: 0;
+  // height: 0;
   overflow: hidden;
   padding: 0;
 }
 .modal.book-modal.active {
   display: block;
-  height: auto;
+  // height: auto;
   overflow: visible;
 }
 
 .slider_modal {
   width: 100%;
-  align-items: flex-start;
   .slick-arrow {
-    top: 60px;
     width: 12.8px;
     height: 25.7px;
     opacity: 1;
   }
   .arr-l-b {
-    left: 40px;
+    left: 30px;
   }
   .arr-r-b {
-    right: 40px;
+    right: 30px;
   }
   .col-md-6, .col {
     padding-right: 10px;
     padding-left: 10px;
   }
   .number {
-    padding: 50px 60px 10px 60px;
+    padding: 50px 77px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     picture source,
     picture img {
-      max-width: 320px;
+      max-width: 240px;
+    }
+    h3 {
+      font-size: 16px;
+      margin-top: 10px;
     }
     &__price {
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      margin: 20px 0 30px 0;
-      // max-width: 400px;
-      padding: 30px;
-      height: 62px;
-      border-radius: 5px;
-      background-color: rgb(243, 243, 243);
-    }
-    &__form {
-      width: 92%;
-      margin-top: 30px;
-      input,
-      textarea {
-        margin-bottom: 20px;
-      }
-      .quantity input {
-        margin-bottom: 0;
+      
+      .cost {
+        flex-direction: column;
+        .weekdays span,
+        .weekend span {
+          font-size: 14px;
+        }
       }
     }
-    .form__total {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: $beige;
-      border-radius: 5px;
-      padding: 20px;
-      margin: 5px 0 30px 0;
-      span {
-        padding: 0 3px 0 5px;
-        font-size: calc(#{$base-font-size} + 4px);
-        font-weight: 500;
-      }
+    &__guests {
+      font-size: 14px;
     }
-    .form__button {
-      display: flex;
+  }
+}
+
+form.number__form {
+  width: 92%;
+  margin-top: -20px;
+  padding: 0 70px;
+  input,
+  textarea {
+    margin-bottom: 20px;
+  }
+  .quantity input {
+    margin-bottom: 0;
+  }
+  .form__button {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 30px 0;
+    .button {
+      min-width: 218px;
+      min-height: 46px;
       justify-content: center;
-      margin: 0 0 30px 0;
-      .button {
-        min-width: 218px;
-        min-height: 46px;
-      }
+      @include button($accent, $white, normal, normal, normal);
+      box-shadow: 0 8px 25px 0 rgba(172, 172, 172, 0.6);
+    }
+  }
+  .form__total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $beige;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 5px 0 30px 0;
+    span {
+      padding: 0 3px 0 5px;
+      font-size: calc(#{$base-font-size} + 4px);
+      font-weight: 500;
     }
   }
 }
