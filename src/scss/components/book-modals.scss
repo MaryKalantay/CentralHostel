@@ -3,13 +3,13 @@
 .modal.book-modal {
   position: relative;
   display: block;
-  height: 0;
+  // height: 0;
   overflow: hidden;
   padding: 0;
 }
 .modal.book-modal.active {
   display: block;
-  height: auto;
+  // height: auto;
   overflow: visible;
 }
 
@@ -48,36 +48,9 @@
       justify-content: center;
       align-items: center;
       margin: 20px 0 30px 0;
-      // max-width: 400px;
       padding: 30px;
       height: 62px;
       border-radius: 5px;
-      background-color: rgb(243, 243, 243);
-    }
-    &__form {
-      width: 92%;
-      margin-top: 30px;
-      input,
-      textarea {
-        margin-bottom: 20px;
-      }
-      .quantity input {
-        margin-bottom: 0;
-      }
-    }
-    .form__total {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: $beige;
-      border-radius: 5px;
-      padding: 20px;
-      margin: 5px 0 30px 0;
-      span {
-        padding: 0 3px 0 5px;
-        font-size: calc(#{$base-font-size} + 4px);
-        font-weight: 500;
-      }
     }
     .form__button {
       display: flex;
@@ -87,6 +60,33 @@
         min-width: 218px;
         min-height: 46px;
       }
+    }
+  }
+}
+
+form.number__form {
+  width: 92%;
+  margin-top: 30px;
+  padding: 0 70px;
+  input,
+  textarea {
+    margin-bottom: 20px;
+  }
+  .quantity input {
+    margin-bottom: 0;
+  }
+  .form__total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $beige;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 5px 0 30px 0;
+    span {
+      padding: 0 3px 0 5px;
+      font-size: calc(#{$base-font-size} + 4px);
+      font-weight: 500;
     }
   }
 }
