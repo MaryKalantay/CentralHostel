@@ -6,7 +6,9 @@
   // height: 0;
   overflow: hidden;
   padding: 0;
+  max-width: 650px;
 }
+
 .modal.book-modal.active {
   display: block;
   // height: auto;
@@ -15,63 +17,97 @@
 
 .slider_modal {
   width: 100%;
+
   .slick-arrow {
     width: 12.8px;
     height: 25.7px;
     opacity: 1;
   }
+
   .arr-l-b {
     left: 30px;
   }
+
   .arr-r-b {
     right: 30px;
   }
-  .col-md-6, .col {
+
+  .col-md-6,
+  .col {
     padding-right: 10px;
     padding-left: 10px;
   }
+
   .number {
     padding: 50px 77px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: $tablet) {
+      padding: 30px 57px 10px 57px;
+    }
+
     picture source,
     picture img {
-      max-width: 240px;
+      max-width: 100%;
     }
+
     h3 {
       font-size: 16px;
       margin-top: 10px;
     }
+
     &__price {
-      
+      @media (max-width: $tablet) {
+        margin-top: 10px;
+      }
+
       .cost {
         flex-direction: column;
+
         .weekdays span,
         .weekend span {
           font-size: 14px;
         }
       }
     }
+
     &__guests {
       font-size: 14px;
     }
+
+    &__info {
+      @media (max-width: $tablet) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
   }
+
 }
 
 form.number__form {
   margin-top: -20px;
   padding: 0 70px;
+  @media (max-width: $tablet) {
+    padding: 0 50px;
+  }
+
   input,
   textarea {
     margin-bottom: 20px;
   }
+
   .quantity input {
     margin-bottom: 0;
   }
+
   .form__button {
     display: flex;
     justify-content: center;
     margin: 0 0 30px 0;
+
     .button {
       min-width: 218px;
       min-height: 46px;
@@ -80,6 +116,7 @@ form.number__form {
       box-shadow: 0 8px 25px 0 rgba(172, 172, 172, 0.6);
     }
   }
+
   .form__total {
     display: flex;
     justify-content: center;
@@ -88,6 +125,7 @@ form.number__form {
     border-radius: 5px;
     padding: 20px;
     margin: 5px 0 30px 0;
+
     span {
       padding: 0 3px 0 5px;
       font-size: calc(#{$base-font-size} + 4px);

@@ -3,14 +3,39 @@
   margin-top: 10px;
   z-index: 1000;
 }
-.lightpick__previous-action, .lightpick__next-action, .lightpick__close-action {
+
+.lightpick__previous-action,
+.lightpick__next-action,
+.lightpick__close-action {
   line-height: 0;
 }
+
+.lightpick__day.is-start-date.is-in-range:hover,
+.lightpick__day.is-end-date.is-in-range.is-flipped:hover {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 50%;
+}
+
+.lightpick__day.is-start-date.is-today.is-in-range {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 50%;
+}
+
+.lightpick__day.is-start-date.is-today {
+  color: $primary;
+  border-radius: 50%;
+}
+
 .lightpick__day.is-today {
   color: $accent;
   background: none;
   position: relative;
   font-weight: 700;
+
   &::after {
     position: absolute;
     bottom: 5px;
@@ -22,26 +47,54 @@
     border-radius: 50%;
   }
 }
-.lightpick__day.is-start-date.is-in-range, .lightpick__day.is-end-date.is-in-range.is-flipped,
-.lightpick__day.is-end-date.is-in-range, .lightpick__day.is-start-date.is-in-range.is-flipped {
+
+.lightpick__day.is-start-date.is-in-range,
+.lightpick__day.is-end-date.is-in-range.is-flipped,
+.lightpick__day.is-end-date.is-in-range,
+.lightpick__day.is-start-date.is-in-range.is-flipped {
   background-image: none;
   background-color: $accent
 }
+
 .lightpick__day:not(.is-disabled):hover,
-.lightpick__previous-action, .lightpick__next-action, .lightpick__close-action {
+.lightpick__previous-action,
+.lightpick__next-action,
+.lightpick__close-action {
   background: $gray;
-  border-radius: 50%;
+  // border-radius: 50%;
 }
+
 .lightpick__day.is-in-range {
   background-image: none;
   background-color: $gray;
 }
+
 .lightpick__day.is-in-range:hover {
   background-color: $primary;
   background-image: none;
 }
-.lightpick__day.is-start-date, .lightpick__day.is-end-date, .lightpick__day.is-start-date:hover, .lightpick__day.is-end-date:hover {
+
+.lightpick__day.is-start-date,
+.lightpick__day.is-end-date,
+.lightpick__day.is-start-date:hover,
+.lightpick__day.is-end-date:hover {
   background-image: none;
   background: $accent;
   border-radius: 50%;
+}
+
+.lightpick__day:not(.is-disabled):hover {
+  border-radius: 50%;
+}
+
+.lightpick__day.is-in-range:hover {
+  border-radius: 0;
+}
+
+.lightpick__day.is-end-date,
+.lightpick__day.is-end-date:hover {
+  border-top-left-radius: 0;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 0;
 }
