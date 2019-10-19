@@ -28,7 +28,9 @@ const jqueryModal = () => {
     });
 
     $('a[href="#modal-book-room"]').click(function (event) {
-      $('#slider_book_rooms_modal').slick('slickGoTo', parseInt(this.getAttribute('index')));
+      if (this.getAttribute("id") !== 'initial-modal') {
+        $('#slider_book_rooms_modal').slick('slickGoTo', parseInt(this.getAttribute('index')));
+      }
     });
 
     const totalSumSpan = $('#totalSum');
