@@ -25,12 +25,11 @@ const Tabs = () => {
         $(this).addClass('active');
 
         //remove active class from active tabContent
-        activeTabContent.removeClass('active');
-        activeTabContent.fadeOut();
-
-        //add active class to current tabContent
-        $(currentTabId).addClass('active');
-        $(currentTabId).fadeIn();
+        activeTabContent.fadeOut(500, function () {
+          activeTabContent.removeClass('active');
+          //add active class to current tabContent
+          $(currentTabId).addClass('active');
+        });
       });
 
       const tabItemAccordion = $(tabValue.mtabs).find('.tab-content a');
