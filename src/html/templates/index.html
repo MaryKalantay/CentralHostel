@@ -163,15 +163,15 @@
         </div>
       </div>
     </div>
-    <form class="form number__form">
+    <form class="form number__form" id="bookingForm">
       <div class="row">
         <div class="col-sm-6 col-lg-6">
-          <input name="name" type="text" placeholder="Ваше имя и фамилия" required />
+          <input id="guestName" name="name" type="text" placeholder="Ваше имя и фамилия" required />
         </div>
         <div class="col-sm-6 col-lg-6">
           <div class="quantity">
             <label>Кол-во человек:</label>
-            <input type="number" min="1" max="30" step="1" value="1" required />
+            <input id="guestsNumber" type="number" min="1" max="30" step="1" value="1" required />
           </div>
         </div>
       </div>
@@ -215,8 +215,8 @@
       </div>
       <div class="row">
         <div class="col-sm-12 col-md-6">
-          <input id="breackfast" type="checkbox" />
-          <label for="breackfast">
+          <input id="breakfast" type="checkbox" />
+          <label for="breakfast">
             <span><svg>
                 <use xlink:href="#check"></use>
               </svg></span>
@@ -233,15 +233,15 @@
       </div>
       <div class="row">
         <div class="col-12 col-sm-6">
-          <input name="email" type="email" placeholder="Email" required />
+          <input id="guestEmail" name="email" type="email" placeholder="Email" required />
         </div>
         <div class="col-12 col-sm-6">
-          <input name="phone" type="tel" pattern="" placeholder="Номер телефона" required />
+          <input id="phoneNumber" name="phone" type="tel" pattern="[0-9]{7,}" placeholder="Номер телефона" required />
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <textarea rows="4" placeholder="Комментарии"></textarea>
+          <textarea rows="4" id="bookingComments" placeholder="Комментарии"></textarea>
         </div>
       </div>
       <div class="row">

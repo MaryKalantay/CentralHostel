@@ -11,7 +11,7 @@ const Forms = () => {
         min = input.attr('min'),
         max = input.attr('max');
 
-      btnUp.click(function() {
+      btnUp.click(function () {
         var oldValue = parseFloat(input.val());
         if (oldValue >= max) {
           var newVal = oldValue;
@@ -22,7 +22,7 @@ const Forms = () => {
         spinner.find("input").trigger("change");
       });
 
-      btnDown.click(function() {
+      btnDown.click(function () {
         var oldValue = parseFloat(input.val());
         if (oldValue <= min) {
           var newVal = oldValue;
@@ -31,6 +31,42 @@ const Forms = () => {
         }
         spinner.find("input").val(newVal);
         spinner.find("input").trigger("change");
+      });
+
+    });
+
+    $('#bookingForm').submit(function (e) {
+      e.preventDefault();
+      $('.close-modal').trigger('click');
+      //create message
+      const guestName = $('#guestName').val();
+      const guestsNumber = $('#guestsNumber').val();
+      const checkInDate = $('#modalCheckIn').val();
+      const checkOutDate = $('#modalCheckOut').val();
+      const earlyCheck = $('#earlyCheck').is(":checked");
+      const lateCheck = $('#lateCheck').is(":checked");
+      const breakfast = $('#breakfast').is(":checked");
+      const totalSum = $('#totalSum').text();
+      const guestEmail = $('#guestEmail').val();
+      const phoneNumber = $('#phoneNumber').val();
+      const bookingComments = $('#bookingComments').val();
+
+      const message =
+        "Имя заказчика: " + guestName + ',%0A' +
+        "Кол-во гостей: " + guestsNumber +',%0A' +
+        "Дата заезда: " + checkInDate + ',%0A' +
+        "Дата выезда: " + checkOutDate + ',%0A' +
+        "Ранний заезд: " + earlyCheck + ',%0A' +
+        "Поздний выезд: " + lateCheck  + ',%0A' +
+        "Завтрак: " + breakfast + ',%0A' +
+        "Общай сумма: " + totalSum + ',%0A' +
+        "E-mail: " + guestEmail + ',%0A' +
+        "Телефон: " + phoneNumber  + ',%0A' +
+        "Комментарии: " + bookingComments;
+
+        $.get( "https://api.telegram.org/bot692519606:AAEVJr9u5ca5Gnmokr6DKc-uuthMHZMrjO8" +
+        "/sendMessage?chat_id=-399280631&text=" + message, function( data ) {
+        console.log(data);
       });
 
     });

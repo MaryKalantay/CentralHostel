@@ -44,7 +44,7 @@ const jqueryModal = () => {
       totalSumSpan.empty().append(totalSum);
     });
 
-    $('#breackfast').click(function () {
+    $('#breakfast').click(function () {
       let totalSum = parseInt(totalSumSpan.text());
       if (this.checked) {
         totalSum = totalSum + breakfastFee;
