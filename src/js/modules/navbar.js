@@ -3,12 +3,18 @@ const navBar = () => {
   const mobileMenu = () => {
     $('#toggle-btn').click(() => {
       $("body").toggleClass('header-open');
+      $(".dropdown").removeClass('drop');
+    });
+
+    $('.drop > .nav-link').click((e) => {
+      e.preventDefault(); 
+      $(".dropdown").toggleClass('drop');
     });
   };
 
   const anchorScroll = () => {
     $(".nav-link").bind('click', function(e) {
-      e.preventDefault(); // prevent hard jump, the default behavior
+      e.preventDefault(); 
 
       var target = $(this).attr("href"); // Set the target as variable
 

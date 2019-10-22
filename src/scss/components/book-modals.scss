@@ -2,17 +2,10 @@
 
 .modal.book-modal {
   position: relative;
-  display: block;
+  display: none;
   // height: 0;
-  overflow: hidden;
   padding: 0;
   max-width: 650px;
-}
-
-.modal.book-modal.active {
-  display: block;
-  // height: auto;
-  overflow: visible;
 }
 
 .slider_modal {

@@ -3,58 +3,157 @@
   top: 30px;
   z-index: 2000;
   width: 100%;
-  @include animate(all, .5s, ease-out);
-  .header-body {
-    display: flex;
+  padding: 40px 0;
+
+  @media (max-width: $desktop) {
+    padding: 10px 0;
+  }
+
+  .container {
     justify-content: center;
-    align-items: center;
-    @include animate(all .3s ease);
+    display: flex;
+
     @media (max-width: $desktop) {
-      height: 60px;
-      justify-content: flex-start;
+      justify-content: space-between;
     }
   }
-  &__nav {
+
+  a {
+    color: $white;
+  }
+}
+
+.header__logo {
+  display: none;
+  width: 26px;
+  height: 30px;
+
+  @media (max-width: $desktop) {
     display: flex;
-    align-items: center;
-    transition: all .5s ease-out;
-    @media (max-width: $desktop) {
+  }
+}
+
+.toggle-btn {
+  @include animate(background);
+
+  background: $white;
+  display: none;
+  height: 2px;
+  position: relative;
+  margin: 15px 0 0 0;
+  width: 20px;
+
+  @media (max-width: $desktop) {
+    display: flex;
+  }
+
+  &::before,
+  &::after {
+    background: $white;
+    content: '';
+    display: flex;
+    height: 100%;
+    position: absolute;
+    top: 50px;
+    @include animate(all, .2s, ease-out);
+    width: 100%;
+  }
+
+  &::before {
+    top: 5px;
+  }
+
+  &::after {
+    top: -5px;
+  }
+}
+
+.header__nav {
+  display: flex;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+  }
+}
+
+.nav {
+  display: flex;
+  padding: 0;
+  align-items: center;
+
+  @media (max-width: $desktop) {
+    @include animate(all);
+    overflow: hidden;
+    opacity: 0;
+    background: rgba($accent, .9);
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+
+    .nav-item {
+      padding: 0;
       width: 100%;
-      overflow: hidden;
-      max-height: 0;
-      flex-direction: column;
-      align-items: center;
-      position: absolute;
-      top: 0; left: 0;
-      padding-top: 60px;
-      z-index: -1;
     }
-    .nav-link {
-      display: flex;
-      font-size: $base-font-size;
-      color: $white;
-      margin: 40px 16px;
-      position: relative;
-      @media (max-width: $desktop) {
-        justify-content: center;
-        margin: 0;
-        padding: 15px;
-        width: 100%;
-        border-top: 1px solid rgba(255,255,255,.2);
+  }
+
+  .nav-item {
+    list-style: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: $desktop) {
+      flex-direction: column;
+    }
+
+    &:hover {
+      .dropdown {
+        visibility: visible;
+        opacity: 1;
       }
-      &:hover,
-      &.active {
+
+      >.nav-link {
         color: $primary;
+
         &::after {
           border-bottom: 1px solid $primary;
           left: 0%;
           right: 0%;
           transition-delay: 0s;
+
           @media (max-width: $desktop) {
             display: none;
           }
         }
       }
+
+      .nav-link:not(:only-child) {
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    .nav-link {
+      display: flex;
+      font-size: $base-font-size;
+      color: $white;
+      margin: 0 16px;
+      position: relative;
+
+      @media (max-width: $desktop) {
+        justify-content: center;
+        margin: 0;
+        padding: 15px;
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, .2);
+      }
+
       &::after {
         position: absolute;
         display: flex;
@@ -69,113 +168,154 @@
         transition-property: all;
       }
     }
-  }
-  &__book {
-    height: 0;
-    display: none;
-    overflow: hidden;
-    @include animate(all .3s ease);
-  }
-  &__logo {
-    display: none;
-    width: 26px;
-    height: 30px;
-    @media (max-width: $desktop) {
-      display: flex;
-    }
-  }
-  &__toggle {
-    padding-top: 7px;
-    height: 14px;
-    width: 20px;
-    margin-top: 30px;
-    display: none;
-    margin-left: auto;
-    position: relative;
-    cursor: pointer;
-    @media (max-width: $desktop) {
-      display: flex;
-      margin-top: 0;
-      cursor: pointer;
-    }
-    .toggle-btn {
-      background: $white;
-      display: flex;
-      height: 2px;
-      position: relative;
-      @include animate(background, .2s, ease-out);
-      width: 20px;
-      &::before,
-      &::after {
-        background: $white;
-        content: '';
-        display: flex;
-        height: 100%;
-        position: absolute;
-        top: 30px;
-        @include animate(all, .2s, ease-out);
+
+    .dropdown {
+      @include animate(all);
+
+      flex-direction: column;
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 30px;
+      padding: 10px;
+      width: 210px;
+      left: 50%;
+      margin-left: -105px;
+      background: rgba($accent, .9);
+      border-radius: 5px;
+
+      @media (max-width: $desktop) {
+        position: static;
         width: 100%;
+        display: none;
       }
-      &::before {
-        top: 5px;
+
+      &:before {
+        position: absolute;
+        content: ' ';
+        display: flex;
+        @include triangle(15px, $white, top);
       }
-      &::after {
-        top: -5px;
+
+      .nav-link {
+        padding: 0;
+        margin: 0;
+
+        &:after {
+          display: none;
+        }
       }
+    }
+  }
+
+  .drop.dropdown {
+    @media (max-width: $desktop) {
+      display: none;
+      margin: 0;
+      padding: 0;
+      background: none;
+
+      .nav-link {
+        padding: 10px 0;
+        font-size: 13px;
+      }
+    }
+
+
+
+  }
+}
+
+.header__book {
+  display: none;
+  height: auto;
+  margin-left: 16px;
+  @include animate(all .3s ease);
+
+  .button {
+    @include button($primary, normal, normal, normal);
+    @include animate(all, .2s, ease-in-out);
+
+    @media (max-width: $widescreen) {
+      padding: 8px 20px;
     }
   }
 }
 
-.header-open .header__nav {
-  max-height: 294px;
-  background: $accent;
-  transition: all, .5s ease-out;
-}
-.header-open {
-  .header .header__book {
-    display: none;
-  }
-  .toggle-btn {
-    background: transparent;
-    transition: all, .5s ease-out;
-    &::before,
-    &::after {
-      transition: all, .2s ease-out;
-      top: 0;
-    }
-    &::before {transform: rotate(-45deg);}
-    &::after {transform: rotate(45deg);}
-
-  }
-}
-
-//Stiky Header
 .sticky-header {
   .header {
     background: rgba(0, 0, 0, .9);
     top: 0;
     transition: all, .5s ease-out;
+    padding: 10px 0;
+
     .nav-link {
-      margin: 20px 32px 20px 0;
       @media (max-width: $widescreen) {
-        margin: 20px 18px 20px 0;
+        margin: 0 18px;
       }
+
       @media (max-width: $desktop) {
         margin: 0;
         padding: 15px;
       }
     }
+
+    .nav-item {
+      .dropdown {
+        top: 41px;
+        border-radius: 0 0 6px 6px;
+        padding-top: 0px;
+      }
+    }
+
     &__book {
       display: block;
-      height: auto;
-      @include animate(all .3s ease);
-      .button {
-        @include button($primary, normal, normal, normal);
-        @include animate(all, .2s, ease-in-out);
-        @media (max-width: $widescreen) {
-          padding: 8px 20px;
-        }
+
+      @media (max-width: $desktop) {
+        display: none;
       }
+    }
+  }
+}
+
+.header-open {
+  .header {
+    @media (max-width: $desktop) {
+      @include animate(all);
+      background: rgba($accent, .9);
+    }
+
+  }
+
+  .toggle-btn {
+    @include animate(all);
+
+    background: transparent;
+
+    &::before,
+    &::after {
+      @include animate(all);
+      top: 0;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  .nav {
+    overflow: visible;
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  .drop.dropdown {
+    @media (max-width: $desktop) {
+      display: flex;
     }
   }
 }
