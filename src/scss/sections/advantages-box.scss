@@ -1,57 +1,97 @@
 // Advantages Box
 .advantages-box {
   text-align: center;
+
+
   h2 {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
+
     @media (max-width: $desktop) {
-      margin-bottom: 20px;        
-    } 
-  }
-  .advantage {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 3rem;
-    p {
-      font-weight: 300;
-      line-height: 1.79;
-      letter-spacing: 0.5px;
-      text-align: center;
-      color: #999999;
+      margin-bottom: 20px;
     }
   }
+}
 
-  &__video {
+.advantage {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2%;
+
+  @media (max-width: $desktop) {
+    width: 50%;
+  }
+
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+
+
+  .advantage-holder {
+    max-width: 260px;
+  }
+
+  p {
+    font-weight: 300;
+    line-height: 1.79;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #999999;
+  }
+
+  svg {
+    margin-bottom: 15px;
+  }
+}
+
+.advantage.advantage-center {
+  width: 40%;
+
+
+
+  @media (max-width: $desktop) {
+    width: 50%;
+  }
+
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.advantage.advantages-box__video {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .open-modal {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    .open-modal {
-      position: relative;
+
+    img {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      filter: blur(3.5px);
+      transition: all 0.7s ease;
+    }
+
+    &:hover {
       img {
-        display: flex;
-        filter: blur(3.5px);
-        transition: all 0.7s ease;
+        filter: blur(0);
       }
-      &:hover {
-        img {
-          filter: blur(0);
-        }
-      }
-      span {
-        width: 76px;
-        height: 76px;
-        display: flex;
-        position: absolute;
-        z-index: 1;
-        content: '';
-        background: url(../images/play.png) no-repeat;
-        background-size: cover; 
-      }
+    }
+
+    span {
+      width: 76px;
+      height: 76px;
+      display: flex;
+      position: absolute;
+      z-index: 1;
+      content: '';
+      background: url(../images/play.png) no-repeat;
+      background-size: cover;
     }
   }
 }
@@ -62,5 +102,5 @@
   height: 700px;
   box-shadow: none;
   background: none;
-  outline: none; }
-  
+  outline: none;
+}
