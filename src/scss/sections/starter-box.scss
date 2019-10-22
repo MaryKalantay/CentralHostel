@@ -9,6 +9,7 @@
   z-index: 1;
   min-width: 100%;
   background-position: center;
+
   &__intro {
     display: flex;
     flex-direction: column;
@@ -16,15 +17,28 @@
     align-items: center;
     text-align: center;
     margin-top: 5vh;
-    height: calc(85vh - #{$header-line-height});
+    height: calc(75vh - #{$header-line-height});
+
     .logo {
       svg {
         fill: $white;
         @media (max-width: $tablet) {
           width: 300px;
         }
+        @media (max-width: $phone) {
+          display: none;
+        }
       }
     }
+
+    .logo-mobile {
+      display: none;
+      @media (max-width: $phone) {
+        display: block;
+        margin-top: -50%;
+      }
+    }
+
     .slogan {
       font-size: 20px;
       font-weight: normal;
@@ -39,6 +53,7 @@
       }
     }
   }
+
   &__info {
     display: flex;
     justify-content: center;
@@ -47,6 +62,7 @@
       flex-direction: column;
       align-items: center;
     }
+
     .phone {
       height: 28px;
       margin: 0 10px;
@@ -59,6 +75,7 @@
         margin: 0 10px 15px 0;
       }
     }
+
     .address {
       text-transform: uppercase;
       margin: 0 10px;
@@ -71,14 +88,16 @@
       }
     }
   }
+
   p {
     font-size: 24px;
   }
 }
+
 .book__mobile {
   @include button($primary, $accent, normal, normal, normal);
   display: none;
-  box-shadow:  0 8px 25px 0 rgba(172, 172, 172, 0.6);
+  box-shadow: 0 8px 25px 0 rgba(172, 172, 172, 0.6);
   margin-bottom: 15px;
   @media (max-width: $desktop) {
     display: flex;
@@ -96,12 +115,14 @@
   @media (max-width: $desktop) {
     display: none;
   }
+
   &__form {
     display: flex;
     position: relative;
     @media (max-width: $desktop) {
       display: block;
     }
+
     label {
       position: absolute;
       top: -15px;
@@ -114,12 +135,14 @@
         position: static;
       }
     }
+
     .data-input {
       margin-right: 10px;
       @media (max-width: $desktop) {
         margin-right: 0;
         margin-bottom: 10px;
       }
+
       input {
         min-width: 200px;
         border: none;
@@ -130,6 +153,7 @@
           min-width: 100%;
         }
       }
+
       &__submit {
         margin-right: 0;
         @media (max-width: $desktop) {
@@ -138,23 +162,27 @@
         }
       }
     }
+
     .button {
       @include button($accent, $white, normal, normal, normal);
 
       min-height: 46px;
       padding: 10px 50px;
-      background:$accent;
+      background: $accent;
       font-size: calc(#{$base-font-size} + 2px);
       color: $white;
       @include animate(all, .2s, ease);
     }
   }
+
   &__notice {
     a {
       color: $white;
       position: relative;
+
       &:hover {
         color: $primary;
+
         &::after {
           border-bottom: 1px dashed $primary;
           left: 51%;
@@ -162,6 +190,7 @@
           transition-delay: 0s;
         }
       }
+
       &::after {
         position: absolute;
         display: flex;
