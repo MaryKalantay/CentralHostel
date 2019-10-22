@@ -27,7 +27,13 @@
     width: 100%;
   }
 
-
+  &:nth-last-child(3),
+  &:last-child {
+    margin-top: -80px;
+    @media (max-width: $desktop) {
+      margin-top: 0;
+    }
+  }
   .advantage-holder {
     max-width: 260px;
   }
@@ -44,6 +50,8 @@
     margin-bottom: 15px;
   }
 }
+
+
 
 .advantage.advantage-center {
   width: 40%;
