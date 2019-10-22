@@ -26,14 +26,6 @@ img {
   height: auto;
 }
 
-// hide tel links on desktop
-@media only screen and (min-width: 1025px) {
-    a[href^="tel"], a[href^="skype"], a[href^="sms"] {
-    cursor: default;
-    pointer-events: none;
-  }
-}
-
 ul {
   margin: 0;
   padding: 0 0 0 18px;
