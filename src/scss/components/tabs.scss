@@ -20,7 +20,7 @@
     margin:  60px 0 30px 0;
     padding:  25px;
     font-weight:  400;
-    font-size:  calc(14px - 2px);
+    font-size:  16px;
     transition:  all 0.2s ease-out;
     @media (max-width: $desktop) {
       display:  flex;
@@ -36,14 +36,9 @@
       display:  flex;
       position:  absolute;
       top:  -30px;
-      background:  #E4E8ED;
-      border-radius:  100%;
-      content:  '';
       transition:  all 0.2s ease-out;
       @media (max-width: $desktop) {
-        width:  10px;
-        height:  10px;
-        margin-right:  10px;
+        margin-right:  20px;
         position:  static;
       }
     }
@@ -98,32 +93,32 @@
  &__colors {
     .item.red {
       &:before {
-        background: $red;
+        content: url(/src/images/Icons/logo_red_icon.svg);
       }
     }
     .item.yellow {
       &:before {
-        background: $yellow;
+        content: url(/src/images/Icons/logo_yellow_icon.svg);
       }
     }
     .item.green {
       &:before {
-        background: $green;
+        content: url(/src/images/Icons/logo_green_icon.svg);
       }
     }
     .item.blue {
       &:before {
-        background: $blue;
+        content: url(/src/images/Icons/logo_blue_icon.svg);
       }
     }
     .item.purple {
       &:before {
-        background: $purple;
+        content: url(/src/images/Icons/logo_violet_icon.svg);
       }
     }
     .item.gray {
       &:before {
-        background: $spacegray;
+        content: url(/src/images/Icons/logo_gray_icon.svg);
       }
     }
   }

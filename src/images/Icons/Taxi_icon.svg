@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="34px" viewBox="0 0 46 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 17</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CLanding" transform="translate(-768.000000, -5208.000000)" stroke="#1D1D1B" stroke-width="2">
+            <g id="Transport" transform="translate(130.000000, 5104.000000)">
+                <g id="Group-17" transform="translate(639.000000, 105.000000)">
+                    <polyline id="Stroke-1" points="6 18 8 20 13 20"></polyline>
+                    <g id="Group-16">
+                        <path d="M4,27 L4,31 C4,31.552 4.448,32 5,32 L12,32 C12.552,32 13,31.552 13,31 L13,30" id="Stroke-2" stroke-linejoin="round"></path>
+                        <path d="M43,10 L38,10 L36,13 L33,14 L22,14 L11,14 L8,13 L6,10 L1,10 C0.448,10 0,10.448 0,11 L0,13 C0,13.552 0.448,14 1,14 L5,15 L4.008,16.488 C3.351,17.474 3,18.632 3,19.817 L3,25 C3,26.657 4.343,28 6,28 L22,28 L38,28 C39.657,28 41,26.657 41,25 L41,19.817 C41,18.632 40.649,17.474 39.992,16.488 L39,15 L43,14 C43.552,14 44,13.552 44,13 L44,11 C44,10.448 43.552,10 43,10 Z" id="Stroke-4" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M37,12 C37,12 34.46,6.545 34,6 C33.54,5.455 32.7,5 32,5 L12,5 C11.3,5 10.46,5.455 10,6 C9.54,6.545 7,12 7,12" id="Stroke-6"></path>
+                        <polyline id="Stroke-8" points="38 18 36 20 31 20"></polyline>
+                        <path d="M40,27 L40,31 C40,31.552 39.552,32 39,32 L32,32 C31.448,32 31,31.552 31,31 L31,30" id="Stroke-10" stroke-linejoin="round"></path>
+                        <path d="M13,24 L31,24" id="Stroke-12"></path>
+                        <polygon id="Stroke-14" stroke-linejoin="round" points="29 5 27 0 22 0 17 0 15 5"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
