@@ -102,11 +102,17 @@
   }
 }
 
-#video-modal.modal {
-  padding: 0;
-  width: 560px;
-  height: 315px;
-  box-shadow: none;
-  background: none;
-  outline: none;
+.video-modal {
+  height: 100px;
+  width: 100%;
+}
+
+.video-modal iframe,
+.video-modal object,
+.video-modal embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
