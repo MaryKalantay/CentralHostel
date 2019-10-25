@@ -28,7 +28,7 @@ const jqueryModal = () => {
     });
 
     $('a[href="#modal-book-room"]').click(function (event) {
-      if (this.getAttribute("id") !== 'initial-modal') {
+      if (this.getAttribute("class").indexOf("initial-modal") === -1) {
         $('#slider_book_rooms_modal').slick('slickGoTo', parseInt(this.getAttribute('index')));
       }
     });
