@@ -2,6 +2,16 @@
 import moment from "moment";
 import 'moment/locale/ru';
 
+function isMobile() {
+  return navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/webOS/i)
+    || navigator.userAgent.match(/iPhone/i)
+    || navigator.userAgent.match(/iPad/i)
+    || navigator.userAgent.match(/iPod/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i);
+}
+
 const rangeDatepicker = () => {
   const picker = () => {
     const dayPrice = 230;
@@ -25,108 +35,155 @@ const rangeDatepicker = () => {
       return moment(date).locale('ru').format(dateFormat);
     }
 
-    const checkInPicker = new Lightpick({
-      field: document.getElementById('checkIn'),
-      startDate: initialCheckInDate,
-      format: dateFormat,
-      singleDate: true,
-      minDate: moment(),
-      onSelect: function (start, end) {
-        checkInDateInput.val(momentFormatted(start));
-        checkInModalDateInput.val(momentFormatted(start));
-        if (!start.isBefore(initialCheckOutDate)) {
-          checkOutDateInput.val('');
+    if (isMobile()) {
+      console.log('mobile mode');
+
+      //++++++++modal pickers mobile++++++++
+      let startDate = initialCheckInDate;
+      const checkInModalPicker = new Lightpick({
+        field: document.getElementById('modalCheckIn'),
+        startDate: initialCheckInDate,
+        format: dateFormat,
+        singleDate: true,
+        minDate: moment(),
+        onSelect: function (start, end) {
+          startDate = moment(start);
+          checkInModalDateInput.val(momentFormatted(start));
+          if (!start.isBefore(initialCheckOutDate)) {
+            checkOutModalDateInput.val('');
+          }
+        }
+      });
+
+      checkInModalDateInput.click(function () {
+        $('[class="lightpick lightpick--1-columns"]').css('zIndex', 5001);
+      });
+
+      const checkOutModalPicker = new Lightpick({
+        field: document.getElementById('modalCheckOut'),
+        startDate: initialCheckInDate,
+        format: dateFormat,
+        singleDate: true,
+        minDate: moment(),
+        onSelect: function (start, end) {
+          checkOutModalDateInput.val(momentFormatted(start));
+          totalSum = dayPrice * moment(start).diff(startDate, 'days');
+          $('#totalSum').empty().append(totalSum);
+        },
+        onOpen: function () {
           checkOutModalDateInput.val('');
         }
-        checkOutPicker.setStartDate(moment(start));
-        checkOutPicker.setEndDate(null);
-        checkOutModalPicker.setStartDate(moment(start));
-        checkOutModalPicker.setEndDate(null);
-        checkOutDateInput.focus();
-      }
-    });
+      });
 
-    const checkOutPicker = new Lightpick({
-      field: document.getElementById('checkOut'),
-      startDate: initialCheckInDate,
-      format: ' ',
-      separator: ' ',
-      singleDate: false,
-      minDate: moment(),
-      selectForward: true,
-      numberOfMonths: 2,
-      onSelect: function (start, end) {
-        checkInDateInput.val(momentFormatted(start));
-        checkOutDateInput.val(momentFormatted(end));
-        checkInModalDateInput.val(momentFormatted(start));
-        checkOutModalDateInput.val(momentFormatted(end));
-        if (end) {
-          totalSum = dayPrice * moment(end).diff(moment(start), 'days');
-          $('#totalSum').empty().append(totalSum);
+      checkOutModalDateInput.click(function () {
+        $('[class="lightpick lightpick--1-columns"]').css('zIndex', 5001);
+      });
+
+      checkOutModalDateInput.val(momentFormatted(initialCheckOutDate));
+    } else {
+      const checkInPicker = new Lightpick({
+        field: document.getElementById('checkIn'),
+        startDate: initialCheckInDate,
+        format: dateFormat,
+        singleDate: true,
+        minDate: moment(),
+        onSelect: function (start, end) {
+          checkInDateInput.val(momentFormatted(start));
+          checkInModalDateInput.val(momentFormatted(start));
+          if (!start.isBefore(initialCheckOutDate)) {
+            checkOutDateInput.val('');
+            checkOutModalDateInput.val('');
+          }
+          checkOutPicker.setStartDate(moment(start));
+          checkOutPicker.setEndDate(null);
+          checkOutModalPicker.setStartDate(moment(start));
+          checkOutModalPicker.setEndDate(null);
+          checkOutDateInput.focus();
         }
-      },
-      onOpen: function () {
-        checkOutDateInput.val('');
-      }
-    });
+      });
 
-    checkOutDateInput.val(momentFormatted(initialCheckOutDate));
-
-    //++++++++modal pickers++++++++
-    const checkInModalPicker = new Lightpick({
-      field: document.getElementById('modalCheckIn'),
-      startDate: initialCheckInDate,
-      format: dateFormat,
-      singleDate: true,
-      minDate: moment(),
-      onSelect: function (start, end) {
-        checkInDateInput.val(momentFormatted(start));
-        checkInModalDateInput.val(momentFormatted(start));
-        if (!start.isBefore(initialCheckOutDate)) {
+      const checkOutPicker = new Lightpick({
+        field: document.getElementById('checkOut'),
+        startDate: initialCheckInDate,
+        format: ' ',
+        separator: ' ',
+        singleDate: false,
+        minDate: moment(),
+        selectForward: true,
+        numberOfMonths: 2,
+        onSelect: function (start, end) {
+          checkInDateInput.val(momentFormatted(start));
+          checkOutDateInput.val(momentFormatted(end));
+          checkInModalDateInput.val(momentFormatted(start));
+          checkOutModalDateInput.val(momentFormatted(end));
+          if (end) {
+            totalSum = dayPrice * moment(end).diff(moment(start), 'days');
+            $('#totalSum').empty().append(totalSum);
+          }
+        },
+        onOpen: function () {
           checkOutDateInput.val('');
+        }
+      });
+
+      checkOutDateInput.val(momentFormatted(initialCheckOutDate));
+
+      //++++++++modal pickers++++++++
+      const checkInModalPicker = new Lightpick({
+        field: document.getElementById('modalCheckIn'),
+        startDate: initialCheckInDate,
+        format: dateFormat,
+        singleDate: true,
+        minDate: moment(),
+        onSelect: function (start, end) {
+          checkInDateInput.val(momentFormatted(start));
+          checkInModalDateInput.val(momentFormatted(start));
+          if (!start.isBefore(initialCheckOutDate)) {
+            checkOutDateInput.val('');
+            checkOutModalDateInput.val('');
+          }
+          checkOutPicker.setStartDate(moment(start));
+          checkOutPicker.setEndDate(null);
+          checkOutModalPicker.setStartDate(moment(start));
+          checkOutModalPicker.setEndDate(null);
+          checkOutModalDateInput.focus();
+        }
+      });
+
+      checkInModalDateInput.click(function () {
+        $('[class="lightpick lightpick--1-columns"]').css('zIndex', 5001);
+      });
+
+      const checkOutModalPicker = new Lightpick({
+        field: document.getElementById('modalCheckOut'),
+        startDate: initialCheckInDate,
+        format: ' ',
+        separator: ' ',
+        singleDate: false,
+        minDate: moment(),
+        selectForward: true,
+        numberOfMonths: 2,
+        onSelect: function (start, end) {
+          checkInDateInput.val(momentFormatted(start));
+          checkOutDateInput.val(momentFormatted(end));
+          checkInModalDateInput.val(momentFormatted(start));
+          checkOutModalDateInput.val(momentFormatted(end));
+          if (end) {
+            totalSum = dayPrice * moment(end).diff(moment(start), 'days');
+            $('#totalSum').empty().append(totalSum);
+          }
+        },
+        onOpen: function () {
           checkOutModalDateInput.val('');
         }
-        checkOutPicker.setStartDate(moment(start));
-        checkOutPicker.setEndDate(null);
-        checkOutModalPicker.setStartDate(moment(start));
-        checkOutModalPicker.setEndDate(null);
-        checkOutModalDateInput.focus();
-      }
-    });
+      });
 
-    checkInModalDateInput.click(function () {
-      $('[class="lightpick lightpick--1-columns"]').css('zIndex', 5001);
-    });
+      checkOutModalDateInput.focus(function () {
+        $('[class="lightpick lightpick--2-columns"]').css('zIndex', 5001);
+      });
 
-    const checkOutModalPicker = new Lightpick({
-      field: document.getElementById('modalCheckOut'),
-      startDate: initialCheckInDate,
-      format: ' ',
-      separator: ' ',
-      singleDate: false,
-      minDate: moment(),
-      selectForward: true,
-      numberOfMonths: 2,
-      onSelect: function (start, end) {
-        checkInDateInput.val(momentFormatted(start));
-        checkOutDateInput.val(momentFormatted(end));
-        checkInModalDateInput.val(momentFormatted(start));
-        checkOutModalDateInput.val(momentFormatted(end));
-        if (end) {
-          totalSum = dayPrice * moment(end).diff(moment(start), 'days');
-          $('#totalSum').empty().append(totalSum);
-        }
-      },
-      onOpen: function () {
-        checkOutModalDateInput.val('');
-      }
-    });
-
-    checkOutModalDateInput.focus(function () {
-      $('[class="lightpick lightpick--2-columns"]').css('zIndex', 5001);
-    });
-
-    checkOutModalDateInput.val(momentFormatted(initialCheckOutDate));
+      checkOutModalDateInput.val(momentFormatted(initialCheckOutDate));
+    }
   };
 
   return {

@@ -1,4 +1,5 @@
 // Tabs
+import Swal from 'sweetalert2'
 
 const Forms = () => {
   const styleNumber = () => {
@@ -51,22 +52,32 @@ const Forms = () => {
       const phoneNumber = $('#phoneNumber').val();
       const bookingComments = $('#bookingComments').val();
 
+      const currentSlide = $('#slider_book_rooms_modal').slick('slickCurrentSlide');
+      const selector = 'div[id="slider_book_rooms_modal"]>div>div>div:nth-child(' + (currentSlide + 1).toString() + ') h3';
+      const numberColor = $(selector).text();
+
       const message =
         "Имя заказчика: " + guestName + ',%0A' +
-        "Кол-во гостей: " + guestsNumber +',%0A' +
+        "Кол-во гостей: " + guestsNumber + ',%0A' +
+        "Цвет: " + numberColor + ',%0A' +
         "Дата заезда: " + checkInDate + ',%0A' +
         "Дата выезда: " + checkOutDate + ',%0A' +
         "Ранний заезд: " + earlyCheck + ',%0A' +
-        "Поздний выезд: " + lateCheck  + ',%0A' +
+        "Поздний выезд: " + lateCheck + ',%0A' +
         "Завтрак: " + breakfast + ',%0A' +
         "Общай сумма: " + totalSum + ',%0A' +
         "E-mail: " + guestEmail + ',%0A' +
-        "Телефон: " + phoneNumber  + ',%0A' +
+        "Телефон: " + phoneNumber + ',%0A' +
         "Комментарии: " + bookingComments;
 
-        $.get( "https://api.telegram.org/bot692519606:AAEVJr9u5ca5Gnmokr6DKc-uuthMHZMrjO8" +
-        "/sendMessage?chat_id=-399280631&text=" + message, function( data ) {
-        console.log(data);
+      $.get("https://api.telegram.org/bot692519606:AAEVJr9u5ca5Gnmokr6DKc-uuthMHZMrjO8" +
+        "/sendMessage?chat_id=-399280631&text=" + message, function (data) {
+        Swal.fire({
+          type: 'success',
+          title: 'Спасибо что выбрали наш хостел, бронирование произведено!',
+          showConfirmButton: false,
+          timer: 3000
+        });
       });
 
     });

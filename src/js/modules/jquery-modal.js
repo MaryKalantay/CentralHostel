@@ -28,8 +28,11 @@ const jqueryModal = () => {
     });
 
     $('a[href="#modal-book-room"]').click(function (event) {
-      if (this.getAttribute("id") !== 'initial-modal') {
-        $('#slider_book_rooms_modal').slick('slickGoTo', parseInt(this.getAttribute('index')));
+      const $this = this;
+      if (this.getAttribute("name") !== 'initial-modal') {
+        setTimeout(function () {
+          $('#slider_book_rooms_modal').slick('slickGoTo', parseInt($this.getAttribute('index')));
+        }, 500);
       }
     });
 
