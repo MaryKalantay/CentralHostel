@@ -1,4 +1,9 @@
 .rooms-box {
+  .container {
+    @media (max-width: $phone) {
+      padding: 0;
+    }
+  }
   h2 {
     text-align: center;
   }
