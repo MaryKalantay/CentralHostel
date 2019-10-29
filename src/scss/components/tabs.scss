@@ -22,45 +22,36 @@
     font-weight:  400;
     font-size:  16px;
     transition:  all 0.2s ease-out;
-    @media (max-width: $desktop) {
-      display:  flex;
-      align-items:  center;
-      justify-content:  flex-start;
-      margin:  0 0 10px 0;
-      padding:  1rem;
-      border:  1px solid $black;
+    @media (max-width: $widescreen) {
+      font-size:  14px;  
+      padding: 20px; 
     }
+
     &::before  {
       height:  30px;
       width:  30px;
-      display:  flex;
+      display:  inline-flex;
       position:  absolute;
       top:  -30px;
       transition:  all 0.2s ease-out;
       @media (max-width: $desktop) {
         margin-right:  20px;
         position:  static;
+        margin-top: -10px;
       }
     }
-
-    &:hover,
-    &.active {
-      opacity:  1;
-      &::after {
-        height:  2px;
-        width:  60px;
-        display:  flex;
-        content:  '';
-        position:  absolute;
-        bottom:  0;
-        background:  $black;
-        @media (max-width: $desktop) {
-          display: none;
-        }
-      }
-      &::after {
-        opacity:  1;
-      }
+    &::after {
+      content:  '';
+      width:  60px;
+      height:  2px;
+      display:  flex;
+      position:  absolute;
+      bottom:  0;
+      background:  $black;
+  }
+  &.active,
+    &:hover {
+      opacity: 1;
     }
   }
   .item-content {
@@ -79,11 +70,48 @@
     }
     .container {
       padding: 0;
+      @media (max-width: $phone) {
+        padding: 0 15px;
+      }
     }
-    .item {
-      display: none;
+  }
+}
+
+.tab-content {
+  .item {
+    display: none;
+    @media (max-width: $desktop) {
+      display:  flex;
+      opacity: 1;
+      align-items:  center;
+      justify-content:  flex-start;
+      margin:  0 0 10px 0;
+      padding:  1rem;
+      background: $white;
+    }
+    &::after {
       @media (max-width: $desktop) {
         display: flex;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+        bottom: auto;
+        width: 0; 
+        height: 0; 
+        border: solid $black;;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 4px;
+        background: none;
+        transform: rotate(45deg);
+      }
+    }
+    &.active {
+      &::after {
+        @media (max-width: $desktop) {
+          top: 24px;
+          transform: rotate(-135deg);
+        }
       }
     }
   }
