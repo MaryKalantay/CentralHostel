@@ -38,6 +38,8 @@ const rangeDatepicker = () => {
     if (isMobile()) {
       console.log('mobile mode');
 
+      $('.rooms-box .item-content').addClass('active');
+
       //++++++++modal pickers mobile++++++++
       let startDate = initialCheckInDate;
       const checkInModalPicker = new Lightpick({
