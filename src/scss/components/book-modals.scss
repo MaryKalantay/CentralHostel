@@ -1,18 +1,15 @@
 // Book modals
 
 .modal.book-modal {
-  position: relative;
   display: block;
-  height: 0;
-  opacity: 0;
-  visibility: hidden;
+  position: absolute;
+  left: -9999px;
   padding: 0;
   max-width: 650px;
 }
 .jquery-modal.current .modal.book-modal {
-  height: auto;
-  opacity: 1;
-  visibility: visible;
+  position: relative;
+  left: 0;
 }
 
 .slider_modal {
