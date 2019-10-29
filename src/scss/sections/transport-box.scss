@@ -1,31 +1,54 @@
 // Transport Box
 .transport-box {
-  h5 {
-    margin-top: 50px;
-    @media (max-width: $desktop) {
-      margin-top: 30px;
-    }
-  }
   p+ul {
     margin-top: -12px;
   }
-  p, li {
+
+  p,
+  li {
     max-width: 85%;
     line-height: 1.88;
     font-size: calc(#{$base-font-size} + 2px);
     letter-spacing: 0.5px;
+
     @media (max-width: $desktop) {
       font-size: $base-font-size;
       max-width: 100%;
     }
   }
+
+  &__title-holder {
+    display: flex;
+    align-items: center;
+    h5 {
+      line-height: 1.88;
+      margin-bottom: 0;
+    }
+    svg {
+      width: 48px;
+      height: 44px;
+      margin-right: 30px;;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+    width: 100%;
+  }
+
   &__info {
     margin-top: 30px;
+    margin-bottom: 80px;
+
     @media (max-width: $desktop) {
       margin-top: 15px;
+      margin-bottom: 40px;
     }
+
     .last-p {
       margin-top: 30px;
+
       @media (max-width: $desktop) {
         margin-top: 15px;
       }

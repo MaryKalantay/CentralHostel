@@ -9,6 +9,8 @@
     z-index: 1;
     width: 32px;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
     @include animate(all, .2s, ease);
     &:hover {
