@@ -1,6 +1,7 @@
 {
-  "header": "Полезная информация",
-  "keyDeep": {
-    "inner": "value"
-  }
+  "usefulInfo": "Полезная информация",
+  "numbersAndPrices": "Номера и цены",
+  "discounts": "Акции",
+  "howToGet": "Как добраться",
+  "aboutUs": "О нас"
 }
