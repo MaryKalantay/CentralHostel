@@ -13,18 +13,26 @@ import selectPicker from './modules/select-picker';
 import Forms from './modules/forms';
 import i18next from 'i18next';
 import Backend from 'i18next-xhr-backend';
+import jqueryI18next from 'jquery-i18next';
 
 (($) => {
   // When DOM is ready
+  let language = navigator.language.substr(0, 2);
   i18next
-    .use(Backend)
-    .init({
-      backend: {
-        // for all available options read the backend's repository readme file
-        loadPath: '/locales/{{lng}}/{{ns}}.json'
-      }
-    }).then(function () {
+    .use(Backend).init({
+    fallbackLng: 'ru',
+    lng: language,
+    debug: true,
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json'
+    },
+    useCookie: false,
+    useLocalStorage: false
+  }, function () {}).then(function (err, t) {
+    console.log('language loaded');
     $(() => {
+      jqueryI18next.init(i18next, $);
+      $('body').localize();
       navBar.mobileMenu();
       navBar.anchorScroll();
       jqueryModal.modal();

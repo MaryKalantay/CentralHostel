@@ -17,6 +17,15 @@
 
 <!-- iOS & other mobile devices (ideally 180x180, at least 120x120) -->
 <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23710006-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23710006-2');
+  </script>
 </head>
 
 <body>
@@ -72,7 +81,7 @@
               <li class="nav-item"><a href="#rooms" class="nav-link">Номера и цены</a></li>
               <li class="nav-item"><a href="#action" class="nav-link">Акции</a></li>
               <li class="nav-item"><a href="#location" class="nav-link">Как добраться</a></li>
-              <li class="nav-item drop"><a href="#location" class="nav-link">Полезная информация</a>
+              <li class="nav-item drop"><a href="#location" class="nav-link" data-i18n="header"></a>
                 <ul class="dropdown">
                     <li class="nav-item"><a href="#location" class="nav-link">О нас</a></li>
                     <li class="nav-item"><a href="#transport" class="nav-link">Транспорт</a></li>
