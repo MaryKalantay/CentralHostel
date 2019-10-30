@@ -103,11 +103,22 @@
             <form action="" class="book-box__form">
               <div class="data-input">
                 <label for="checkIn">Дата заезда</label>
-                <input name="checkIn" type="text" id="checkIn" readonly />
+                <div class="input-group">
+                    <span><svg width="19px" height="19px">
+                        <use xlink:href="#calendar"></use>
+                      </svg></span>
+                      <input name="checkIn" type="text" id="checkIn" readonly />
+                  </div>
+            
               </div>
               <div class="data-input">
                 <label for="checkOut">Дата отъезда</label>
-                <input name="checkOut" id="checkOut" type="text" readonly />
+                <div class="input-group">
+                    <span><svg width="19px" height="19px">
+                        <use xlink:href="#calendar"></use>
+                      </svg></span>
+                      <input name="checkOut" id="checkOut" type="text" readonly />
+                  </div>
               </div>
               <div class="data-input data-input__submit">
                 <a href="#modal-book-room" index="0" class="open-modal button button-solid color-accent" name="initial-modal">
