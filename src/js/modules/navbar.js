@@ -3,12 +3,12 @@ const navBar = () => {
   const mobileMenu = () => {
     $('#toggle-btn').click(() => {
       $("body").toggleClass('header-open');
-      $(".dropdown").removeClass('drop');
+      // $(".dropdown").removeClass('drop');
     });
 
     $('.drop > .nav-link').click((e) => {
       e.preventDefault(); 
-      $(".dropdown").toggleClass('drop');
+      // $(".dropdown").toggleClass('drop');
     });
   };
 

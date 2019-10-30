@@ -1,17 +1,16 @@
 // Book modals
 
 .modal.book-modal {
-  position: relative;
   display: block;
-  height: 0;
-  opacity: 0;
-  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  padding: 0;
+  max-width: 650px;
 }
 
 .jquery-modal.current .modal.book-modal {
-  height: auto;
-  opacity: 1;
-  visibility: visible;
+  position: relative;
+  left: 0;
 }
 
 .slider_modal {
@@ -21,14 +20,25 @@
     width: 12.8px;
     height: 25.7px;
     opacity: 1;
+
+    @media (max-width: $desktop) {
+      width: 18.8px;
+      height: 33.7px;
+    }
   }
 
   .arr-l-b {
     left: 30px;
+    @media (max-width: $desktop) {
+      left: 20px;
+    }
   }
 
   .arr-r-b {
     right: 30px;
+    @media (max-width: $desktop) {
+      right: 20px;
+    }
   }
 
   .col-md-6,
@@ -89,6 +99,7 @@
 form.number__form {
   margin-top: -20px;
   padding: 0 70px;
+
   @media (max-width: $tablet) {
     padding: 0 50px;
   }

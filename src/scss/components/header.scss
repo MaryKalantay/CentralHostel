@@ -1,12 +1,13 @@
 .header {
   position: fixed;
-  top: 30px;
+  top: $header-line-height;
   z-index: 2000;
   width: 100%;
   padding: 40px 0;
 
   @media (max-width: $desktop) {
     padding: 10px 0;
+    top: $header-line-height-sm;
   }
 
   .container {
@@ -126,15 +127,15 @@
           right: 0%;
           transition-delay: 0s;
 
-          @media (max-width: $desktop) {
-            display: none;
-          }
+          // @media (max-width: $desktop) {
+          //   display: none;
+          // }
         }
       }
 
       .nav-link:not(:only-child) {
         &:before {
-          display: none;
+          // display: none;
         }
       }
     }
@@ -166,6 +167,9 @@
         transition-duration: .3s;
         transition-timing-function: cubic-bezier(0, -0.98, -0.51, -0.93);
         transition-property: all;
+        @media (max-width: $desktop) {
+          display: none;
+        }
       }
     }
 
@@ -187,7 +191,11 @@
       @media (max-width: $desktop) {
         position: static;
         width: 100%;
-        display: none;
+        visibility: visible;
+        opacity: 1;
+        margin: 0;
+        padding: 0;
+        background: none;;
       }
 
       &:before {
@@ -200,29 +208,13 @@
       .nav-link {
         padding: 0;
         margin: 0;
-
-        &:after {
-          display: none;
+        
+        @media (max-width: $desktop) {
+          padding: 10px 0;
+          font-size: 13px;
         }
       }
     }
-  }
-
-  .drop.dropdown {
-    @media (max-width: $desktop) {
-      display: none;
-      margin: 0;
-      padding: 0;
-      background: none;
-
-      .nav-link {
-        padding: 10px 0;
-        font-size: 13px;
-      }
-    }
-
-
-
   }
 }
 
