@@ -11,19 +11,30 @@ import jqueryModal from './modules/jquery-modal';
 import slickSlider from './modules/slick-slider';
 import selectPicker from './modules/select-picker';
 import Forms from './modules/forms';
+import i18next from 'i18next';
+import Backend from 'i18next-xhr-backend';
 
 (($) => {
   // When DOM is ready
-  $(() => {
-    navBar.mobileMenu();
-    navBar.anchorScroll();
-    jqueryModal.modal();
-    slickSlider.slider();
-    slickSlider.slider_zones();
-    Tabs.fadeTabs();
-    rangeDatepicker.picker();
-    stickyHeader.sticky();
-    selectPicker.select();
-    Forms.styleNumber();
+  i18next
+    .use(Backend)
+    .init({
+      backend: {
+        // for all available options read the backend's repository readme file
+        loadPath: '/locales/{{lng}}/{{ns}}.json'
+      }
+    }).then(function () {
+    $(() => {
+      navBar.mobileMenu();
+      navBar.anchorScroll();
+      jqueryModal.modal();
+      slickSlider.slider();
+      slickSlider.slider_zones();
+      Tabs.fadeTabs();
+      rangeDatepicker.picker();
+      stickyHeader.sticky();
+      selectPicker.select();
+      Forms.styleNumber();
+    });
   });
 })(jQuery);
