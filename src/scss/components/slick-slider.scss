@@ -1,10 +1,12 @@
 .slick-slider {
   display: flex;
   align-items: center;
+
   .slick-slide {
     box-sizing: border-box;
     position: relative;
   }
+
   .slick-arrow {
     z-index: 1;
     width: 32px;
@@ -13,17 +15,45 @@
     transform: translateY(-50%);
     cursor: pointer;
     @include animate(all, .2s, ease);
+
     &:hover {
       opacity: 1;
     }
   }
+
+  .slick-dots {
+    @media (max-width: $desktop) {
+      bottom: -15px;
+    }
+
+    li {
+      width: 20px;
+      height: 20px;
+
+      @media (max-width: $desktop) {
+        width: 10px;
+        height: 10px;
+      }
+
+      button:before {
+        font-size: 30px;
+
+        @media (max-width: $desktop) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
   .slick-arrow.slick-disabled {
     opacity: .6;
   }
+
   .arr-l {
     left: 0;
   }
+
   .arr-r {
     right: 0;
   }
-} 
+}

@@ -2,7 +2,7 @@
 .starter-box {
   position: relative;
   background: url('../images/screen.jpg') no-repeat;
-  height: calc(100vh - #{$header-line-height});
+  min-height: calc(100vh - #{$header-line-height});
   display: flex;
   color: #fff;
   background-size: cover;
@@ -17,8 +17,8 @@
     align-items: center;
     text-align: center;
     margin-top: auto;
-    height: calc(100vh - 60px);
-  
+    min-height: calc(100vh - 60px);
+
     .logo {
       margin-top: 60px;
       svg {
@@ -142,9 +142,24 @@
         margin-bottom: 10px;
       }
 
+      .input-group {
+        span {
+          width: 43px;
+          padding: 10px 12px;
+          margin-bottom: 0;
+          background: $white;
+          border-color: $white;
+          svg {
+            fill: $accent;
+          }
+        }
+      }
       input {
-        min-width: 200px;
+        min-width: calc(200px - 43px);
         border: none;
+        letter-spacing: 0.44px;
+        text-transform: capitalize;
+        
         @media (max-width: $desktop) {
           min-width: 320px;
         }
