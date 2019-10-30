@@ -32,7 +32,7 @@ const jqueryModal = () => {
       if (this.getAttribute("name") !== 'initial-modal') {
         setTimeout(function () {
           $('#slider_book_rooms_modal').slick('slickGoTo', parseInt($this.getAttribute('index')));
-        }, 500);
+        }, 700);
       }
     });
 

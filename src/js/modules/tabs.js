@@ -43,16 +43,16 @@ const Tabs = () => {
         //remove active class from active tab
         $(currentTabsBlockId + ' a.active').removeClass('active');
 
-        //add active class to current tab
-        $(this).addClass('active');
-
-        //remove active class from active tabContent
-        activeTabContent.removeClass('active');
-        activeTabContent.slideUp('');
-
         //add active class to current tabContent
-        $(currentTabId).addClass('active');
-        $(currentTabId).slideDown();
+        if ($(currentTabId)[0].getAttribute('class').indexOf('active') === -1) {
+          $(currentTabId).addClass('active');
+          $(this).addClass('active');
+          $(currentTabId).slideDown();
+        } else {
+          $(currentTabId).slideUp();
+          $(this).removeClass('active');
+          $(currentTabId).removeClass('active');
+        }
       });
     });
   };
