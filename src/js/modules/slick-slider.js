@@ -12,6 +12,7 @@ const slickSlider = () => {
 
     $.each(sliders, function(e) {
       $(this.item_slider).slick({
+        lazyLoad: 'ondemand',
         infinite:false,
         dots: true,
         arrows: true,
@@ -30,6 +31,7 @@ const slickSlider = () => {
 
     $.each(sliders_zones, function(e) {
       $(this.item_slider_zone).slick({
+        lazyLoad: 'ondemand',
         infinite:false,
         dots: false,
         arrows: true,

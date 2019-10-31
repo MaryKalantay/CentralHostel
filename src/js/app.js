@@ -48,6 +48,8 @@ import jqueryI18next from 'jquery-i18next';
     });
 
   $('#langEN').click(function () {
+    $('.lang .item.active').removeClass('active');
+    $(this).addClass('active');
     if (i18next.language !== 'en') {
       i18next.changeLanguage('en', function () {
       }).then(function () {
@@ -57,6 +59,8 @@ import jqueryI18next from 'jquery-i18next';
   });
 
   $('#langRU').click(function () {
+    $('.lang .item.active').removeClass('active');
+    $(this).addClass('active');
     if (i18next.language !== 'ru') {
       i18next.changeLanguage('ru', function () {
       }).then(function () {

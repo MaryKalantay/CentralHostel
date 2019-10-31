@@ -15,6 +15,7 @@ const jqueryModal = () => {
     });
 
     $('#slider_book_rooms_modal').slick({
+      lazyLoad: 'ondemand',
       infinite: true,
       fade: true,
       centerMode: true,
