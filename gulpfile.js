@@ -260,12 +260,7 @@
       cfg.task.esLint,
       cfg.task.imageMin
     ),
-    cfg.task.copyFolders,
-    //TODO: uncomment it for local tests
-    // gulp.parallel(
-    //   cfg.task.browserSync,
-    //   cfg.task.watch
-    // )
+    cfg.task.copyFolders
   ));
 
   /**
