@@ -261,10 +261,11 @@
       cfg.task.imageMin
     ),
     cfg.task.copyFolders,
-    gulp.parallel(
-      cfg.task.browserSync,
-      cfg.task.watch
-    )
+    //TODO: uncomment it for local tests
+    // gulp.parallel(
+    //   cfg.task.browserSync,
+    //   cfg.task.watch
+    // )
   ));
 
   /**
