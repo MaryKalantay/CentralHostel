@@ -34,6 +34,7 @@ import jqueryI18next from 'jquery-i18next';
       $(() => {
         jqueryI18next.init(i18next, $);
         $('body').localize();
+        lazyload();
         navBar.mobileMenu();
         navBar.anchorScroll();
         jqueryModal.modal();
