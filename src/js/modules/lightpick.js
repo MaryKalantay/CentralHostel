@@ -14,8 +14,12 @@ function isMobile() {
 
 const rangeDatepicker = () => {
   const picker = () => {
-    const dayPrice = 230;
-    let totalSum = dayPrice;
+    const totalSumSpan = $('#totalSum');
+    let days = 1;
+    let guestsNumber = 1;
+    let earlyCheck = false;
+    let lateCheck = false;
+    let breakfast = false;
 
     const dateFormat = 'dd. D MMM YYYY';
 
@@ -69,8 +73,8 @@ const rangeDatepicker = () => {
         minDate: moment(),
         onSelect: function (start, end) {
           checkOutModalDateInput.val(momentFormatted(start));
-          totalSum = dayPrice * moment(start).diff(startDate, 'days');
-          $('#totalSum').empty().append(totalSum);
+          days = moment(start).diff(startDate, 'days');
+          totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck);
         },
         onOpen: function () {
           checkOutModalDateInput.val('');
@@ -119,8 +123,8 @@ const rangeDatepicker = () => {
           checkInModalDateInput.val(momentFormatted(start));
           checkOutModalDateInput.val(momentFormatted(end));
           if (end) {
-            totalSum = dayPrice * moment(end).diff(moment(start), 'days');
-            $('#totalSum').empty().append(totalSum);
+            days = moment(end).diff(moment(start), 'days');
+            totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck);
           }
         },
         onOpen: function () {
@@ -171,8 +175,8 @@ const rangeDatepicker = () => {
           checkInModalDateInput.val(momentFormatted(start));
           checkOutModalDateInput.val(momentFormatted(end));
           if (end) {
-            totalSum = dayPrice * moment(end).diff(moment(start), 'days');
-            $('#totalSum').empty().append(totalSum);
+            days = moment(end).diff(moment(start), 'days');
+            totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck);
           }
         },
         onOpen: function () {
@@ -185,6 +189,47 @@ const rangeDatepicker = () => {
       });
 
       checkOutModalDateInput.val(momentFormatted(initialCheckOutDate));
+    }
+
+    $('#earlyCheck').click(function () {
+      earlyCheck = this.checked;
+      totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck);
+    });
+
+    $('#breakfast').click(function () {
+      breakfast = this.checked;
+      totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck);
+    });
+
+    $('#lateCheck').click(function () {
+      lateCheck = this.checked;
+      totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck);
+    });
+
+    $('#guestsNumber').change(function () {
+      guestsNumber = parseInt($('#guestsNumber').val());
+      totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck);
+    });
+
+    function totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck) {
+      const lateCheckFee = 115;
+      const earlyCheckFee = 115;
+      const breakfastFee = 50;
+      const dayPrice = 230;
+      let totalPrice = 0;
+
+      totalPrice = days * guestsNumber * dayPrice;
+      if (lateCheck) {
+        totalPrice = totalPrice + lateCheckFee;
+      }
+      if (earlyCheck) {
+        totalPrice = totalPrice + earlyCheckFee;
+      }
+      if (breakfast) {
+        totalPrice = totalPrice + breakfastFee;
+      }
+
+      totalSumSpan.empty().append(totalPrice);
     }
   };
 

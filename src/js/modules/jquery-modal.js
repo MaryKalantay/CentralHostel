@@ -3,10 +3,6 @@
 const jqueryModal = () => {
   const modal = () => {
 
-    const lateCheckFee = 115;
-    const earlyCheckFee = 115;
-    const breakfastFee = 50;
-
     $('a.open-modal').click(function (event) {
       $(this).modal({
         fadeDuration: 550,
@@ -35,37 +31,6 @@ const jqueryModal = () => {
           $('#slider_book_rooms_modal').slick('slickGoTo', parseInt($this.getAttribute('index')));
         }, 700);
       }
-    });
-
-    const totalSumSpan = $('#totalSum');
-    $('#earlyCheck').click(function () {
-      let totalSum = parseInt(totalSumSpan.text());
-      if (this.checked) {
-        totalSum = totalSum + earlyCheckFee;
-      } else {
-        totalSum = totalSum - earlyCheckFee;
-      }
-      totalSumSpan.empty().append(totalSum);
-    });
-
-    $('#breakfast').click(function () {
-      let totalSum = parseInt(totalSumSpan.text());
-      if (this.checked) {
-        totalSum = totalSum + breakfastFee;
-      } else {
-        totalSum = totalSum - breakfastFee;
-      }
-      totalSumSpan.empty().append(totalSum);
-    });
-
-    $('#lateCheck').click(function () {
-      let totalSum = parseInt(totalSumSpan.text());
-      if (this.checked) {
-        totalSum = totalSum + lateCheckFee;
-      } else {
-        totalSum = totalSum - lateCheckFee;
-      }
-      totalSumSpan.empty().append(totalSum);
     });
   };
 
