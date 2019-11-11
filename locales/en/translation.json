@@ -1,7 +1,6 @@
 ﻿{
   "usefulInfo": "Полезная информация",
   "numbersAndPrices": "Номера и цены",
-  "discounts": "Акции",
   "howToGet": "Как добраться",
   "aboutUs": "О нас", "transportation": "Транспорт", 
   "foodandshop": "Еда и магазины", 
@@ -72,8 +71,7 @@
   "washingMachine": "Стиральная машина", 
   "safe": "Сейф", 
   "iron": "Утюг", 
-  "kitchen": "Кухня", 
-  "pechka": "Печка", 
+  "pechka": "Печка",
   "microwave": "Микроволновка 2 шт.", 
   "kettle": "Чайник", 
   "water": "Питьевая вода", 
