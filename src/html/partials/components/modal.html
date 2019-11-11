@@ -13,11 +13,11 @@
           </div>
           <div class="col-12 col-sm-6 number__info">
             <h3 data-i18n="redNumber"> </h3>
-            <p class="number__guests" data-i18n="[prepend]WNumberA;[append]WNumberB"><br></p>
+            <p class="number__guests"><t data-i18n="WNumberA"></t><br><t data-i18n="WNumberB"></t></p>
             <div class="number__price">
               <div class="cost">
-                <div class="weekdays" data-i18n="[append]UAHPerDay"><span data-i18n="230UAH"></span></div>
-                <div class="weekend" data-i18n="[append]UAHPerDay"><span data-i18n="250UAH"></span></div>
+                <div class="weekdays"><span data-i18n="230UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekDays"></t>)</div>
+                <div class="weekend"><span data-i18n="250UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekEnds"></t>)</div>
               </div>
             </div>
           </div>
@@ -39,8 +39,8 @@
             <p class="number__guests" data-i18n="4MenWomen"> </p>
             <div class="number__price">
               <div class="cost">
-                <div class="weekdays" data-i18n="[append]UAHPerDay"><span data-i18n="230UAH"></span></div>
-                <div class="weekend" data-i18n="[append]UAHPerDay"><span data-i18n="250UAH"></span></div>
+                <div class="weekdays"><span data-i18n="230UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekDays"></t>)</div>
+                <div class="weekend"><span data-i18n="250UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekEnds"></t>)</div>
               </div>
             </div>
           </div>
@@ -62,8 +62,8 @@
             <p class="number__guests" data-i18n= "4MenWomen"> </p>
             <div class="number__price">
               <div class="cost">
-                <div class="weekdays" data-i18n="[append]UAHPerDay"><span data-i18n="230UAH"></span></div>
-                <div class="weekend" data-i18n="[append]UAHPerDay"><span data-i18n="250UAH"></span></div>
+                <div class="weekdays"><span data-i18n="230UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekDays"></t>)</div>
+                <div class="weekend"><span data-i18n="250UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekEnds"></t>)</div>
               </div>
             </div>
           </div>
@@ -85,8 +85,8 @@
             <p class="number__guests" data-i18n="4MenWomen"> </p>
             <div class="number__price">
               <div class="cost">
-                <div class="weekdays" data-i18n="230UAH1"> </div>
-                <div class="weekend" data-i18n="250UAH1"> </div>
+                <div class="weekdays"><span data-i18n="230UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekDays"></t>)</div>
+                <div class="weekend"><span data-i18n="250UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekEnds"></t>)</div>
               </div>
             </div>
           </div>
@@ -108,8 +108,8 @@
             <p class="number__guests" data-i18n="4MenWomen"> </p>
             <div class="number__price">
               <div class="cost">
-                <div class="weekdays" data-i18n="230UAH1"> </div>
-                <div class="weekend" data-i18n="250UAH1"> </div>
+                <div class="weekdays"><span data-i18n="230UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekDays"></t>)</div>
+                <div class="weekend"><span data-i18n="250UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekEnds"></t>)</div>
               </div>
             </div>
           </div>
@@ -131,8 +131,8 @@
             <p class="number__guests" data-i18n="4MenWomen"> </p>
             <div class="number__price">
               <div class="cost">
-                <div class="weekdays" data-i18n="230UAH1"> </div>
-                <div class="weekend" data-i18n="250UAH1"> </div>
+                <div class="weekdays"><span data-i18n="230UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekDays"></t>)</div>
+                <div class="weekend"><span data-i18n="250UAH"></span><t data-i18n="UAHPerDay"></t> (<t data-i18n="weekEnds"></t>)</div>
               </div>
             </div>
           </div>
@@ -173,37 +173,37 @@
     <div class="row">
       <div class="col-12 col-sm-6">
         <input id="earlyCheck" type="checkbox" />
-        <label for="earlyCheck" data-i18n="[append]earlyCheckIn">
+        <label for="earlyCheck">
             <span> <svg>
                 <use xlink:href="#check"> </use>
               </svg> </span>
-          
+            <t data-i18n="earlyCheckIn"></t>
         </label>
       </div>
       <div class="col-12 col-sm-6">
         <input id="lateCheck" type="checkbox" />
-        <label for="lateCheck" data-i18n="[append]lateCheckOut">
+        <label for="lateCheck">
             <span> <svg>
                 <use xlink:href="#check"> </use>
               </svg> </span>
-          
+            <t data-i18n="lateCheckOut"></t>
         </label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-6">
         <input id="breakfast" type="checkbox" />
-        <label for="breakfast" data-i18n="[append]breakfastPlus">
+        <label for="breakfast">
             <span> <svg>
                 <use xlink:href="#check"> </use>
               </svg> </span>
-          
+            <t data-i18n="breakfastPlus"></t>
         </label>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <div class="form__total" data-i18n="[prepend]total;[append]UAH"><span id="totalSum" data-i18n="230UAH"></span></div>
+        <div class="form__total"><t data-i18n="total"></t><span id="totalSum" data-i18n="230UAH"></span><t data-i18n="UAH"></t></div>
       </div>
     </div>
     <div class="row">
