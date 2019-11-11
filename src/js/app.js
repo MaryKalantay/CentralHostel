@@ -17,7 +17,20 @@ import jqueryI18next from 'jquery-i18next';
 
 (($) => {
   // When DOM is ready
-  let language = navigator.language.substr(0, 2);
+  let language;
+  if (localStorage.getItem("language")) {
+    language = localStorage.getItem("language");
+  } else {
+    localStorage.setItem("language", language);
+    language = navigator.language.substr(0, 2);
+  }
+
+  if (language === 'ru') {
+    $('#langRU').addClass('active');
+  } else {
+    $('#langEN').addClass('active');
+  }
+
   i18next
     .use(Backend).init({
     fallbackLng: 'en',
@@ -49,23 +62,21 @@ import jqueryI18next from 'jquery-i18next';
     });
 
   $('#langEN').click(function () {
-    $('.lang .item.active').removeClass('active');
-    $(this).addClass('active');
     if (i18next.language !== 'en') {
       i18next.changeLanguage('en', function () {
       }).then(function () {
-        $('body').localize();
+        localStorage.setItem("language", 'en');
+        location.reload();
       })
     }
   });
 
   $('#langRU').click(function () {
-    $('.lang .item.active').removeClass('active');
-    $(this).addClass('active');
     if (i18next.language !== 'ru') {
       i18next.changeLanguage('ru', function () {
       }).then(function () {
-        $('body').localize();
+        localStorage.setItem("language", 'ru');
+        location.reload();
       })
     }
   });
