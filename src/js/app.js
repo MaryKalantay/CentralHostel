@@ -9,6 +9,7 @@ import stickyHeader from './modules/header-sticky';
 import Tabs from './modules/tabs';
 import jqueryModal from './modules/jquery-modal';
 import slickSlider from './modules/slick-slider';
+import selectPicker from './modules/select-picker';
 import Forms from './modules/forms';
 import i18next from 'i18next';
 import Backend from 'i18next-xhr-backend';
