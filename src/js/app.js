@@ -23,6 +23,12 @@ import jqueryI18next from 'jquery-i18next';
     language = navigator.language.substr(0, 2);
   }
 
+  if (language === 'ru') {
+    $('#langRU').addClass('active');
+  } else {
+    $('#langEN').addClass('active');
+  }
+
   i18next
     .use(Backend).init({
     fallbackLng: 'en',
