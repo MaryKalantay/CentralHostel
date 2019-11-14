@@ -96,7 +96,7 @@
               </a>
           </div>
           <div class="lang">
-              <a href="#" id="langRU" class="item active">Ru</a>
+              <a href="#" id="langRU" class="item">Ru</a>
               <a href="#" id="langEN" class="item">En</a>
           </div>
         </div>
@@ -114,7 +114,7 @@
             <ul class="nav">
               <li class="nav-item"> <a href="#about" class="nav-link" data-i18n="aboutUs"> </a> </li>
               <li class="nav-item"> <a href="#rooms" class="nav-link" data-i18n="numbersAndPrices"> </a> </li>
-              <li class="nav-item"> <a href="#action" class="nav-link" data-i18n="discounts"> </a> </li>
+              <li class="nav-item"> <a href="#action" class="nav-link" data-i18n="rules"> </a> </li>
               <li class="nav-item"><a href="#location" class="nav-link" data-i18n="howToGet"> </a> </li>
               <li class="nav-item drop"> <a href="#location" class="nav-link" data-i18n="usefulInfo"> </a>
                 <ul class="dropdown">
@@ -1190,9 +1190,22 @@
       </div>
     </section>
     ﻿<section class="section price-box">
-        <h2 data-i18n="Prices"> </h2>
+        <h2 data-i18n="rulesCaption"> </h2>
       <div class="container">
         <div class="row">
+        <div class="col-md-6">
+          <p><t data-i18n="reseptionWorkingHours"></t><strong data-i18n="wholeHours"></strong></p>
+          <p><t data-i18n="chekInRules"></t><br><t data-i18n="chekOutRules"></t></p>
+          <p><t data-i18n="earlySettlementA"></t><strong>50%</strong><t data-i18n="earlySettlementB"></t><br>
+            <t data-i18n="lateCheckOutA"></t><strong>50% </strong><t data-i18n="lateCheckOutB"></t><br>
+            <t data-i18n="checkInPromt" style="font-style: italic;color: #999;font-size: 90%;"></t>
+          </p>
+          <p><t data-i18n="cleaning"></t><strong data-i18n="everyDay"></strong><t> (11:00-14:00)</t></p>
+          <p><t data-i18n="fridgeUsing"></t><strong data-i18n="forFree"></strong></p>
+          <p data-i18n="tableware"></p>
+          <p><t data-i18n="wash"></t><strong>30 </strong><t data-i18n="UAH"></t></p>
+          <p><t data-i18n="breakfastA"></t><strong>50 </strong><t data-i18n="UAH"></t></p>
+        </div>
         <div class="col-md-6">
           <table class="table price-box__table">
             <thead>
@@ -1210,27 +1223,16 @@
                 </tr>
               <tr>
                 <td data-i18n="femaleNumber"> </td>
+                  <td><strong data-i18n="230UAH"></strong><t data-i18n="UAH"></t></td>
                   <td><strong data-i18n="250UAH"></strong><t data-i18n="UAH"></t></td>
-                  <td><strong data-i18n="280UAH"></strong><t data-i18n="UAH"></t></td>
               </tr>
-            </tbody>
-          </table>
-          <p><t data-i18n="earlySettlementA"></t><strong>50%</strong><t data-i18n="earlySettlementB"></t></p>
-          <p><t data-i18n="lateCheckOutA"></t><strong>50% </strong><t data-i18n="lateCheckOutB"></t></p>
-          <p class="last-p"><t data-i18n="breakfastA"></t><strong>50</strong><t data-i18n="breakfastB"></t></p>
-        </div>
-        <div class="col-md-6">
-          <div class="sales">
-            <h3 data-i18n="discounts"> </h3>
-            <ul class="list-unstyled">
-              <li><strong>-10%</strong><t data-i18n="2weeks"></t></li>
-              <li><strong>-5%</strong><t data-i18n="7days"></t></li>
-              <li><strong>-3%</strong><t data-i18n="4people"></t></li>
-              <li><strong>-5% </strong><t data-i18n="7daysPlus"></t></li>
-              <li><strong>-7%</strong><t data-i18n="month"></t></li>
-            </ul>
-             <p class="last-p" data-i18n="note"> </p>
-          </div>
+              </tbody>   
+            </table>   
+          <h3 data-i18n="discounts"> </h3>
+          <p><strong>-3%</strong><t data-i18n="4people"></t><t data-i18n="prepayment"></t></p>
+          <p><strong>-5% </strong><t data-i18n="7daysPlus"></t><t data-i18n="prepayment"></t></p>
+          <p><strong>-7%</strong><t data-i18n="month"></t><t data-i18n="prepayment"></t></p>
+          <p style="font-style:italic;color:#999;font-size: 100%;" data-i18n="note"> </p>
         </div>
         </div>
       </div>
@@ -1627,17 +1629,6 @@
               href="" data-i18n="clickHere"> </a></p>
         </div>
 
-        <div class="places-box__title">
-          <div class="row">
-            <div class="col">
-              <div class="places-box__title">
-                <h5 data-i18n="parks"> </h5>
-                <p data-i18n="windowsOverlookPark"> </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="places-box__item">
           <div class="row">
             <div class="col-md-6">
@@ -1662,9 +1653,7 @@
             <div class="col-md-6">
               <div class="places-box__info">
                 <h5 data-i18n="ecopark"> </h5>
-                <p data-i18n="aboutEcopark"> </p>
-                <p data-i18n="howToGet">:<br> <a
-                    href="https://feldman-ecopark.com/o_ekoparke#how_to_get"> https://feldman-ecopark.com/o_ekoparke#how_to_get</a>
+                <p><t data-i18n="aboutEcopark"></t><noindex><a rel="nofollow" href="https://feldman-ecopark.com/o_ekoparke#how_to_get"> https://feldman-ecopark.com/o_ekoparke#how_to_get</a></noindex></p>
                 </p>
               </div>
             </div>
@@ -1689,7 +1678,7 @@
             <nav id="footer-nav" class="footer__nav">
               <a href="#rooms" class="nav-link" data-i18n="numbersAndPrices"> </a>
               <a href="#about" class="nav-link" data-i18n="aboutUs"> </a>
-              <a href="#action" class="nav-link" data-i18n="discounts"> </a>
+              <a href="#action" class="nav-link" data-i18n="rules"> </a>
               <a href="#location" class="nav-link" data-i18n="howToGet"> </a>
               <a href="#info" class="nav-link" data-i18n="usefulInfo"> </a>
             </nav>
