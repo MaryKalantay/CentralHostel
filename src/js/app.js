@@ -16,8 +16,19 @@ import Backend from 'i18next-xhr-backend';
 import jqueryI18next from 'jquery-i18next';
 
 (($) => {
-  // When DOM is ready
-  let language = navigator.language.substr(0, 2);
+  let language;
+  if (window.location.href.indexOf('lang') !== -1) {
+    language = window.location.href.replace(new RegExp('http://[^?]+[?]lang=(\\w+)'), '$1')
+  } else {
+    language = navigator.language.substr(0, 2);
+  }
+
+  if (language === 'ru') {
+    $('#langRU').addClass('active');
+  } else {
+    $('#langEN').addClass('active');
+  }
+
   i18next
     .use(Backend).init({
     fallbackLng: 'en',
@@ -33,6 +44,8 @@ import jqueryI18next from 'jquery-i18next';
     .then(function (err, t) {
       $(() => {
         jqueryI18next.init(i18next, $);
+        $("html").attr("lang", language);
+        $('head').localize();
         $('body').localize();
         lazyload();
         navBar.mobileMenu();
@@ -54,6 +67,8 @@ import jqueryI18next from 'jquery-i18next';
     if (i18next.language !== 'en') {
       i18next.changeLanguage('en', function () {
       }).then(function () {
+        $('head').localize();
+        $("html").attr("lang", 'en');
         $('body').localize();
       })
     }
@@ -65,6 +80,8 @@ import jqueryI18next from 'jquery-i18next';
     if (i18next.language !== 'ru') {
       i18next.changeLanguage('ru', function () {
       }).then(function () {
+        $('head').localize();
+        $("html").attr("lang", 'ru');
         $('body').localize();
       })
     }
