@@ -1,8 +1,9 @@
 // Tabs
 import Swal from 'sweetalert2'
+import i18next from "i18next";
 
 const Forms = () => {
-  const styleNumber = () => {
+  const styleNumber = (i18next) => {
     jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
     jQuery('.quantity').each(function () {
       var spinner = jQuery(this),
@@ -74,7 +75,7 @@ const Forms = () => {
         "/sendMessage?chat_id=-399280631&text=" + message, function (data) {
         Swal.fire({
           type: 'success',
-          title: 'Спасибо что выбрали наш хостел, бронирование произведено!',
+          title: i18next.t('confirmBookingText'),
           showConfirmButton: false,
           timer: 3000
         });

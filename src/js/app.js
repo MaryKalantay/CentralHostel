@@ -56,7 +56,7 @@ import jqueryI18next from 'jquery-i18next';
         Tabs.fadeTabs();
         rangeDatepicker.picker();
         stickyHeader.sticky();
-        Forms.styleNumber();
+        Forms.styleNumber(i18next);
       });
     });
 
@@ -66,6 +66,7 @@ import jqueryI18next from 'jquery-i18next';
     if (i18next.language !== 'en') {
       i18next.changeLanguage('en', function () {
       }).then(function () {
+        Forms.styleNumber(i18next);
         $('head').localize();
         $("html").attr("lang", 'en');
         $('body').localize();
@@ -79,6 +80,7 @@ import jqueryI18next from 'jquery-i18next';
     if (i18next.language !== 'ru') {
       i18next.changeLanguage('ru', function () {
       }).then(function () {
+        Forms.styleNumber(i18next);
         $('head').localize();
         $("html").attr("lang", 'ru');
         $('body').localize();

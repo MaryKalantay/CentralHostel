@@ -275,5 +275,6 @@
   "yourComments": "Комментарии", 
   "getDiscountA": "Получи скидки при ",
   "earlyBookink": "раннем",
-  "getDiscountB": " бронировании!"
+  "getDiscountB": " бронировании!",
+  "confirmBookingText": "Спасибо что выбрали наш хостел, бронирование произведено!"
 }
