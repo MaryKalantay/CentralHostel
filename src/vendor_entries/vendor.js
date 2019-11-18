@@ -9,4 +9,5 @@ module.exports = [
   './node_modules/lightpick/lightpick.js',
   './node_modules/jquery-modal/jquery.modal.js',
   './node_modules/select2/dist/js/select2.js',
+  './node_modules/sweetalert2/dist/sweetalert2.js'
 ];
