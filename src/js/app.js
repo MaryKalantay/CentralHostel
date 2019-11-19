@@ -27,7 +27,7 @@ import jqueryI18next from 'jquery-i18next';
     $('#langRU').addClass('active');
   } else if (language === 'en'){
     $('#langEN').addClass('active');
-  } else if (language === 'ua'){
+  } else if (language === 'uk'){
     $('#langUA').addClass('active');
   }
 
@@ -93,11 +93,11 @@ import jqueryI18next from 'jquery-i18next';
   $('#langUA').click(function () {
     $('.lang .item.active').removeClass('active');
     $(this).addClass('active');
-    if (i18next.language !== 'ua') {
-      i18next.changeLanguage('ua', function () {
+    if (i18next.language !== 'uk') {
+      i18next.changeLanguage('uk', function () {
       }).then(function () {
         Forms.styleNumber(i18next);
-        $("html").attr("lang", 'ua');
+        $("html").attr("lang", 'uk');
         $('head').localize();
         $('body').localize();
       })
