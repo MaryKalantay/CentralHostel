@@ -25,8 +25,10 @@ import jqueryI18next from 'jquery-i18next';
 
   if (language === 'ru') {
     $('#langRU').addClass('active');
-  } else {
+  } else if (language === 'en'){
     $('#langEN').addClass('active');
+  } else if (language === 'ua'){
+    $('#langUA').addClass('active');
   }
 
   i18next
@@ -67,8 +69,8 @@ import jqueryI18next from 'jquery-i18next';
       i18next.changeLanguage('en', function () {
       }).then(function () {
         Forms.styleNumber(i18next);
-        $('head').localize();
         $("html").attr("lang", 'en');
+        $('head').localize();
         $('body').localize();
       })
     }
@@ -81,10 +83,24 @@ import jqueryI18next from 'jquery-i18next';
       i18next.changeLanguage('ru', function () {
       }).then(function () {
         Forms.styleNumber(i18next);
-        $('head').localize();
         $("html").attr("lang", 'ru');
+        $('head').localize();
         $('body').localize();
       })
     }
   });
+
+  $('#langUA').click(function () {
+    $('.lang .item.active').removeClass('active');
+    $(this).addClass('active');
+    if (i18next.language !== 'ua') {
+      i18next.changeLanguage('ua', function () {
+      }).then(function () {
+        Forms.styleNumber(i18next);
+        $("html").attr("lang", 'ua');
+        $('head').localize();
+        $('body').localize();
+      })
+    }
+  });  
 })(jQuery);
