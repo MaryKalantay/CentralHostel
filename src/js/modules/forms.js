@@ -1,6 +1,9 @@
 // Tabs
 const Forms = () => {
   const styleNumber = (i18next) => {
+    $('#coverimageforplayer').click(function () {
+      $('#coverimageforplayer').replaceWith($('#youtubeplayer').show());
+    });
     jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
     jQuery('.quantity').each(function () {
       var spinner = jQuery(this),
@@ -70,12 +73,12 @@ const Forms = () => {
 
       // $.get("https://api.telegram.org/bot692519606:AAEVJr9u5ca5Gnmokr6DKc-uuthMHZMrjO8" +
       //   "/sendMessage?chat_id=-399280631&text=" + message, function (data) {
-        Swal.fire({
-          title: i18next.t('confirmBookingText'),
-          showConfirmButton: false,
-          icon: 'success',
-          timer: 3000
-        });
+      Swal.fire({
+        title: i18next.t('confirmBookingText'),
+        showConfirmButton: false,
+        icon: 'success',
+        timer: 3000
+      });
       // });
 
     });
