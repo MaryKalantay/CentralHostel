@@ -3,6 +3,7 @@ const Forms = () => {
   const styleNumber = (i18next) => {
     $('#coverimageforplayer').click(function () {
       $('#coverimageforplayer').replaceWith($('#youtubeplayer').show());
+      $('#youtubeplayer').attr('src', 'https://www.youtube.com/embed/oj6sFMrrQm0?autoplay=1');
     });
     jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
     jQuery('.quantity').each(function () {
