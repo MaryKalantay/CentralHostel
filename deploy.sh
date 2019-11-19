@@ -10,3 +10,5 @@ echo "copying index.html to ../public_html/"
 sudo cp index.html ../public_html/
 echo "copying from node_modules/slick-carousel/slick/ajax-loader.gif to ../public_html/assets/css/"
 sudo cp node_modules/slick-carousel/slick/ajax-loader.gif ../public_html/assets/css/
+sudo cp node_modules/slick-carousel/slick/slick.ttf ../public_html/assets/css/fonts
+sudo cp node_modules/slick-carousel/slick/slick.woff ../public_html/assets/css/fonts
