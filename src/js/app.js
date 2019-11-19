@@ -15,7 +15,7 @@ import i18next from 'i18next';
 import Backend from 'i18next-xhr-backend';
 import jqueryI18next from 'jquery-i18next';
 
-(($) => {
+$(window).on('load', function() {
   let language;
   if (window.location.href.indexOf('lang') !== -1) {
     language = window.location.href.replace(new RegExp('[^/]+//[^?]+[?]lang=(\\w\\w).*'), '$1')
@@ -29,6 +29,23 @@ import jqueryI18next from 'jquery-i18next';
     $('#langEN').addClass('active');
   } else if (language === 'uk'){
     $('#langUA').addClass('active');
+  }
+
+  function sequentialLocalization() {
+    $('head').localize();
+    $('.header').localize();
+    $('.starter-box').localize();
+    $('.modal').localize();
+    $('.advantages-box').localize();
+    $('.rooms-box').localize();
+    $('.zones-box').localize();
+    $('.action-box').localize();
+    $('.price-box').localize();
+    $('.hostel-box').localize();
+    $('.transport-box').localize();
+    $('.food-shop-box').localize();
+    $('.places-box').localize();
+    $('.footer').localize();
   }
 
   i18next
@@ -47,18 +64,17 @@ import jqueryI18next from 'jquery-i18next';
       $(() => {
         jqueryI18next.init(i18next, $);
         $("html").attr("lang", language);
-        $('head').localize();
-        $('body').localize();
-        lazyload();
+        sequentialLocalization();
         navBar.mobileMenu();
         navBar.anchorScroll();
+        rangeDatepicker.picker();
         jqueryModal.modal();
         slickSlider.slider();
         slickSlider.slider_zones();
         Tabs.fadeTabs();
-        rangeDatepicker.picker();
         stickyHeader.sticky();
         Forms.styleNumber(i18next);
+        lazyload();
       });
     });
 
@@ -70,8 +86,7 @@ import jqueryI18next from 'jquery-i18next';
       }).then(function () {
         Forms.styleNumber(i18next);
         $("html").attr("lang", 'en');
-        $('head').localize();
-        $('body').localize();
+        sequentialLocalization();
       })
     }
   });
@@ -84,8 +99,7 @@ import jqueryI18next from 'jquery-i18next';
       }).then(function () {
         Forms.styleNumber(i18next);
         $("html").attr("lang", 'ru');
-        $('head').localize();
-        $('body').localize();
+        sequentialLocalization();
       })
     }
   });
@@ -98,9 +112,8 @@ import jqueryI18next from 'jquery-i18next';
       }).then(function () {
         Forms.styleNumber(i18next);
         $("html").attr("lang", 'uk');
-        $('head').localize();
-        $('body').localize();
+        sequentialLocalization();
       })
     }
-  });  
-})(jQuery);
+  });
+});
