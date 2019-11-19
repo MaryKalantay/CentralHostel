@@ -260,7 +260,8 @@
       cfg.task.esLint,
       cfg.task.imageMin
     ),
-    cfg.task.copyFolders,
+    cfg.task.copyFolders
+    // ,
     // gulp.parallel(
     //   cfg.task.browserSync,
     //   cfg.task.watch
