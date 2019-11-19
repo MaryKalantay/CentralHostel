@@ -18,7 +18,7 @@ import jqueryI18next from 'jquery-i18next';
 (($) => {
   let language;
   if (window.location.href.indexOf('lang') !== -1) {
-    language = window.location.href.replace(new RegExp('http://[^?]+[?]lang=(\\w+)'), '$1')
+    language = window.location.href.replace(new RegExp('[^/]+//[^?]+[?]lang=(\\w\\w).*'), '$1')
   } else {
     language = navigator.language.substr(0, 2);
   }
