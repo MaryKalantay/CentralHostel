@@ -13,3 +13,5 @@ sudo cp node_modules/slick-carousel/slick/ajax-loader.gif ../public_html/assets/
 sudo mkdir ../public_html/assets/css/fonts
 sudo cp node_modules/slick-carousel/slick/fonts/slick.ttf ../public_html/assets/css/fonts/
 sudo cp node_modules/slick-carousel/slick/fonts/slick.woff ../public_html/assets/css/fonts/
+npm install uglify-js -g
+uglifyjs --compress --mangle --output ../public_html/assets/js/app.min.js -- ../public_html/assets/js/app.js
