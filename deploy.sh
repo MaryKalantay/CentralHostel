@@ -9,4 +9,4 @@ sudo cp -r locales/ ../public_html/
 echo "copying index.html to ../public_html/"
 sudo cp index.html ../public_html/
 echo "copying from node_modules/slick-carousel/slick/ajax-loader.gif to ../public_html/assets/css/"
-sudo cp node_modules/slick-carousel/slick/ajax-loader.gif assets/css/
+sudo cp node_modules/slick-carousel/slick/ajax-loader.gif ../public_html/assets/css/
