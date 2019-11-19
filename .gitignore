@@ -35,6 +35,7 @@ node_modules
 *.map
 .tmp
 tmp
+index.html
 
 # wordpress configs and uploads
 /wp-config.php
