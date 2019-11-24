@@ -29,7 +29,9 @@ $(window).on('load', function() {
     $('#langEN').addClass('active');
   } else if (language === 'uk'){
     $('#langUA').addClass('active');
-  }
+  } else if (language === 'de'){
+    $('#langDE').addClass('active');
+  }  
 
   function sequentialLocalization() {
     $('head').localize();
@@ -116,4 +118,16 @@ $(window).on('load', function() {
       })
     }
   });
+  $('#langDE').click(function () {
+    $('.lang .item.active').removeClass('active');
+    $(this).addClass('active');
+    if (i18next.language !== 'de') {
+      i18next.changeLanguage('de', function () {
+      }).then(function () {
+        Forms.styleNumber(i18next);
+        $("html").attr("lang", 'de');
+        sequentialLocalization();
+      })
+    }
+  });  
 });
