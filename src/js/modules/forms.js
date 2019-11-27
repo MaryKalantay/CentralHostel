@@ -72,15 +72,15 @@ const Forms = () => {
         "Телефон: " + phoneNumber + ',%0A' +
         "Комментарии: " + bookingComments;
 
-      // $.get("https://api.telegram.org/bot692519606:AAEVJr9u5ca5Gnmokr6DKc-uuthMHZMrjO8" +
-      //   "/sendMessage?chat_id=-399280631&text=" + message, function (data) {
+       $.get("https://api.telegram.org/bot692519606:AAEVJr9u5ca5Gnmokr6DKc-uuthMHZMrjO8" +
+         "/sendMessage?chat_id=-399280631&text=" + message, function (data) {
       Swal.fire({
         title: i18next.t('confirmBookingText'),
         showConfirmButton: false,
         icon: 'success',
         timer: 3000
       });
-      // });
+      });
 
     });
   };
