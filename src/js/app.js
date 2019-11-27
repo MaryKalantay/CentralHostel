@@ -31,7 +31,9 @@ $(window).on('load', function() {
     $('#langUA').addClass('active');
   } else if (language === 'de'){
     $('#langDE').addClass('active');
-  }  
+  } else if (language === 'fr'){
+    $('#langFR').addClass('active');
+  }    
 
   function sequentialLocalization() {
     $('head').localize();
@@ -130,4 +132,16 @@ $(window).on('load', function() {
       })
     }
   });  
+  $('#langFR').click(function () {
+    $('.lang .item.active').removeClass('active');
+    $(this).addClass('active');
+    if (i18next.language !== 'fr') {
+      i18next.changeLanguage('fr', function () {
+      }).then(function () {
+        Forms.styleNumber(i18next);
+        $("html").attr("lang", 'fr');
+        sequentialLocalization();
+      })
+    }
+  });   
 });
