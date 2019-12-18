@@ -35,7 +35,9 @@ $(window).on('load', function() {
     $('#langFR').addClass('active');
   } else if (language === 'es'){
     $('#langES').addClass('active');
-  } 
+  } else if (language === 'tr'){
+    $('#langTR').addClass('active');
+  }   
 
   function sequentialLocalization() {
     $('head').localize();
@@ -154,6 +156,18 @@ $(window).on('load', function() {
       }).then(function () {
         Forms.styleNumber(i18next);
         $("html").attr("lang", 'es');
+        sequentialLocalization();
+      })
+    }
+  });   
+  $('#langTR').click(function () {
+    $('.lang .item.active').removeClass('active');
+    $(this).addClass('active');
+    if (i18next.language !== 'tr') {
+      i18next.changeLanguage('tr', function () {
+      }).then(function () {
+        Forms.styleNumber(i18next);
+        $("html").attr("lang", 'tr');
         sequentialLocalization();
       })
     }
