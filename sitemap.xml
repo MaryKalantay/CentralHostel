@@ -19,5 +19,17 @@
                rel="alternate"
                hreflang="uk"
                href="https://hostel.kharkiv.ua/?lang=uk"/>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="uk"
+               href="https://hostel.kharkiv.ua/?lang=tr"/>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="uk"
+               href="https://hostel.kharkiv.ua/?lang=es"/>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="uk"
+               href="https://hostel.kharkiv.ua/?lang=fr"/>  
   </url>
 </urlset>
