@@ -21,15 +21,15 @@
                href="https://hostel.kharkiv.ua/?lang=uk"/>
     <xhtml:link 
                rel="alternate"
-               hreflang="tr"
+               hreflang="uk"
                href="https://hostel.kharkiv.ua/?lang=tr"/>
     <xhtml:link 
                rel="alternate"
-               hreflang="es"
+               hreflang="uk"
                href="https://hostel.kharkiv.ua/?lang=es"/>
     <xhtml:link 
                rel="alternate"
-               hreflang="fr"
-               href="https://hostel.kharkiv.ua/?lang=fr"/>                                             
+               hreflang="uk"
+               href="https://hostel.kharkiv.ua/?lang=fr"/>  
   </url>
 </urlset>
