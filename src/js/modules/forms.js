@@ -2,6 +2,8 @@
 const Forms = () => {
   const styleNumber = (i18next) => {
     $('#coverimageforplayer').click(function () {
+      gtag_report_conversion(parseFloat(totalSum) / 25.0);
+      gtag('event', 'PlayShort', {'event_category': 'Video'});
       $('#coverimageforplayer').replaceWith($('#youtubeplayer').show());
       $('#youtubeplayer').attr('src', 'https://www.youtube.com/embed/oj6sFMrrQm0?autoplay=1');
     });
@@ -67,11 +69,12 @@ const Forms = () => {
         "Ранний заезд: " + earlyCheck + ',%0A' +
         "Поздний выезд: " + lateCheck + ',%0A' +
         "Завтрак: " + breakfast + ',%0A' +
-        "Общай сумма: " + totalSum + ',%0A' +
+        "Общая сумма: " + totalSum + ',%0A' +
         "E-mail: " + guestEmail + ',%0A' +
         "Телефон: " + phoneNumber + ',%0A' +
         "Комментарии: " + bookingComments;
 
+      gtag_report_conversion(parseFloat(totalSum) / 25.0);
        $.get("https://api.telegram.org/bot692519606:AAEVJr9u5ca5Gnmokr6DKc-uuthMHZMrjO8" +
          "/sendMessage?chat_id=-399280631&text=" + message, function (data) {
       Swal.fire({

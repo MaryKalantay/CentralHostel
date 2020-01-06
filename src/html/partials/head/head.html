@@ -69,4 +69,21 @@
       "url": "https://hostel.kharkiv.ua",
       "priceRange": "$6 - $10"
     }</script>
+<script>
+  function gtag_report_conversion(quantity, url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-1061482729/nyohCMK29bgBEOnhk_oD',
+        'value': quantity,
+        'currency': 'USD',
+        'transaction_id': '',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
 </head>
