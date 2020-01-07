@@ -13,6 +13,8 @@ const Tabs = () => {
     $.each(multiTabs, function (tabIndex, tabValue) {
       const tabItem = $(tabValue.mtabs).find('.tab-menu a');
       $(tabItem).click(function (e) {
+        
+        gtag('event', 'ClickRoom', {'event_category': 'Action', 'event_label': $(this).attr('data-i18n'), 'send_to': 'UA-23710006-2'});
         e.preventDefault(e);
         const currentTabId = $(this).attr('href');
         const currentTabsBlockId = currentTabId.replace(new RegExp('(\\#tabs_\\d+)_\\d+'), '$1');
