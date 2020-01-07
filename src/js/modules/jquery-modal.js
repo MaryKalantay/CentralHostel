@@ -4,6 +4,7 @@ const jqueryModal = () => {
   const modal = () => {
 
     $('a.open-modal').click(function (event) {
+      gtag('event', 'OpenForm', {'event_category': 'Booking', 'send_to': 'UA-23710006-2'});
       $(this).modal({
         fadeDuration: 550,
       });

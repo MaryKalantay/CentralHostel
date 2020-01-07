@@ -2,8 +2,9 @@
 const Forms = () => {
   const styleNumber = (i18next) => {
     $('#coverimageforplayer').click(function () {
-      gtag_report_conversion(parseFloat(totalSum) / 25.0);
-      gtag('event', 'PlayShort', {'event_category': 'Video'});
+      //gtag_report_conversion(parseFloat(totalSum) / 25.0);
+      //gtag_report_video_play('event', 'PlayShort', {'event_category': 'Video', 'send_to': 'UA-23710006-2'});
+      gtag('event', 'PlayShort', {'event_category': 'Video', 'send_to': 'UA-23710006-2'});
       $('#coverimageforplayer').replaceWith($('#youtubeplayer').show());
       $('#youtubeplayer').attr('src', 'https://www.youtube.com/embed/oj6sFMrrQm0?autoplay=1');
     });
@@ -75,7 +76,8 @@ const Forms = () => {
         "Комментарии: " + bookingComments;
 
       gtag_report_conversion(parseFloat(totalSum) / 25.0);
-       $.get("https://api.telegram.org/bot692519606:AAEVJr9u5ca5Gnmokr6DKc-uuthMHZMrjO8" +
+      gtag('event', 'CreateBooking', {'event_category': 'Booking', 'event_label': guestName, 'value': totalSum, 'send_to': 'UA-23710006-2'});
+      $.get("https://api.telegram.org/bot692519606:AAEVJr9u5ca5Gnmokr6DKc-uuthMHZMrjO8" +
          "/sendMessage?chat_id=-399280631&text=" + message, function (data) {
       Swal.fire({
         title: i18next.t('confirmBookingText'),
