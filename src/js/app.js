@@ -71,7 +71,7 @@ $(window).on('load', function() {
     .then(function (err, t) {
       $(() => {
         jqueryI18next.init(i18next, $);
-        if(!Boolean($('html').attr('noinitialtranslate'))
+        if(!Boolean($('html').attr('noinitialtranslate')))
         {
           //$('html').attr('lang', language);
           $('html').attr('lang', 'hello');
