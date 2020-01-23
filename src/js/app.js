@@ -73,14 +73,10 @@ $(window).on('load', function() {
         jqueryI18next.init(i18next, $);
         if(!Boolean($('html').attr('noinitialtranslate')))
         {
-          //$('html').attr('lang', language);
-          $('html').attr('lang', 'hello');
+          $('html').attr('lang', language);
           sequentialLocalization();
         }
-        else
-        {
-          $('html').attr('lang', 'world');
-        }
+        
         navBar.mobileMenu();
         navBar.anchorScroll();
         rangeDatepicker.picker();

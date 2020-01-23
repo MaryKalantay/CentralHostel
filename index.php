@@ -36,7 +36,7 @@ function processHTMLNode($htmlNode, $translationDitionary)
 				{
 					if ($atrubuteName === '')
 					{
-						$item->textContent = $translationValue.'Translated';
+						$item->textContent = $translationValue;
 					}
 					else
 					{
@@ -112,7 +112,9 @@ if ($langVal != null)
 			// Disable OnLoad page translation
 			$doc->documentElement->setAttribute('noinitialtranslate', 'true');
 			$doc->documentElement->setAttribute('lang', $langVal);
+			$doc->documentElement->setAttribute('creationDate', date("Y-m-d H:i:s"));
 			$resultString = $doc->saveHTML();
+			file_put_contents($translatedHtmlFilePath, $resultString);
 		}
 		else
 		{
