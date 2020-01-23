@@ -58,7 +58,7 @@ $(window).on('load', function() {
 
   i18next
     .use(Backend).init({
-    fallbackLng: 'en',
+    fallbackLng: 'ru',
     lng: language,
     debug: true,
     backend: {
