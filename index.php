@@ -36,7 +36,7 @@ function processHTMLNode($htmlNode, $translationDitionary)
 				{
 					if ($atrubuteName === '')
 					{
-						$item->textContent = $translationValue;
+						$item->textContent = $translationValue.'';
 					}
 					else
 					{
@@ -109,6 +109,9 @@ if ($langVal != null)
 			{
 				processHTMLNode($doc, $jsonIterator);
 			}
+			// Disable OnLoad page translation
+			$doc->documentElement->setAttribute('noinitialtranslate', 'true');
+			$doc->documentElement->setAttribute('lang', $langVal);
 			$resultString = $doc->saveHTML();
 		}
 		else
@@ -121,18 +124,6 @@ if ($langVal != null)
 if ($resultString === '')
 {
 	$resultString = file_get_contents('./index_nolang.html', true);
-}
-else
-{
-	//Remove localization on page loading
-	$startOnLoadString = '//StartOnLoadLocalization';
-	$endOnLoadString = '//EndOnLoadLocalization';
-	$startOnLoadLocalization = strpos($resultString, $startOnLoadString);
-	$endOnLoadLocalization = strpos($resultString, $endOnLoadString);
-	if ($startOnLoadLocalization != false && $endOnLoadLocalization != false && $startOnLoadLocalization < $endOnLoadLocalization)
-	{
-		$resultString = substr_replace($resultString, '', $startOnLoadString, $endOnLoadLocalization - $startOnLoadString + strlen($endOnLoadString));
-	}
 }
 echo $resultString;
 

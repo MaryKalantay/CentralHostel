@@ -72,9 +72,10 @@ $(window).on('load', function() {
       $(() => {
         jqueryI18next.init(i18next, $);
         $("html").attr("lang", language);
-        //StartOnLoadLocalization
-        sequentialLocalization();
-        //EndOnLoadLocalization
+        if ($("html").attr("noinitialtranslate") !== 'true')
+        {
+          sequentialLocalization();
+        }
         navBar.mobileMenu();
         navBar.anchorScroll();
         rangeDatepicker.picker();
