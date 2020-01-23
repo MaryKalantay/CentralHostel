@@ -7,7 +7,7 @@
 
 function showLogs() 
 {
-	return false;
+	return true;
 }
 
 function processHTMLNode($htmlNode, $translationDitionary)
