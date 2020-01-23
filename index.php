@@ -63,65 +63,77 @@ $doc->loadHTML($file);
 $resultString = "";
 $langVal = $_GET["lang"];
 
-if ($langVal != null)
+$shouldTranslateOnLoad = false;
+if ($langVal === null)
+{
+	// Translate to russian by default
+	$langVal != 'ru';
+	$shouldTranslateOnLoad  = true;
+	$translatedHtmlFilePath = './index_'.$langVal.'_translate_on_load.html';
+}
+else
 {
 	$translatedHtmlFilePath = './index_'.$langVal.'.html';
-	if (file_exists($translatedHtmlFilePath))
+}
+if (file_exists($translatedHtmlFilePath))
+{
+	$resultString = file_get_contents($translatedHtmlFilePath, true);
+}
+else
+{
+	$langJSONPath = './locales/'.$langVal.'/translation.json';
+	if (file_exists($langJSONPath))
 	{
-		$resultString = file_get_contents($translatedHtmlFilePath, true);
+		$json = file_get_contents($langJSONPath, FILE_USE_INCLUDE_PATH);
+		//var_dump($json);
+		$jsonIterator = json_decode($json, JSON_UNESCAPED_UNICODE);
+
+		if (showLogs())
+		{
+		    switch (json_last_error()) {
+		        case JSON_ERROR_NONE:
+		            echo ' - Ошибок нет';
+		        break;
+		        case JSON_ERROR_DEPTH:
+		            echo ' - Достигнута максимальная глубина стека';
+		        break;
+		        case JSON_ERROR_STATE_MISMATCH:
+		            echo ' - Некорректные разряды или несоответствие режимов';
+		        break;
+		        case JSON_ERROR_CTRL_CHAR:
+		            echo ' - Некорректный управляющий символ';
+		        break;
+		        case JSON_ERROR_SYNTAX:
+		            echo ' - Синтаксическая ошибка, некорректный JSON';
+		        break;
+		        case JSON_ERROR_UTF8:
+		            echo ' - Некорректные символы UTF-8, возможно неверно закодирован';
+		        break;
+		        default:
+		            echo ' - Неизвестная ошибка';
+		        break;
+		    }		
+	    }	
+		if (json_last_error() === JSON_ERROR_NONE)
+		{
+			processHTMLNode($doc, $jsonIterator);
+		}
+		
+		if ($shouldTranslateOnLoad === false)
+		{
+			// Disable OnLoad page translation
+			$doc->documentElement->setAttribute('noinitialtranslate', 'true');
+		}
+		$doc->documentElement->setAttribute('lang', $langVal);
+		$doc->documentElement->setAttribute('creationDate', date("Y-m-d H:i:s"));
+		$resultString = $doc->saveHTML();
+		file_put_contents($translatedHtmlFilePath, $resultString);
 	}
 	else
 	{
-		$langJSONPath = './locales/'.$langVal.'/translation.json';
-		if (file_exists($langJSONPath))
+		if (showLogs())
 		{
-			$json = file_get_contents($langJSONPath, FILE_USE_INCLUDE_PATH);
-			//var_dump($json);
-			$jsonIterator = json_decode($json, JSON_UNESCAPED_UNICODE);
-
-			if (showLogs())
-			{
-			    switch (json_last_error()) {
-			        case JSON_ERROR_NONE:
-			            echo ' - Ошибок нет';
-			        break;
-			        case JSON_ERROR_DEPTH:
-			            echo ' - Достигнута максимальная глубина стека';
-			        break;
-			        case JSON_ERROR_STATE_MISMATCH:
-			            echo ' - Некорректные разряды или несоответствие режимов';
-			        break;
-			        case JSON_ERROR_CTRL_CHAR:
-			            echo ' - Некорректный управляющий символ';
-			        break;
-			        case JSON_ERROR_SYNTAX:
-			            echo ' - Синтаксическая ошибка, некорректный JSON';
-			        break;
-			        case JSON_ERROR_UTF8:
-			            echo ' - Некорректные символы UTF-8, возможно неверно закодирован';
-			        break;
-			        default:
-			            echo ' - Неизвестная ошибка';
-			        break;
-			    }		
-		    }	
-			if (json_last_error() === JSON_ERROR_NONE)
-			{
-				processHTMLNode($doc, $jsonIterator);
-			}
-			// Disable OnLoad page translation
-			$doc->documentElement->setAttribute('noinitialtranslate', 'true');
-			$doc->documentElement->setAttribute('lang', $langVal);
-			$doc->documentElement->setAttribute('creationDate', date("Y-m-d H:i:s"));
-			$resultString = $doc->saveHTML();
-			file_put_contents($translatedHtmlFilePath, $resultString);
-		}
-		else
-		{
-			if (showLogs())
-			{
-				echo 'Translation file:  '.$langJSONPath.' did not found';
-			}
+			echo 'Translation file:  '.$langJSONPath.' did not found';
 		}
 	}
 }
