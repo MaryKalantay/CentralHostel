@@ -7,7 +7,7 @@ sudo cp -r assets/ ../public_html/
 echo "Copying from locales/ to ../public_html/"
 sudo cp -r locales/ ../public_html/
 echo "Removing index.html files for all languages"
-find . -name 'index*.html' #-delete
+find ./ -name 'index*.html' #-delete
 echo "Copying index.html to ../public_html/"
 sudo cp index.html ../public_html/index_nolang.html
 echo "Copying sitemap.xml to ../public_html/"
