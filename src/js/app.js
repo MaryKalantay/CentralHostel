@@ -71,10 +71,11 @@ $(window).on('load', function() {
     .then(function (err, t) {
       $(() => {
         jqueryI18next.init(i18next, $);
-        $("html").attr("lang", language);
         if ($("html").attr("noinitialtranslate") !== 'true')
         {
+          $("html").attr("lang", language);
           sequentialLocalization();
+          $("html").attr("lang1", "hello");
         }
         navBar.mobileMenu();
         navBar.anchorScroll();

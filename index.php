@@ -36,7 +36,7 @@ function processHTMLNode($htmlNode, $translationDitionary)
 				{
 					if ($atrubuteName === '')
 					{
-						$item->textContent = $translationValue.'';
+						$item->textContent = $translationValue.'Translated';
 					}
 					else
 					{
