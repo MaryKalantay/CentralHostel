@@ -64,7 +64,7 @@ $resultString = "";
 $langVal = $_GET["lang"];
 
 $shouldTranslateOnLoad = false;
-if (empty($langVal)
+if (empty($langVal))
 {
 	// Translate to russian by default
 	$langVal != 'ru';
