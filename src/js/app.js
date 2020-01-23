@@ -71,15 +71,15 @@ $(window).on('load', function() {
     .then(function (err, t) {
       $(() => {
         jqueryI18next.init(i18next, $);
-        if ($("html").attr("noinitialtranslate") !== 'true')
+        if ($('html').attr('noinitialtranslate') !== 'true')
         {
-          $("html").attr("lang", language);
+          $('html').attr('lang', language);
           sequentialLocalization();
-          $("html").attr("lang1", "hello");
+          $('html').attr('lang1', 'hello');
         }
         else
         {
-          $("html").attr("lang1", "world");
+          $('html').attr('lang1', 'hello1');
         }
         navBar.mobileMenu();
         navBar.anchorScroll();
