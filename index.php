@@ -7,7 +7,7 @@
 
 function showLogs() 
 {
-	return true;
+	return false;
 }
 
 function processHTMLNode($htmlNode, $translationDitionary)
@@ -64,7 +64,7 @@ $resultString = "";
 $langVal = $_GET["lang"];
 
 $shouldTranslateOnLoad = false;
-if ($langVal === null)
+if (empty($langVal)
 {
 	// Translate to russian by default
 	$langVal != 'ru';
