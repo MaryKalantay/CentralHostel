@@ -67,7 +67,7 @@ $shouldTranslateOnLoad = false;
 if (empty($langVal))
 {
 	// Translate to russian by default
-	$langVal != 'ru';
+	$langVal = 'ru';
 	$shouldTranslateOnLoad  = true;
 	$translatedHtmlFilePath = './index_'.$langVal.'_translate_on_load.html';
 }
