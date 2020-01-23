@@ -118,7 +118,10 @@ if ($langVal != null)
 		}
 		else
 		{
-			echo 'Translation file:  '.$langJSONPath.' did not found';
+			if (showLogs())
+			{
+				echo 'Translation file:  '.$langJSONPath.' did not found';
+			}
 		}
 	}
 }
