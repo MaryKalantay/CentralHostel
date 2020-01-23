@@ -77,6 +77,10 @@ $(window).on('load', function() {
           sequentialLocalization();
           $("html").attr("lang1", "hello");
         }
+        else
+        {
+          $("html").attr("lang1", "world");
+        }
         navBar.mobileMenu();
         navBar.anchorScroll();
         rangeDatepicker.picker();
