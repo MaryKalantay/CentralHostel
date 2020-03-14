@@ -212,10 +212,12 @@ const rangeDatepicker = () => {
     });
 
     function totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck) {
-      const lateCheckFee = 115;
-      const earlyCheckFee = 115;
       const breakfastFee = 50;
-      const dayPrice = 230;
+
+      const dayPrice = 190;
+      const lateCheckFee = dayPrice / 2;
+      const earlyCheckFee = dayPrice / 2;
+
       let totalPrice = 0;
 
       totalPrice = days * guestsNumber * dayPrice;
