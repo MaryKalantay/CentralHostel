@@ -21,3 +21,8 @@ sudo cp node_modules/slick-carousel/slick/fonts/slick.ttf ../hostel.kharkiv.ua/a
 sudo cp node_modules/slick-carousel/slick/fonts/slick.woff ../hostel.kharkiv.ua/assets/css/fonts/
 npm install uglify-js -g
 uglifyjs --compress --mangle --output ../hostel.kharkiv.ua/assets/js/app.min.js -- ../hostel.kharkiv.ua/assets/js/app.js
+
+echo "Rename source css"
+sudo mv ../hostel.kharkiv.ua/assets/css/styles.min.css ../hostel.kharkiv.ua/assets/css/source_styles.min.css
+echo "Copy cropped css"
+sudo cp src/scss/crop_styles.min.css ../hostel.kharkiv.ua/assets/css/styles.min.css

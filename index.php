@@ -126,7 +126,7 @@ else
 		}
 		$doc->documentElement->setAttribute('lang', $langVal);
 		$doc->documentElement->setAttribute('creationDate', date("Y-m-d H:i:s"));
-		$resultString = $doc->saveHTML();
+		$resultString = html_entity_decode($doc->saveHTML(), ENT_NOQUOTES, 'UTF-8');
 		file_put_contents($translatedHtmlFilePath, $resultString);
 	}
 	else
