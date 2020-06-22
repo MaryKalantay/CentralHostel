@@ -127,11 +127,11 @@ else
 		$doc->documentElement->setAttribute('lang', $langVal);
 		$doc->documentElement->setAttribute('creationDate', date("Y-m-d H:i:s"));
 		$resultString = html_entity_decode($doc->saveHTML(), ENT_NOQUOTES, 'UTF-8');
-		
-		if (strtoupper($langVal) !== 'RU')
+
+		/*if (strtoupper($langVal) !== 'RU')
 		{
-			$resultString = str_replace('<script src="//code.jivosite.com/widget/rMTKjMEysI" async></script>', '<script src="//code.jivosite.com/widget/mJGDzFi5oj" async></script>', $resultString)
-		}
+			$resultString = str_replace('<script src="//code.jivosite.com/widget/rMTKjMEysI" async></script>', '<script src="//code.jivosite.com/widget/mJGDzFi5oj" async></script>', $resultString);
+		}*/
 
 		file_put_contents($translatedHtmlFilePath, $resultString);
 	}
