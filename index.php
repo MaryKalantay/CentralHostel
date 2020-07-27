@@ -10,6 +10,36 @@ function showLogs()
 	return false;
 }
 
+function handleJSONError()
+{
+	if (showLogs())
+	{
+	    switch (json_last_error()) {
+	        case JSON_ERROR_NONE:
+	            echo ' - Ошибок нет';
+	        break;
+	        case JSON_ERROR_DEPTH:
+	            echo ' - Достигнута максимальная глубина стека';
+	        break;
+	        case JSON_ERROR_STATE_MISMATCH:
+	            echo ' - Некорректные разряды или несоответствие режимов';
+	        break;
+	        case JSON_ERROR_CTRL_CHAR:
+	            echo ' - Некорректный управляющий символ';
+	        break;
+	        case JSON_ERROR_SYNTAX:
+	            echo ' - Синтаксическая ошибка, некорректный JSON';
+	        break;
+	        case JSON_ERROR_UTF8:
+	            echo ' - Некорректные символы UTF-8, возможно неверно закодирован';
+	        break;
+	        default:
+	            echo ' - Неизвестная ошибка';
+	        break;
+	    }		
+    }		
+}
+
 function processHTMLNode($htmlNode, $translationDitionary)
 {
 	foreach ($htmlNode->childNodes as $item)	
@@ -88,35 +118,13 @@ else
 		//var_dump($json);
 		$jsonIterator = json_decode($json, JSON_UNESCAPED_UNICODE);
 
-		if (showLogs())
-		{
-		    switch (json_last_error()) {
-		        case JSON_ERROR_NONE:
-		            echo ' - Ошибок нет';
-		        break;
-		        case JSON_ERROR_DEPTH:
-		            echo ' - Достигнута максимальная глубина стека';
-		        break;
-		        case JSON_ERROR_STATE_MISMATCH:
-		            echo ' - Некорректные разряды или несоответствие режимов';
-		        break;
-		        case JSON_ERROR_CTRL_CHAR:
-		            echo ' - Некорректный управляющий символ';
-		        break;
-		        case JSON_ERROR_SYNTAX:
-		            echo ' - Синтаксическая ошибка, некорректный JSON';
-		        break;
-		        case JSON_ERROR_UTF8:
-		            echo ' - Некорректные символы UTF-8, возможно неверно закодирован';
-		        break;
-		        default:
-		            echo ' - Неизвестная ошибка';
-		        break;
-		    }		
-	    }	
+		
+		handleJSONError();
+
 		if (json_last_error() === JSON_ERROR_NONE)
 		{
 			processHTMLNode($doc, $jsonIterator);
+
 		}
 		
 		if ($shouldTranslateOnLoad === false)
@@ -127,6 +135,26 @@ else
 		$doc->documentElement->setAttribute('lang', $langVal);
 		$doc->documentElement->setAttribute('creationDate', date("Y-m-d H:i:s"));
 		$resultString = html_entity_decode($doc->saveHTML(), ENT_NOQUOTES, 'UTF-8');
+
+		// Apply settings
+		$settingsJSONFile = 'settings.json';
+		if (file_exists($settingsJSONFile))
+		{
+			$json = file_get_contents($settingsJSONFile, FILE_USE_INCLUDE_PATH);
+			$jsonIterator = json_decode($json, JSON_UNESCAPED_UNICODE);
+
+			handleJSONError();
+
+			if (json_last_error() === JSON_ERROR_NONE)
+			{
+				$regularPriceValue = strval($jsonIterator['regular_price']);
+				$resultString = str_replace('regular_price', $regularPriceValue, $resultString);
+			}
+		}
+		else
+		{
+			echo 'Unable to find settings.json';
+		}			
 
 		/*if (strtoupper($langVal) !== 'RU')
 		{
