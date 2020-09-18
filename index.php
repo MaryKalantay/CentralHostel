@@ -158,7 +158,7 @@ else
 
 		/*if (strtoupper($langVal) !== 'RU')
 		{
-			$resultString = str_replace('<script src="//code.jivosite.com/widget/rMTKjMEysI" async></script>', '<script src="//code.jivosite.com/widget/mJGDzFi5oj" async></script>', $resultString);
+			$resultString = str_replace('<script src="//code.jivosite.com/widget/rMTKjMEysI" async></script>', '<script src="//code.jivosite.com/widget/DuGM4gb2Vo" async></script>', $resultString);
 		}*/
 
 		file_put_contents($translatedHtmlFilePath, $resultString);
