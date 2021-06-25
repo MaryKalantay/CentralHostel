@@ -214,13 +214,17 @@ const rangeDatepicker = () => {
     function totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck) {
       const breakfastFee = 50;
 
-      const dayPrice = 230;
-      const lateCheckFee = dayPrice / 2;
-      const earlyCheckFee = dayPrice / 2;
+      const regularPrice = regular_price;
+      const weekendsPrice = weekends_price;
+      const femaleRegularPrice = female_regular_price;
+      const femaleWeekendsPrice = female_weekends_price;
+      
+      const lateCheckFee = regularPrice / 2;
+      const earlyCheckFee = regularPrice / 2;
 
       let totalPrice = 0;
 
-      totalPrice = days * guestsNumber * dayPrice;
+      totalPrice = days * guestsNumber * regularPrice;
       if (lateCheck) {
         totalPrice = totalPrice + lateCheckFee;
       }

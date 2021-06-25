@@ -147,8 +147,23 @@ else
 
 			if (json_last_error() === JSON_ERROR_NONE)
 			{
+
+				$femalePriceValue = strval($jsonIterator['female_regular_price']);
+				$resultString = str_replace('female_regular_price', $femalePriceValue, $resultString);
+
+				$femaleWeekendsPriceValue = strval($jsonIterator['female_weekends_price']);
+				$resultString = str_replace('female_weekends_price', $femaleWeekendsPriceValue, $resultString);
+								
 				$regularPriceValue = strval($jsonIterator['regular_price']);
 				$resultString = str_replace('regular_price', $regularPriceValue, $resultString);
+
+				$weekendsPriceValue = strval($jsonIterator['weekends_price']);
+				$resultString = str_replace('weekends_price', $weekendsPriceValue, $resultString);
+
+			}
+			else
+			{
+				echo 'Unable to open settings.json';
 			}
 		}
 		else
