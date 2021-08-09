@@ -73,7 +73,8 @@ const Forms = () => {
         "Общая сумма: " + totalSum + ',%0A' +
         "E-mail: " + guestEmail + ',%0A' +
         "Телефон: " + phoneNumber + ',%0A' +
-        "Комментарии: " + bookingComments;
+        "Комментарии: " + bookingComments + ',%0A' +
+        "Источник: " + document.referrer;
 
       gtag_report_conversion(parseFloat(totalSum) / 25.0);
       gtag('event', 'CreateBooking', {'event_category': 'Booking', 'event_label': guestName, 'value': totalSum, 'send_to': 'UA-23710006-2'});
