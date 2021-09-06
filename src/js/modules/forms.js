@@ -61,6 +61,30 @@ const Forms = () => {
       const selector = 'div[id="slider_book_rooms_modal"]>div>div>div:nth-child(' + (currentSlide + 1).toString() + ') h3';
       const numberColor = $(selector).text();
 
+      var referrer = document.referrer;
+      var fullPath = document.referrer + document.location.pathname + document.location.search;
+
+      if (fullPath.match("/gclid/i"))
+      {
+        referrer = "AdWords";
+      }
+
+      var search=document.location.search;
+      var searchKey = "";
+      if( search !='')
+      {
+        search = search.replace( /^\?+/,'' );
+        var res= search.split('&');
+        for(var i=0;i<res.length;i++)
+        {
+          var t=res[i].split('=');
+          if (t[0] == 'q' || t[0] == 'query')
+          {
+            searchKey = t[1];
+          }
+        }        
+      }
+
       const message =
         "Имя заказчика: " + guestName + ',%0A' +
         "Кол-во гостей: " + guestsNumber + ',%0A' +
@@ -74,7 +98,8 @@ const Forms = () => {
         "E-mail: " + guestEmail + ',%0A' +
         "Телефон: " + phoneNumber + ',%0A' +
         "Комментарии: " + bookingComments + ',%0A' +
-        "Источник: " + document.referrer;
+        "Источник: " + referrer + ',%0A' +
+        "Фраза: " + searchKey;
 
       gtag_report_conversion(parseFloat(totalSum) / 25.0);
       gtag('event', 'CreateBooking', {'event_category': 'Booking', 'event_label': guestName, 'value': totalSum, 'send_to': 'UA-23710006-2'});
