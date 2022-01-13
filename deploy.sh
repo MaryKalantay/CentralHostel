@@ -28,3 +28,4 @@ echo "Copy cropped css"
 sudo cp src/scss/crop_styles.min.css ../hostel.kharkiv.ua/assets/css/styles.min.css
 echo "Copy settings.json"
 sudo cp settings.json ../hostel.kharkiv.ua/settings.json
+sudo cp .htaccess ../hostel.kharkiv.ua/.htaccess

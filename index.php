@@ -176,6 +176,8 @@ else
 			$resultString = str_replace('<script src="//code.jivosite.com/widget/rMTKjMEysI" async></script>', '<script src="//code.jivosite.com/widget/DuGM4gb2Vo" async></script>', $resultString);
 		}*/
 
+		$resultString = str_replace('/?lang=ru', '/', $resultString);
+
 		file_put_contents($translatedHtmlFilePath, $resultString);
 	}
 	else

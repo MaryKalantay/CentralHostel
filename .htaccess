@@ -1,0 +1,10 @@
+# Redirect Query String
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{QUERY_STRING} ^(.*&)?lang=ru(?:&(.*))?$ [NC]
+	RewriteRule ^ %{REQUEST_URI}?%1%2 [L,R=301,NE]
+	RewriteCond %{QUERY_STRING} ^(.*&)?lang=ru.(?:&(.*))?$ [NC]
+	RewriteRule ^ %{REQUEST_URI}?%1%2 [L,R=301,NE]
+	RewriteCond %{HTTP_HOST} ^www\.(.*)$ 
+	RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+</IfModule>
