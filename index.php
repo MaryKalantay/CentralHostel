@@ -160,6 +160,13 @@ else
 				$weekendsPriceValue = strval($jsonIterator['weekends_price']);
 				$resultString = str_replace('weekends_price', $weekendsPriceValue, $resultString);
 
+
+				$jivositeCode = $jsonIterator['jivo_'.$langVal];
+
+				if ($weekendsPriceValue !== NULL && $weekendsPriceValue !== '' && isset($jsonIterator['jivo_'.$langVal]))
+				{
+					$resultString = str_replace('rMTKjMEysI', $jivositeCode, $resultString);					
+				}
 			}
 			else
 			{
