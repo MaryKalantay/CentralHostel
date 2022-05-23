@@ -25,7 +25,7 @@ uglifyjs --compress --mangle --output ../hostel.kharkiv.ua/assets/js/app.min.js 
 echo "Rename source css"
 sudo mv ../hostel.kharkiv.ua/assets/css/styles.min.css ../hostel.kharkiv.ua/assets/css/source_styles.min.css
 echo "Copy cropped css"
-sudo cp src/scss/crop_styles.min.css ../hostel.kharkiv.ua/assets/css/styles.min.css
+sudo cp src/scss/styles.min.css ../hostel.kharkiv.ua/assets/css/styles.min.css
 echo "Copy settings.json"
 sudo cp settings.json ../hostel.kharkiv.ua/settings.json
 sudo cp .htaccess ../hostel.kharkiv.ua/.htaccess
