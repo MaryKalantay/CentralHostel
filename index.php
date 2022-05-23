@@ -148,17 +148,30 @@ else
 			if (json_last_error() === JSON_ERROR_NONE)
 			{
 
+				$appMinJSFile = './assets/js/app.min.js';
+				$appJS = file_get_contents($appMinJSFile, FILE_USE_INCLUDE_PATH);
+
 				$femalePriceValue = strval($jsonIterator['female_regular_price']);
 				$resultString = str_replace('female_regular_price', $femalePriceValue, $resultString);
+				$appJS = str_replace('female_regular_price', $femalePriceValue, $appJS);
 
 				$femaleWeekendsPriceValue = strval($jsonIterator['female_weekends_price']);
 				$resultString = str_replace('female_weekends_price', $femaleWeekendsPriceValue, $resultString);
+				$appJS = str_replace('female_weekends_price', $femaleWeekendsPriceValue, $appJS);
 								
 				$regularPriceValue = strval($jsonIterator['regular_price']);
 				$resultString = str_replace('regular_price', $regularPriceValue, $resultString);
+				$appJS = str_replace('regular_price', $regularPriceValue, $appJS);
 
 				$weekendsPriceValue = strval($jsonIterator['weekends_price']);
 				$resultString = str_replace('weekends_price', $weekendsPriceValue, $resultString);
+				$appJS = str_replace('weekends_price', $weekendsPriceValue, $appJS);
+
+				$breakfastPriceValue = strval($jsonIterator['breakfast_price']);
+				$resultString = str_replace('breakfast_price', $breakfastPriceValue, $resultString);
+				$appJS = str_replace('breakfast_price', $breakfastPriceValue, $appJS);
+
+				file_put_contents($appMinJSFile, $appJS);
 
 
 				$jivositeCode = $jsonIterator['jivo_'.$langVal];

@@ -212,12 +212,12 @@ const rangeDatepicker = () => {
     });
 
     function totalPriceCalculate(days, guestsNumber, earlyCheck, breakfast, lateCheck) {
-      const breakfastFee = 50;
+      const breakfastFee = breakfast_price;
 
-      const regularPrice = 230;
-      const weekendsPrice = 250;
-      const femaleRegularPrice = 230;
-      const femaleWeekendsPrice = 250;
+      const regularPrice = regular_price;
+      const weekendsPrice = weekends_price;
+      const femaleRegularPrice = female_regular_price;
+      const femaleWeekendsPrice = female_weekends_price;
       
       const lateCheckFee = regularPrice / 2;
       const earlyCheckFee = regularPrice / 2;
