@@ -3,6 +3,8 @@
 # install scripts
 init_wp
 
+**.token
+
 # editor
 /nbproject/private/
 /nbproject/
